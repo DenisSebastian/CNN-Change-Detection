@@ -17,32 +17,32 @@ knitr::include_graphics("images/esq-DASNet.jpeg")
 ## Links Por explorar
 
 
-<https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection>
+<!-- <https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection> -->
 
-- <https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1>
-- <https://www.youtube.com/results?search_query=change+detection+gee>
-- arquiología<https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc>
+<!-- - <https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1> -->
+<!-- - <https://www.youtube.com/results?search_query=change+detection+gee> -->
+<!-- - arquiología<https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc> -->
 
-<https://www.youtube.com/watch?v=wDBcTOTAwOc>
+<!-- <https://www.youtube.com/watch?v=wDBcTOTAwOc> -->
 
-- <https://www.youtube.com/watch?v=5oONMB0UPWc>
-- <https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01>
-
-
-- <https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications>
-
-- <https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf>
-
-- <https://www.youtube.com/watch?v=KyjNhAvQS2s>
-- <https://paperswithcode.com/task/change-detection-for-remote-sensing-images>
+<!-- - <https://www.youtube.com/watch?v=5oONMB0UPWc> -->
+<!-- - <https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01> -->
 
 
-<https://github.com/likyoo/Siam-NestedUNet>
+<!-- - <https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications> -->
 
-contaminación
+<!-- - <https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf> -->
 
-- <https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi>
+<!-- - <https://www.youtube.com/watch?v=KyjNhAvQS2s> -->
+<!-- - <https://paperswithcode.com/task/change-detection-for-remote-sensing-images> -->
 
-Programa de la NASA
-<https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications>
+
+<!-- <https://github.com/likyoo/Siam-NestedUNet> -->
+
+<!-- contaminación -->
+
+<!-- - <https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi> -->
+
+<!-- Programa de la NASA -->
+<!-- <https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications> -->
 
