@@ -1,5 +1,3 @@
-# Introduction
+# Introduccion {#intro}
 
-This is a book created from markdown and executable code.
-
-See @knuth84 for additional discussion of literate programming.
+Definición del problema de investigación.

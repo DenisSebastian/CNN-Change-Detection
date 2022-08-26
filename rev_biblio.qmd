@@ -1,0 +1,4 @@
+# Revisión Bibliográfica {#rev-biblio}
+
+En está sección se registrará los aspectos generales de la  revisión bibliográfica a modo de conocer el estado del arte en técnicas de identificación de cambios en imagenes satelitales utilizado redes neuronales convolucionales.
+

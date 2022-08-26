@@ -1,5 +1,3 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Este documento tiene como objetivo inicial ir registrando los avances en el proceso de experimentación de la Tesis de Master of Data Science de la Universidad Adolfo Ibáñez.
