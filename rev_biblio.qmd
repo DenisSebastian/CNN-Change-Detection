@@ -2,3 +2,47 @@
 
 En está sección se registrará los aspectos generales de la  revisión bibliográfica a modo de conocer el estado del arte en técnicas de identificación de cambios en imagenes satelitales utilizado redes neuronales convolucionales.
 
+## DASNet
+
+DASNet: Dual attentive fully convolutional siamese networks for change detection in high-resolution satellite images[@chen_dasnet_2021]
+
+**Resumen** La detección de cambios es una tarea básica del procesamiento de imágenes por teledetección. El objetivo de la investigación es identificar la información de cambio de interés y filtrar la información de cambio irrelevante como factores de interferencia. Recientemente, el aumento del aprendizaje profundo ha proporcionado nuevas herramientas para la detección de cambios, que han dado resultados impresionantes. Sin embargo, los métodos disponibles se centran principalmente en la información de diferencia entre las imágenes de teledetección multitemporal y carecen de robustez ante la información de pseudocambio. Para superar la falta de resistencia de los métodos actuales a los pseudocambios, en este trabajo proponemos un nuevo método, a saber, las redes siamesas totalmente convolucionales de atención dual (DASNet), para la detección de cambios en imágenes de alta resolución. A través del mecanismo de atención dual, se capturan las dependencias de largo alcance para obtener representaciones de características más discriminantes para mejorar el rendimiento de reconocimiento del modelo. Además, la muestra desequilibrada es un problema grave en la detección de cambios, es decir, las muestras sin cambios son mucho más abundantes que las muestras con cambios, lo que constituye una de las principales razones de los pseudocambios. Proponemos la pérdida contrastiva ponderada de doble margen para abordar este problema, castigando la atención a los pares de características sin cambios y aumentando la atención a los pares de características con cambios. Los resultados experimentales de nuestro método en el conjunto de datos de detección de cambios (CDD) y en el conjunto de datos de detección de cambios en edificios (BCDD) demuestran que, en comparación con otros métodos de referencia, el método propuesto consigue mejoras máximas del 2,9% y el 4,2%, respectivamente, en la puntuación F1. Nuestra implementación de PyTorch está disponible en <https://github.com/lehaifeng/DASNet>.
+
+**Index Terms**—Change detection, high-resolution images, dual attention, Siamese network, weighted double-margin contrastive loss.
+
+```{r DASNet, echo=FALSE, out.width="100%", fig.align='center', fig.cap="DASNet: Dual attentive fully convolutional siamese networks for change detection in high-resolution satellite"}
+knitr::include_graphics("images/esq-DASNet.jpeg")
+```
+
+## Links Por explorar
+
+
+<https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection>
+
+- <https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1>
+- <https://www.youtube.com/results?search_query=change+detection+gee>
+- arquiología<https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc>
+
+<https://www.youtube.com/watch?v=wDBcTOTAwOc>
+
+- <https://www.youtube.com/watch?v=5oONMB0UPWc>
+- <https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01>
+
+
+- <https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications>
+
+- <https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf>
+
+- <https://www.youtube.com/watch?v=KyjNhAvQS2s>
+- <https://paperswithcode.com/task/change-detection-for-remote-sensing-images>
+
+
+<https://github.com/likyoo/Siam-NestedUNet>
+
+contaminación
+
+- <https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi>
+
+Programa de la NASA
+<https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications>
+
