@@ -15,6 +15,9 @@ book:
     - intro.qmd
     - marco.qmd
     - rev_biblio.qmd
+    - Ms-CapsNet.qmd
+    - insumos.qmd
+    - experimentacion.qmd
     - references.qmd
 
 bibliography: references.bib
