@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CNN Change Detection - 3&nbsp; Revisión Bibliográfica</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./marco.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CNN Change Detection</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduccion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./marco.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Marco de Referencia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rev_biblio.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#dasnet" id="toc-dasnet" class="nav-link active" data-scroll-target="#dasnet"> <span class="header-section-number">3.1</span> DASNet</a></li>
+  <li><a href="#links-por-explorar" id="toc-links-por-explorar" class="nav-link" data-scroll-target="#links-por-explorar"> <span class="header-section-number">3.2</span> Links Por explorar</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="rev-biblio" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>En está sección se registrará los aspectos generales de la revisión bibliográfica a modo de conocer el estado del arte en técnicas de identificación de cambios en imagenes satelitales utilizado redes neuronales convolucionales.</p>
+<section id="dasnet" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="dasnet"><span class="header-section-number">3.1</span> DASNet</h2>
+<p>DASNet: Dual attentive fully convolutional siamese networks for change detection in high-resolution satellite images<span class="citation" data-cites="chen_dasnet_2021">(<a href="references.html#ref-chen_dasnet_2021" role="doc-biblioref">Chen et al. 2021</a>)</span></p>
+<p><strong>Resumen</strong> La detección de cambios es una tarea básica del procesamiento de imágenes por teledetección. El objetivo de la investigación es identificar la información de cambio de interés y filtrar la información de cambio irrelevante como factores de interferencia. Recientemente, el aumento del aprendizaje profundo ha proporcionado nuevas herramientas para la detección de cambios, que han dado resultados impresionantes. Sin embargo, los métodos disponibles se centran principalmente en la información de diferencia entre las imágenes de teledetección multitemporal y carecen de robustez ante la información de pseudocambio. Para superar la falta de resistencia de los métodos actuales a los pseudocambios, en este trabajo proponemos un nuevo método, a saber, las redes siamesas totalmente convolucionales de atención dual (DASNet), para la detección de cambios en imágenes de alta resolución. A través del mecanismo de atención dual, se capturan las dependencias de largo alcance para obtener representaciones de características más discriminantes para mejorar el rendimiento de reconocimiento del modelo. Además, la muestra desequilibrada es un problema grave en la detección de cambios, es decir, las muestras sin cambios son mucho más abundantes que las muestras con cambios, lo que constituye una de las principales razones de los pseudocambios. Proponemos la pérdida contrastiva ponderada de doble margen para abordar este problema, castigando la atención a los pares de características sin cambios y aumentando la atención a los pares de características con cambios. Los resultados experimentales de nuestro método en el conjunto de datos de detección de cambios (CDD) y en el conjunto de datos de detección de cambios en edificios (BCDD) demuestran que, en comparación con otros métodos de referencia, el método propuesto consigue mejoras máximas del 2,9% y el 4,2%, respectivamente, en la puntuación F1. Nuestra implementación de PyTorch está disponible en <a href="https://github.com/lehaifeng/DASNet" class="uri">https://github.com/lehaifeng/DASNet</a>.</p>
+<p><strong>Index Terms</strong>—Change detection, high-resolution images, dual attention, Siamese network, weighted double-margin contrastive loss.</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/esq-DASNet.jpeg" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">DASNet: Dual attentive fully convolutional siamese networks for change detection in high-resolution satellite</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="links-por-explorar" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="links-por-explorar"><span class="header-section-number">3.2</span> Links Por explorar</h2>
+<p><a href="https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection" class="uri">https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection</a></p>
+<ul>
+<li><a href="https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1" class="uri">https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1</a></li>
+<li><a href="https://www.youtube.com/results?search_query=change+detection+gee" class="uri">https://www.youtube.com/results?search_query=change+detection+gee</a></li>
+<li>arquiología<a href="https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc" class="uri">https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc</a></li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=wDBcTOTAwOc" class="uri">https://www.youtube.com/watch?v=wDBcTOTAwOc</a></p>
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=5oONMB0UPWc" class="uri">https://www.youtube.com/watch?v=5oONMB0UPWc</a></p></li>
+<li><p><a href="https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01" class="uri">https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01</a></p></li>
+<li><p><a href="https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications" class="uri">https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications</a></p></li>
+<li><p><a href="https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf" class="uri">https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=KyjNhAvQS2s" class="uri">https://www.youtube.com/watch?v=KyjNhAvQS2s</a></p></li>
+<li><p><a href="https://paperswithcode.com/task/change-detection-for-remote-sensing-images" class="uri">https://paperswithcode.com/task/change-detection-for-remote-sensing-images</a></p></li>
+</ul>
+<p><a href="https://github.com/likyoo/Siam-NestedUNet" class="uri">https://github.com/likyoo/Siam-NestedUNet</a></p>
+<p>contaminación</p>
+<ul>
+<li><a href="https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi" class="uri">https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi</a></li>
+</ul>
+<p>Programa de la NASA <a href="https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications" class="uri">https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications</a></p>
+<!-- radianearth -->
+<p>bigearth net</p>
+<p>sentinel 1 Change detection no supervisado S1 si existe cambio algorimo global, unet - rmask</p>
+<p>torch geo</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-chen_dasnet_2021" class="csl-entry" role="doc-biblioentry">
+Chen, Jie, Ziyang Yuan, Jian Peng, Li Chen, Haozhe Huang, Jiawei Zhu, Yu Liu, and Haifeng Li. 2021. <span>“<span>DASNet</span>: <span>Dual</span> Attentive Fully Convolutional Siamese Networks for Change Detection of High Resolution Satellite Images.”</span> <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em> 14: 1194–1206. <a href="https://doi.org/10.1109/JSTARS.2020.3037893">https://doi.org/10.1109/JSTARS.2020.3037893</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./marco.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Marco de Referencia</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Denis Berroeta</div>   
+  </div>
+</footer>
+
+
+
+</body></html>
