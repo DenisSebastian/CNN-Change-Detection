@@ -1,4 +1,4 @@
-# Introduccion {#intro}
+# Introducción {#intro}
 
 Definición del problema de investigación, alinear con proyecto SAMSARA
 
