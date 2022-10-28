@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CNN Change Detection - 3&nbsp; Revisión Bibliográfica</title>
+<title>CNN Change Detection - 4&nbsp; Revisión Bibliográfica</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -120,27 +120,42 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./marco.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Marco de Referencia</span></a>
+  <a href="./objetivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Objetivos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rev_biblio.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></a>
+  <a href="./marco.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marco de Referencia</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ms-CapsNet</span></a>
+  <a href="./rev_biblio.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./insumos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Insumos</span></a>
+  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ms-CapsNet</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimentación</span></a>
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Insumos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimentación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cube.html" class="sidebar-item-text sidebar-link">Data Cube</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./recursos.html" class="sidebar-item-text sidebar-link">Recursos</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -157,16 +172,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#detección-de-cambios-con-imágenes-radar" id="toc-detección-de-cambios-con-imágenes-radar" class="nav-link active" data-scroll-target="#detección-de-cambios-con-imágenes-radar"> <span class="header-section-number">3.1</span> Detección de Cambios con Imágenes Radar</a>
+  <li><a href="#detección-de-cambios-con-imágenes-radar" id="toc-detección-de-cambios-con-imágenes-radar" class="nav-link active" data-scroll-target="#detección-de-cambios-con-imágenes-radar"> <span class="header-section-number">4.1</span> Detección de Cambios con Imágenes Radar</a>
   <ul class="collapse">
-  <li><a href="#ms-capsnet" id="toc-ms-capsnet" class="nav-link" data-scroll-target="#ms-capsnet"> <span class="header-section-number">3.1.1</span> Ms-CapsNet</a></li>
+  <li><a href="#ms-capsnet" id="toc-ms-capsnet" class="nav-link" data-scroll-target="#ms-capsnet"> <span class="header-section-number">4.1.1</span> Ms-CapsNet</a></li>
   </ul></li>
-  <li><a href="#graph-based-knowledge-supplement" id="toc-graph-based-knowledge-supplement" class="nav-link" data-scroll-target="#graph-based-knowledge-supplement"> <span class="header-section-number">3.2</span> Graph-Based Knowledge Supplement</a></li>
-  <li><a href="#detección-de-cambios-con-imágenes-de-alta-resolución" id="toc-detección-de-cambios-con-imágenes-de-alta-resolución" class="nav-link" data-scroll-target="#detección-de-cambios-con-imágenes-de-alta-resolución"> <span class="header-section-number">3.3</span> Detección de Cambios con Imágenes de alta resolución</a>
+  <li><a href="#graph-based-knowledge-supplement" id="toc-graph-based-knowledge-supplement" class="nav-link" data-scroll-target="#graph-based-knowledge-supplement"> <span class="header-section-number">4.2</span> Graph-Based Knowledge Supplement</a></li>
+  <li><a href="#fully-transformer-network-for-change-detection-of-remote-sensing-images-yan_fully_2022" id="toc-fully-transformer-network-for-change-detection-of-remote-sensing-images-yan_fully_2022" class="nav-link" data-scroll-target="#fully-transformer-network-for-change-detection-of-remote-sensing-images-yan_fully_2022"> <span class="header-section-number">4.3</span> Fully Transformer Network for Change Detection of Remote Sensing Images <span class="citation" data-cites="yan_fully_2022">(<span>Yan, Wan, and Zhang 2022</span>)</span></a></li>
+  <li><a href="#self-supervised-vision-transformers-for-joint-sar-optical-representation-learning-wang_self-supervised_2022" id="toc-self-supervised-vision-transformers-for-joint-sar-optical-representation-learning-wang_self-supervised_2022" class="nav-link" data-scroll-target="#self-supervised-vision-transformers-for-joint-sar-optical-representation-learning-wang_self-supervised_2022"> <span class="header-section-number">4.4</span> Self-supervised Vision Transformers for Joint SAR-optical Representation Learning <span class="citation" data-cites="wang_self-supervised_2022">(<span>Y. Wang, Albrecht, and Zhu 2022</span>)</span></a></li>
+  <li><a href="#detección-de-cambios-con-imágenes-de-alta-resolución" id="toc-detección-de-cambios-con-imágenes-de-alta-resolución" class="nav-link" data-scroll-target="#detección-de-cambios-con-imágenes-de-alta-resolución"> <span class="header-section-number">4.5</span> Detección de Cambios con Imágenes de Alta Resolución</a>
   <ul class="collapse">
-  <li><a href="#dasnet" id="toc-dasnet" class="nav-link" data-scroll-target="#dasnet"> <span class="header-section-number">3.3.1</span> DASNet</a></li>
+  <li><a href="#dasnet" id="toc-dasnet" class="nav-link" data-scroll-target="#dasnet"> <span class="header-section-number">4.5.1</span> DASNet</a></li>
   </ul></li>
-  <li><a href="#links-por-explorar" id="toc-links-por-explorar" class="nav-link" data-scroll-target="#links-por-explorar"> <span class="header-section-number">3.4</span> Links Por explorar</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +191,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="rev-biblio" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></span></h1>
+<h1 class="title"><span id="rev-biblio" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></span></h1>
 </div>
 
 
@@ -190,15 +206,23 @@ div.csl-indent {
 </header>
 
 <p>En está sección se registrará los aspectos generales de la revisión bibliográfica a modo de conocer el estado del arte en técnicas de identificación de cambios en imagenes satelitales utilizado redes neuronales convolucionales.</p>
-<section id="detección-de-cambios-con-imágenes-radar" class="level2 page-columns page-full" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="detección-de-cambios-con-imágenes-radar"><span class="header-section-number">3.1</span> Detección de Cambios con Imágenes Radar</h2>
-<section id="ms-capsnet" class="level3 page-columns page-full" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="ms-capsnet"><span class="header-section-number">3.1.1</span> Ms-CapsNet</h3>
+<p><strong>Principales Desafíos:</strong></p>
+<ol type="1">
+<li>Ruidos Moteado <span class="citation" data-cites="gao2021">(<a href="references.html#ref-gao2021" role="doc-biblioref">Gao et al. 2021</a>)</span></li>
+<li>Sesibilidad a la Deformación <span class="citation" data-cites="gao2021">(<a href="references.html#ref-gao2021" role="doc-biblioref">Gao et al. 2021</a>)</span></li>
+<li>Cantidad de Muestras de Entrenamiento de Cambios <span class="citation" data-cites="wang2022">(<a href="references.html#ref-wang2022" role="doc-biblioref">J. Wang et al. 2022</a>)</span></li>
+<li>Limitada capacidad de representación de las características visuales extraídas <span class="citation" data-cites="yan_fully_2022">(<a href="references.html#ref-yan_fully_2022" role="doc-biblioref">Yan, Wan, and Zhang 2022</a>)</span></li>
+</ol>
+<p><strong>Posibles Soluciones</strong></p>
+<section id="detección-de-cambios-con-imágenes-radar" class="level2 page-columns page-full" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="detección-de-cambios-con-imágenes-radar"><span class="header-section-number">4.1</span> Detección de Cambios con Imágenes Radar</h2>
+<section id="ms-capsnet" class="level3 page-columns page-full" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="ms-capsnet"><span class="header-section-number">4.1.1</span> Ms-CapsNet</h3>
 <p>SAR Image Change Detection Based on Multiscale Capsule Network <span class="citation" data-cites="gao2021">(<a href="references.html#ref-gao2021" role="doc-biblioref">Gao et al. 2021</a>)</span></p>
 <dl>
 <dt>Resumen:</dt>
 <dd>
-<p>Los métodos tradicionales de detección de cambios en imágenes de radar de apertura sintética basados en redes neuronales convolucionales (CNN) se enfrentan a los <strong>retos del ruido de moteado y la sensibilidad a la deformación</strong>. Para mitigar estos problemas, propone una red de cápsulas multiescala (<strong>Ms-CapsNet</strong>) para extraer la información discriminativa entre los píxeles cambiados y los no cambiados. Por un lado, el módulo de cápsula multiescala se emplea para explotar la relación espacial de las características. Por lo tanto, se pueden conseguir propiedades equivariantes agregando las características de diferentes posiciones. Por otro lado, se ha diseñado un módulo de convolución de <strong>fusión adaptativa (AFC)</strong> para la Ms-CapsNet propuesta. Se pueden capturar características semánticas más altas para las cápsulas primarias. Las características extraídas por el módulo AFC mejoran significativamente la robustez frente al ruido de moteado. La eficacia de la Ms-CapsNet propuesta se verifica en tres conjuntos de datos SAR reales. Los experimentos de comparación con cuatro métodos de vanguardia demuestran la eficacia del método propuesto.</p>
+Los métodos tradicionales de detección de cambios en imágenes de radar de apertura sintética basados en redes neuronales convolucionales (CNN) se enfrentan a los <strong>retos del ruido de moteado y la sensibilidad a la deformación</strong>. Para mitigar estos problemas, propone una red de cápsulas multiescala (<strong>Ms-CapsNet</strong>) para extraer la información discriminativa entre los píxeles cambiados y los no cambiados. Por un lado, el módulo de cápsula multiescala se emplea para explotar la relación espacial de las características. Por lo tanto, se pueden conseguir propiedades equivariantes agregando las características de diferentes posiciones. Por otro lado, se ha diseñado un módulo de convolución de <strong>fusión adaptativa (AFC)</strong> para la Ms-CapsNet propuesta. Se pueden capturar características semánticas más altas para las cápsulas primarias. Las características extraídas por el módulo AFC mejoran significativamente la robustez frente al ruido de moteado. La eficacia de la Ms-CapsNet propuesta se verifica en tres conjuntos de datos SAR reales. Los experimentos de comparación con cuatro métodos de vanguardia demuestran la eficacia del método propuesto.
 </dd>
 <dt>Index Terms:</dt>
 <dd>
@@ -220,13 +244,13 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="graph-based-knowledge-supplement" class="level2 page-columns page-full" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="graph-based-knowledge-supplement"><span class="header-section-number">3.2</span> Graph-Based Knowledge Supplement</h2>
-<p>Change Detection From Synthetic Aperture Radar Images via Graph-Based Knowledge Supplement Network <span class="citation" data-cites="wang2022">(<a href="references.html#ref-wang2022" role="doc-biblioref">Wang et al. 2022</a>)</span></p>
+<section id="graph-based-knowledge-supplement" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="graph-based-knowledge-supplement"><span class="header-section-number">4.2</span> Graph-Based Knowledge Supplement</h2>
+<p>Change Detection From Synthetic Aperture Radar Images via Graph-Based Knowledge Supplement Network <span class="citation" data-cites="wang2022">(<a href="references.html#ref-wang2022" role="doc-biblioref">J. Wang et al. 2022</a>)</span></p>
 <dl>
 <dt>Resumen:</dt>
 <dd>
-<p>La detección de cambios en las imágenes del radar de apertura sintética (SAR) es una tarea vital pero difícil en el campo del análisis de imágenes de teledetección. La mayoría de los trabajos anteriores adoptan un método auto-supervisado que utiliza muestras pseudo-etiquetadas para guiar el entrenamiento y las pruebas subsecuentes. Sin embargo, las redes profundas suelen requerir muchas muestras de alta calidad para la optimización de los parámetros. El ruido en las pseudo-etiquetas afecta inevitablemente al rendimiento final de la detección de cambios. Para resolver el problema, proponemos una red de complemento de conocimiento basada en <strong>grafos (GKSNet)</strong>. Para ser más específicos, extraemos información discriminatoria del conjunto de datos etiquetados existente como conocimiento adicional, para suprimir hasta cierto punto los efectos adversos de las muestras ruidosas. A continuación, diseñamos un módulo de transferencia de grafos para destilar información contextual de forma atenta desde el conjunto de datos etiquetados al conjunto de datos de destino, lo que permite salvar la correlación de características entre los conjuntos de datos. Para validar el método propuesto, realizamos amplios experimentos con cuatro conjuntos de datos de SAR, que demostraron la superioridad de la GKSNet propuesta en comparación con varias líneas de base del estado de la técnica.</p>
+La detección de cambios en las imágenes del radar de apertura sintética (SAR) es una tarea vital pero difícil en el campo del análisis de imágenes de teledetección. La mayoría de los trabajos anteriores adoptan un método auto-supervisado que utiliza muestras pseudo-etiquetadas para guiar el entrenamiento y las pruebas subsecuentes. Sin embargo, las redes profundas suelen requerir muchas muestras de alta calidad para la optimización de los parámetros. El ruido en las pseudo-etiquetas afecta inevitablemente al rendimiento final de la detección de cambios. Para resolver el problema, proponemos una red de complemento de conocimiento basada en <strong>grafos (GKSNet)</strong>. Para ser más específicos, extraemos información discriminatoria del conjunto de datos etiquetados existente como conocimiento adicional, para suprimir hasta cierto punto los efectos adversos de las muestras ruidosas. A continuación, diseñamos un módulo de transferencia de grafos para destilar información contextual de forma atenta desde el conjunto de datos etiquetados al conjunto de datos de destino, lo que permite salvar la correlación de características entre los conjuntos de datos. Para validar el método propuesto, realizamos amplios experimentos con cuatro conjuntos de datos de SAR, que demostraron la superioridad de la GKSNet propuesta en comparación con varias líneas de base del estado de la técnica.
 </dd>
 <dt>Index Terms:</dt>
 <dd>
@@ -240,15 +264,55 @@ div.csl-indent {
 </figure>
 </div>
 </section>
-<section id="detección-de-cambios-con-imágenes-de-alta-resolución" class="level2 page-columns page-full" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="detección-de-cambios-con-imágenes-de-alta-resolución"><span class="header-section-number">3.3</span> Detección de Cambios con Imágenes de alta resolución</h2>
-<section id="dasnet" class="level3 page-columns page-full" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="dasnet"><span class="header-section-number">3.3.1</span> DASNet</h3>
+<section id="fully-transformer-network-for-change-detection-of-remote-sensing-images-yan_fully_2022" class="level2 page-columns page-full" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="fully-transformer-network-for-change-detection-of-remote-sensing-images-yan_fully_2022"><span class="header-section-number">4.3</span> Fully Transformer Network for Change Detection of Remote Sensing Images <span class="citation" data-cites="yan_fully_2022">(<a href="references.html#ref-yan_fully_2022" role="doc-biblioref">Yan, Wan, and Zhang 2022</a>)</span></h2>
+<dl>
+<dt>Resumen:</dt>
+<dd>
+Recientemente, la detección de cambios (CD) de las imágenes de teledetección ha logrado un gran progreso con los avances del aprendizaje profundo. Sin embargo, los métodos actuales generalmente ofrecen regiones de CD incompletas y límites de CD irregulares debido a la limitada capacidad de representación de las características visuales extraídas. Para aliviar estos problemas, en este trabajo proponemos un novedoso marco de aprendizaje llamado Fully Transformer Network (FTN) para la CD de imágenes de teledetección, que mejora la extracción de características desde una vista global y combina características visuales de varios niveles de forma piramidal. Más concretamente, el marco propuesto utiliza en primer lugar las ventajas de los transformadores en el modelado de dependencias de largo alcance. Puede ayudar a aprender más características discriminativas de nivel global y obtener regiones completas de CD. A continuación, introducimos una estructura piramidal para agregar características visuales multinivel a partir de Transformers para mejorar las características. La estructura piramidal injertada con un Módulo de Atención Progresiva (PAM) puede mejorar la capacidad de representación de características con interdependencias adicionales a través de atenciones de canal. Por último, para entrenar mejor el marco, utilizamos el aprendizaje supervisado en profundidad con múltiples funciones de pérdida de límites. Amplios experimentos demuestran que nuestro método propuesto alcanza un nuevo rendimiento de vanguardia en cuatro puntos de referencia públicos de CD.
+</dd>
+</dl>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/ftn_cd.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">La estructura general del marco propuesto. Fully Transformer Network for Change Detection of Remote Sensing Images</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Index Terms</strong>: Fully Transformer Network, Change Detection, Remote Sensing Image.</p>
+</section>
+<section id="self-supervised-vision-transformers-for-joint-sar-optical-representation-learning-wang_self-supervised_2022" class="level2 page-columns page-full" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="self-supervised-vision-transformers-for-joint-sar-optical-representation-learning-wang_self-supervised_2022"><span class="header-section-number">4.4</span> Self-supervised Vision Transformers for Joint SAR-optical Representation Learning <span class="citation" data-cites="wang_self-supervised_2022">(<a href="references.html#ref-wang_self-supervised_2022" role="doc-biblioref">Y. Wang, Albrecht, and Zhu 2022</a>)</span></h2>
+<dl>
+<dt>Resumen:</dt>
+<dd>
+El aprendizaje autosupervisado (SSL) ha suscitado un gran interés en la teledetección y la observación de la Tierra debido a su capacidad para aprender representaciones independientes de la tarea sin necesidad de anotaciones humanas. Mientras que la mayoría de los trabajos existentes sobre SSL en teledetección utilizan columnas vertebrales ConvNet y se centran en una sola modalidad, nosotros exploramos el potencial de los transformadores de visión (ViTs) para el aprendizaje conjunto de representaciones SAR-ópticas. Basándonos en DINO, un algoritmo SSL de última generación que destila conocimiento de dos vistas aumentadas de una imagen de entrada, combinamos imágenes SAR y ópticas concatenando todos los canales en una entrada unificada. Posteriormente, enmascaramos aleatoriamente los canales de una modalidad como estrategia de aumento de datos. Durante el entrenamiento, el modelo se alimenta de pares de imágenes ópticas, SAR y SAR-ópticas para aprender representaciones internas e intra-modales. Los resultados experimentales que emplean el conjunto de datos BigEarthNet-MM demuestran las ventajas tanto de los ejes ViT como del algoritmo SSL multimodal propuesto DINO-MM.
+</dd>
+</dl>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/DINO-MM.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">DINO-MM: el algoritmo SSL conjunto SAR-óptico propuesto. La imagen SAR-óptica concatenada se toma como entrada bruta. Se transforma aleatoriamente en dos vistas aumentadas y se introduce en una red maestro-estudiante basada en DINO.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Index Terms</strong>: Self-supervised learning, vision trans- former, multimodal representation learning</p>
+</section>
+<section id="detección-de-cambios-con-imágenes-de-alta-resolución" class="level2 page-columns page-full" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="detección-de-cambios-con-imágenes-de-alta-resolución"><span class="header-section-number">4.5</span> Detección de Cambios con Imágenes de Alta Resolución</h2>
+<section id="dasnet" class="level3 page-columns page-full" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="dasnet"><span class="header-section-number">4.5.1</span> DASNet</h3>
 <p>DASNet: Dual attentive fully convolutional siamese networks for change detection in high-resolution satellite images<span class="citation" data-cites="chen_dasnet_2021">(<a href="references.html#ref-chen_dasnet_2021" role="doc-biblioref">Chen et al. 2021</a>)</span></p>
 <dl>
 <dt>Resumen:</dt>
 <dd>
-<p>La detección de cambios es una tarea básica del procesamiento de imágenes por teledetección. El objetivo de la investigación es identificar la información de cambio de interés y filtrar la información de cambio irrelevante como factores de interferencia. Recientemente, el aumento del aprendizaje profundo ha proporcionado nuevas herramientas para la detección de cambios, que han dado resultados impresionantes. Sin embargo, los métodos disponibles se centran principalmente en la información de diferencia entre las imágenes de teledetección multitemporal y carecen de robustez ante la información de pseudocambio. Para superar la falta de resistencia de los métodos actuales a los pseudocambios, en este trabajo proponemos un nuevo método, a saber, las redes siamesas totalmente convolucionales de atención dual (DASNet), para la detección de cambios en imágenes de alta resolución. A través del mecanismo de atención dual, se capturan las dependencias de largo alcance para obtener representaciones de características más discriminantes para mejorar el rendimiento de reconocimiento del modelo. Además, la muestra desequilibrada es un problema grave en la detección de cambios, es decir, las muestras sin cambios son mucho más abundantes que las muestras con cambios, lo que constituye una de las principales razones de los pseudocambios. Proponemos la pérdida contrastiva ponderada de doble margen para abordar este problema, castigando la atención a los pares de características sin cambios y aumentando la atención a los pares de características con cambios. Los resultados experimentales de nuestro método en el conjunto de datos de detección de cambios (CDD) y en el conjunto de datos de detección de cambios en edificios (BCDD) demuestran que, en comparación con otros métodos de referencia, el método propuesto consigue mejoras máximas del 2,9% y el 4,2%, respectivamente, en la puntuación F1. Nuestra implementación de PyTorch está disponible en <a href="https://github.com/lehaifeng/DASNet" class="uri">https://github.com/lehaifeng/DASNet</a>.</p>
+La detección de cambios es una tarea básica del procesamiento de imágenes por teledetección. El objetivo de la investigación es identificar la información de cambio de interés y filtrar la información de cambio irrelevante como factores de interferencia. Recientemente, el aumento del aprendizaje profundo ha proporcionado nuevas herramientas para la detección de cambios, que han dado resultados impresionantes. Sin embargo, los métodos disponibles se centran principalmente en la información de diferencia entre las imágenes de teledetección multitemporal y carecen de robustez ante la información de pseudocambio. Para superar la falta de resistencia de los métodos actuales a los pseudocambios, en este trabajo proponemos un nuevo método, a saber, las redes siamesas totalmente convolucionales de atención dual (DASNet), para la detección de cambios en imágenes de alta resolución. A través del mecanismo de atención dual, se capturan las dependencias de largo alcance para obtener representaciones de características más discriminantes para mejorar el rendimiento de reconocimiento del modelo. Además, la muestra desequilibrada es un problema grave en la detección de cambios, es decir, las muestras sin cambios son mucho más abundantes que las muestras con cambios, lo que constituye una de las principales razones de los pseudocambios. Proponemos la pérdida contrastiva ponderada de doble margen para abordar este problema, castigando la atención a los pares de características sin cambios y aumentando la atención a los pares de características con cambios. Los resultados experimentales de nuestro método en el conjunto de datos de detección de cambios (CDD) y en el conjunto de datos de detección de cambios en edificios (BCDD) demuestran que, en comparación con otros métodos de referencia, el método propuesto consigue mejoras máximas del 2,9% y el 4,2%, respectivamente, en la puntuación F1. Nuestra implementación de PyTorch está disponible en <a href="https://github.com/lehaifeng/DASNet" class="uri">https://github.com/lehaifeng/DASNet</a>.
 </dd>
 <dt>Index Terms:</dt>
 <dd>
@@ -265,35 +329,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="links-por-explorar" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="links-por-explorar"><span class="header-section-number">3.4</span> Links Por explorar</h2>
-<p><a href="https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection" class="uri">https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection</a></p>
-<ul>
-<li><a href="https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1" class="uri">https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1</a></li>
-<li><a href="https://www.youtube.com/results?search_query=change+detection+gee" class="uri">https://www.youtube.com/results?search_query=change+detection+gee</a></li>
-<li>arquiología<a href="https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc" class="uri">https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc</a></li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=wDBcTOTAwOc" class="uri">https://www.youtube.com/watch?v=wDBcTOTAwOc</a></p>
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=5oONMB0UPWc" class="uri">https://www.youtube.com/watch?v=5oONMB0UPWc</a></p></li>
-<li><p><a href="https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01" class="uri">https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01</a></p></li>
-<li><p><a href="https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications" class="uri">https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications</a></p></li>
-<li><p><a href="https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf" class="uri">https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=KyjNhAvQS2s" class="uri">https://www.youtube.com/watch?v=KyjNhAvQS2s</a></p></li>
-<li><p><a href="https://paperswithcode.com/task/change-detection-for-remote-sensing-images" class="uri">https://paperswithcode.com/task/change-detection-for-remote-sensing-images</a></p></li>
-</ul>
-<p><a href="https://github.com/likyoo/Siam-NestedUNet" class="uri">https://github.com/likyoo/Siam-NestedUNet</a></p>
-<p>contaminación</p>
-<ul>
-<li><a href="https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi" class="uri">https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi</a></li>
-</ul>
-<p>Programa de la NASA <a href="https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications" class="uri">https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications</a></p>
-<!-- radianearth -->
-<p>bigearth net</p>
-<p>sentinel 1 Change detection no supervisado S1 si existe cambio algorimo global, unet - rmask</p>
-<p>torch geo</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -306,7 +341,14 @@ Gao, Yunhao, Feng Gao, Junyu Dong, and Heng-Chao Li. 2021. <span>“SAR Image Ch
 <div id="ref-wang2022" class="csl-entry" role="doc-biblioentry">
 Wang, Junjie, Feng Gao, Junyu Dong, Shan Zhang, and Qian Du. 2022. <span>“Change Detection from Synthetic Aperture Radar Images via Graph-Based Knowledge Supplement Network.”</span> <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em> 15: 1823–36. <a href="https://doi.org/10.1109/JSTARS.2022.3146167">https://doi.org/10.1109/JSTARS.2022.3146167</a>.
 </div>
+<div id="ref-wang_self-supervised_2022" class="csl-entry" role="doc-biblioentry">
+Wang, Yi, Conrad M. Albrecht, and Xiao Xiang Zhu. 2022. <span>“Self-Supervised <span>Vision Transformers</span> for <span class="nocase">Joint SAR-optical Representation Learning</span>.”</span> <span>arXiv</span>. <a href="http://arxiv.org/abs/2204.05381">http://arxiv.org/abs/2204.05381</a>.
 </div>
+<div id="ref-yan_fully_2022" class="csl-entry" role="doc-biblioentry">
+Yan, Tianyu, Zifu Wan, and Pingping Zhang. 2022. <span>“Fully <span>Transformer Network</span> for <span>Change Detection</span> of <span>Remote Sensing Images</span>.”</span> <span>arXiv</span>. <a href="http://arxiv.org/abs/2210.00757">http://arxiv.org/abs/2210.00757</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -410,12 +452,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./marco.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Marco de Referencia</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marco de Referencia</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Ms-CapsNet.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ms-CapsNet</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ms-CapsNet</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
