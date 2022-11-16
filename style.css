@@ -6,7 +6,7 @@ p.caption {
   color: #777;
   margin-top: 10px;
 }
-p {
+p, dl {
   font-size: 16px
 }
 p code {

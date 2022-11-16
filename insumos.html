@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CNN Change Detection - 6&nbsp; Insumos</title>
+<title>CNN Change Detection - 7&nbsp; Insumos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,7 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./experimentacion.html" rel="next">
-<link href="./Ms-CapsNet.html" rel="prev">
+<link href="./RUSACD.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Insumos</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Insumos</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -187,12 +187,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./insumos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Insumos</span></a>
+  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">RUSACD</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimentación</span></a>
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Insumos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Experimentación</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -219,14 +224,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#turberas" id="toc-turberas" class="nav-link active" data-scroll-target="#turberas"> <span class="header-section-number">7</span> Turberas</a>
+  <li><a href="#turberas" id="toc-turberas" class="nav-link active" data-scroll-target="#turberas"> <span class="header-section-number">8</span> Turberas</a>
   <ul class="collapse">
-  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción"> <span class="header-section-number">7.1</span> Introducción</a></li>
-  <li><a href="#lectura-de-archivos" id="toc-lectura-de-archivos" class="nav-link" data-scroll-target="#lectura-de-archivos"> <span class="header-section-number">7.2</span> Lectura de archivos</a>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción"> <span class="header-section-number">8.1</span> Introducción</a></li>
+  <li><a href="#lectura-de-archivos" id="toc-lectura-de-archivos" class="nav-link" data-scroll-target="#lectura-de-archivos"> <span class="header-section-number">8.2</span> Lectura de archivos</a>
   <ul class="collapse">
-  <li><a href="#revisión-de-cambios" id="toc-revisión-de-cambios" class="nav-link" data-scroll-target="#revisión-de-cambios"> <span class="header-section-number">7.2.1</span> Revisión de Cambios</a></li>
-  <li><a href="#lectura" id="toc-lectura" class="nav-link" data-scroll-target="#lectura"> <span class="header-section-number">7.2.2</span> Lectura</a></li>
-  <li><a href="#visualización-de-los-cambios-detectados" id="toc-visualización-de-los-cambios-detectados" class="nav-link" data-scroll-target="#visualización-de-los-cambios-detectados"> <span class="header-section-number">7.2.3</span> Visualización de los cambios detectados</a></li>
+  <li><a href="#revisión-de-cambios" id="toc-revisión-de-cambios" class="nav-link" data-scroll-target="#revisión-de-cambios"> <span class="header-section-number">8.2.1</span> Revisión de Cambios</a></li>
+  <li><a href="#lectura" id="toc-lectura" class="nav-link" data-scroll-target="#lectura"> <span class="header-section-number">8.2.2</span> Lectura</a></li>
+  <li><a href="#visualización-de-los-cambios-detectados" id="toc-visualización-de-los-cambios-detectados" class="nav-link" data-scroll-target="#visualización-de-los-cambios-detectados"> <span class="header-section-number">8.2.3</span> Visualización de los cambios detectados</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -237,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Insumos</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Insumos</span></h1>
 <p class="subtitle lead">Tratamiento a los Insumos</p>
 </div>
 
@@ -252,14 +257,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="turberas" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Turberas</h1>
-<section id="introducción" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">7.1</span> Introducción</h2>
+<section id="turberas" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Turberas</h1>
+<section id="introducción" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">8.1</span> Introducción</h2>
 <p>A continuación se explica los procesos realizados a la base recibida llamada <code>Turberas_COT_MMA_CHILOE.kml</code> correspondiente a un archivo espacial de polígonos que representan tu turberas (<span class="quarto-unresolved-ref">?sec-turba</span>) en el <a href="https://es.wikipedia.org/wiki/Archipiélago_de_Chiloé">Archipiélago de Chiloé</a>, en la Región de los Lagos Chile.</p>
 </section>
-<section id="lectura-de-archivos" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="lectura-de-archivos"><span class="header-section-number">7.2</span> Lectura de archivos</h2>
+<section id="lectura-de-archivos" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="lectura-de-archivos"><span class="header-section-number">8.2</span> Lectura de archivos</h2>
 <p>Lectura inicial</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -273,12 +278,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pendiente</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="revisión-de-cambios" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="revisión-de-cambios"><span class="header-section-number">7.2.1</span> Revisión de Cambios</h3>
+<section id="revisión-de-cambios" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="revisión-de-cambios"><span class="header-section-number">8.2.1</span> Revisión de Cambios</h3>
 <p>Corresponde a la revisión de todos los poligonos y registrar y poligonizar los cambios observados que correspnde a actividades antrópicas, para lo cual se se utilizó el software de <a href="https://www.google.com/intl/es-419/earth/versions/">Google Earth Pro</a> valiendose de la funcionalidad de serie de tiempo.</p>
 </section>
-<section id="lectura" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="lectura"><span class="header-section-number">7.2.2</span> Lectura</h3>
+<section id="lectura" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="lectura"><span class="header-section-number">8.2.2</span> Lectura</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>changes_sf <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/turberas/rds/changes_sf.rds"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -552,8 +557,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </section>
-<section id="visualización-de-los-cambios-detectados" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="visualización-de-los-cambios-detectados"><span class="header-section-number">7.2.3</span> Visualización de los cambios detectados</h3>
+<section id="visualización-de-los-cambios-detectados" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="visualización-de-los-cambios-detectados"><span class="header-section-number">8.2.3</span> Visualización de los cambios detectados</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>extraccion <span class="ot">&lt;-</span>  changes_sf <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Observacion <span class="sc">==</span> <span class="st">"Extracción"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -667,13 +672,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Ms-CapsNet.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ms-CapsNet</span></span>
+      <a href="./RUSACD.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">RUSACD</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./experimentacion.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimentación</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Experimentación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
