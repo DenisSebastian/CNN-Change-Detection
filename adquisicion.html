@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CNN Change Detection - Data Cube</title>
+<title>CNN Change Detection - 8&nbsp; Adquisición de Datos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,8 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./recursos.html" rel="next">
-<link href="./sar_sentinel_s1.html" rel="prev">
+<link href="./validacion.html" rel="next">
+<link href="./a-estudio.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,13 +60,13 @@ ul.task-list{list-style: none;}
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Data Cube</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -139,7 +139,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></a>
+  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -221,7 +221,7 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-cube.html" class="sidebar-item-text sidebar-link active">Data Cube</a>
+  <a href="./data-cube.html" class="sidebar-item-text sidebar-link">Data Cube</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -238,16 +238,17 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#datacube-entrenamiento" id="toc-datacube-entrenamiento" class="nav-link active" data-scroll-target="#datacube-entrenamiento">DataCube Entrenamiento</a></li>
+  <li><a href="#resolución-temporal-sentinel-1" id="toc-resolución-temporal-sentinel-1" class="nav-link active" data-scroll-target="#resolución-temporal-sentinel-1"> <span class="header-section-number">8.1</span> Resolución Temporal Sentinel-1</a></li>
+  <li><a href="#intrumentos-a-bordo-sentinel-1" id="toc-intrumentos-a-bordo-sentinel-1" class="nav-link" data-scroll-target="#intrumentos-a-bordo-sentinel-1"> <span class="header-section-number">8.2</span> Intrumentos a Bordo Sentinel-1</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Data Cube</h1>
+<h1 class="title"><span id="datos" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></span></h1>
 </div>
 
 
@@ -261,10 +262,65 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="datacube-entrenamiento" class="level2">
-<h2 class="anchored" data-anchor-id="datacube-entrenamiento">DataCube Entrenamiento</h2>
-<p>Repositorio contiene una serie de notebooks para funcionar con el DataCube Chile. Está dividido en niveles de dificultad y por ahora, sólo está disponible el entrenamiento básico, que sienta los primeros lineamientos para comenzar a trabajar en el cubo de datos.</p>
-<p><a href="https://github.com/Data-Observatory/DataCubeTrainingBasic" class="uri">https://github.com/Data-Observatory/DataCubeTrainingBasic</a></p>
+<p>La misión <strong>Sentinel-1</strong> es el Observatorio Radar Europeo de la iniciativa conjunta Copernicus de la Comisión Europea (CE) y la Agencia Espacial Europea (ESA). Copernicus es una iniciativa europea para la puesta en marcha de servicios de información relacionados con el medio ambiente y la seguridad. Se basa en los datos de observación recibidos de los satélites de observación de la Tierra y la información terrestre.</p>
+<p>La misión Sentinel-1 incluye imágenes en banda C que operan en cuatro modos de imagen exclusivos con diferente resolución (hasta 5 m) y cobertura (hasta 400 km). Ofrece capacidad de doble polarización, tiempos de revisita muy cortos y una rápida entrega de productos. Para cada observación, se dispone de mediciones precisas de la posición y la actitud de la nave espacial.</p>
+<p>El radar de apertura sintética (SAR) tiene la ventaja de operar en longitudes de onda que no se ven obstaculizadas por la nubosidad o la falta de iluminación, y puede adquirir datos sobre un lugar durante el día o la noche en todas las condiciones meteorológicas. Sentinel-1, con su instrumento C-SAR, puede ofrecer una vigilancia fiable y repetida de una zona amplia.</p>
+<p>La misión está compuesta por una constelación de dos satélites, Sentinel-1A y Sentinel-1B, que comparten el mismo plano orbital.</p>
+<p>Sentinel-1 está diseñado para trabajar en un modo de operación preprogramado y libre de conflictos, obteniendo imágenes de todas las masas terrestres mundiales, zonas costeras y rutas marítimas en alta resolución y cubriendo el océano mundial con viñetas. Esto garantiza la fiabilidad del servicio requerida por los servicios operativos y un archivo de datos consistente a largo plazo construido para aplicaciones basadas en series temporales largas.</p>
+<section id="resolución-temporal-sentinel-1" class="level2 page-columns page-full" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="resolución-temporal-sentinel-1"><span class="header-section-number">8.1</span> Resolución Temporal Sentinel-1</h2>
+<p>Un solo satélite Sentinel-1 podrá cartografiar el mundo entero una vez cada 12 días. La constelación de dos satélites ofrece un ciclo de repetición exacta de 6 días. La constelación tendrá una frecuencia de repetición (ascendente/descendente) de 3 días en el ecuador, menos de 1 día en el Ártico y se espera que proporcione cobertura sobre Europa, Canadá y las principales rutas marítimas en 1-3 días <a href="#fig-revisita">Figure&nbsp;<span>8.1</span></a>, independientemente de las condiciones meteorológicas. Los datos del radar se entregarán a los servicios de Copernicus una hora después de su adquisición.</p>
+<div id="fig-revisita" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/revisita1.jpeg" class="img-fluid figure-img" width="600"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 8.1: Tiempo de Revisista en días del Satélite Sentinel-1</figcaption><p></p>
+</figure>
+</div>
+<p>Sentinel-1 se encuentra en una órbita casi polar, sincrónica al sol, con un ciclo de repetición de 12 días y 175 órbitas por ciclo para un solo satélite. Tanto Sentinel-1A como Sentinel-1B comparten el mismo plano orbital con una diferencia de fase orbital de 180°. La cobertura geográfica es la que describe en la siguiente imagen <a href="#fig-cobertura">Figure&nbsp;<span>8.2</span></a>:</p>
+<div id="fig-cobertura" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/revisita.png" class="img-fluid figure-img" width="800"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 8.2: Cobertura Geográfica de Satélite Sentinel-1</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="intrumentos-a-bordo-sentinel-1" class="level2 page-columns page-full" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="intrumentos-a-bordo-sentinel-1"><span class="header-section-number">8.2</span> Intrumentos a Bordo Sentinel-1</h2>
+<p>Sentinel-1 lleva un único instrumento de radar de apertura sintética en banda C que opera a una frecuencia central de 5,405 GHz. Incluye una antena activa phased array de orientación derecha que proporciona un rápido escaneo en elevación y azimut, una capacidad de almacenamiento de datos de 1 410 Gb y una capacidad de enlace descendente en banda X de 520 Mbit/s.</p>
+<p>El instrumento C-SAR soporta el funcionamiento en polarización dual (HH+HV, VV+VH) implementado a través de una cadena de transmisión (conmutable a H o V) y dos cadenas de recepción paralelas para la polarización H y V. Los datos de doble polarización son útiles para la clasificación de la cubierta terrestre y las aplicaciones del hielo marino.</p>
+<p>Sentinel-1 funciona en cuatro modos de adquisición exclusivos <a href="#fig-modosS1">Figure&nbsp;<span>8.3</span></a>:</p>
+<div id="fig-modosS1" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/sentinel_S1_capture.png" class="img-fluid figure-img" width="800"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 8.3: Modos de adquisión de imágenes de Sentinel-1</figcaption><p></p>
+</figure>
+</div>
+<ol type="1">
+<li><dl>
+<dt>Modo Stripmap (SM) {#sm}:</dt>
+<dd>
+El modo de imagen Stripmap se proporciona para la continuidad con las misiones ERS y Envisat. El modo Stripmap proporciona una cobertura con una resolución de 5 m por 5 m sobre una estrecha franja de 80 km. Se puede seleccionar una de las seis franjas de imágenes cambiando el ángulo de incidencia del haz y el ancho del haz de elevación.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Modo de hilera ancha interferométrica (IW):</dt>
+<dd>
+El modo interferométrico de franja ancha (IW) permite combinar una gran anchura de franja (250 km) con una resolución geométrica moderada (5 m por 20 m). El modo IW toma imágenes de tres sub-bandas utilizando la Observación del Terreno con Escáneres Progresivos SAR (TOPSAR). Con la técnica TOPSAR, además de dirigir el haz en el rango como en SCANSAR, el haz también se dirige electrónicamente de atrás hacia adelante en la dirección acimut para cada ráfaga, evitando el festoneado y dando como resultado una imagen de mayor calidad. La interferometría está garantizada por un solapamiento suficiente del espectro Doppler (en el dominio acimutino) y del espectro del número de onda (en el dominio de la elevación). La técnica TOPSAR garantiza una calidad de imagen homogénea en toda la franja. El modo IW es el modo de adquisición por defecto sobre tierra.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Modo de barrido extra ancho (EW)</dt>
+<dd>
+El modo de imagen de franja extra ancha está destinado a los servicios operativos marítimos, de hielo y de zonas polares en los que se requiere una amplia cobertura y tiempos de revisita cortos. El modo EW funciona de forma similar al modo IW, empleando una técnica TOPSAR que utiliza cinco sub-surcos en lugar de tres, lo que resulta en una resolución menor (20 m por 40 m). El modo EW también se puede utilizar para la interferometría como en el modo IW.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Modo Onda (WV)</dt>
+<dd>
+El modo Wave del SENTINEL-1, junto con los modelos globales de olas oceánicas, puede ayudar a determinar la dirección, la longitud de onda y las alturas de las olas en los océanos abiertos. Las adquisiciones en el modo de onda se componen de imágenes de mapa de franjas de 20 km por 20 km, adquiridas alternativamente en dos ángulos de incidencia diferentes. Las imágenes de olas se adquieren cada 100 km, con imágenes en el mismo ángulo de incidencia separadas por 200 km.
+</dd>
+</dl></li>
+</ol>
 
 
 </section>
@@ -369,13 +425,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sar_sentinel_s1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sentinel 1</span>
+      <a href="./a-estudio.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Área de Estudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./recursos.html" class="pagination-link">
-        <span class="nav-page-text">Recursos</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./validacion.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Datos de Validación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

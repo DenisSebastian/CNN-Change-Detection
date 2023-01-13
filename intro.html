@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CNN Change Detection - 1&nbsp; Introducción</title>
+<title>CNN Change Detection - 2&nbsp; Introducción</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +15,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -25,8 +44,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./objetivos.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./problema.html" rel="next">
+<link href="./abstract.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,7 +85,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -96,44 +115,129 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a>
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./objetivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Objetivos</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./marco.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marco de Referencia</span></a>
+  <a href="./problema.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Problema u Oportunidad</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rev_biblio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Revisión Bibliográfica</span></a>
+  <a href="./e-arte.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estado del Arte</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ms-CapsNet</span></a>
+  <a href="./hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hipótesis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">RUSACD</span></a>
+  <a href="./objetivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objetivos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Metodologia</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a-estudio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Área de Estudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./validacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Datos de Validación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./procesamiento.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Procesamientos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resultados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Resultados</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusiones</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./insumos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Insumos</span></a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./rev_papers.html" class="sidebar-item-text sidebar-link">Revisión papers</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link">Ms-CapsNet</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link">RUSACD</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link">Tratamiento de Insumos</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Experimentación</span></a>
+  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link">Experimentación</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./marco.html" class="sidebar-item-text sidebar-link">Marco Conceptual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link">Ecosistemas Protegidos</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sar_sentinel_s1.html" class="sidebar-item-text sidebar-link">Sentinel 1</a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-cube.html" class="sidebar-item-text sidebar-link">Data Cube</a>
@@ -144,34 +248,19 @@ ul.task-list{list-style: none;}
   <a href="./recursos.html" class="sidebar-item-text sidebar-link">Recursos</a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#proyecto-samsara" id="toc-proyecto-samsara" class="nav-link active" data-scroll-target="#proyecto-samsara"> <span class="header-section-number">1.1</span> Proyecto SAMSARA</a>
-  <ul class="collapse">
-  <li><a href="#descripción" id="toc-descripción" class="nav-link" data-scroll-target="#descripción"> <span class="header-section-number">1.1.1</span> Descripción</a></li>
-  <li><a href="#etapas-del-proyecto" id="toc-etapas-del-proyecto" class="nav-link" data-scroll-target="#etapas-del-proyecto"> <span class="header-section-number">1.1.2</span> Etapas del proyecto</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="intro" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></h1>
+<h1 class="title"><span id="intro" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></h1>
 </div>
 
 
@@ -186,32 +275,33 @@ ul.task-list{list-style: none;}
 </header>
 
 <p><img src="images/panorama.jpg" class="img-fluid"></p>
-<p>TO-DO: Definición del problema de investigación, alinear con proyecto <a href="https://goblab.uai.cl/proyecto-samsara/">SAMSARA</a></p>
-<section id="proyecto-samsara" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="proyecto-samsara"><span class="header-section-number">1.1</span> Proyecto SAMSARA</h2>
-<section id="descripción" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="descripción"><span class="header-section-number">1.1.1</span> Descripción</h3>
-<p>Samsara es un Sistema de Alerta y Monitoreo Satelital de Áreas de Relevancia Ambiental, que identificará cambios en la estructura de la vegetación en humedales urbanos, turberas de Chiloé y el bosque y matorral esclerófilo de la región Metropolitana para ayudar a su preservación. La investigación es financiada por la ANID, enmarcada en el Proyecto Fondef IDEA I+D (ID21I10102) y ejecutada por Ingeniería UAI en conjunto con GobLab UAI —el laboratorio de innovación pública de la Escuela de Gobierno—, la Superintendencia de Medio Ambiente, el Servicio de Evaluación Ambiental y el Ministerio de Medio Ambiente.</p>
-<p>El proyecto es liderado por investigadores de la Facultad de Ingeniería y Ciencias y la Escuela de Gobierno de la Universidad Adolfo Ibáñez (UAI) y es desarrollado en conjunto con la Superintendencia del Medio Ambiente, el Servicio de Evaluación Ambiental y el Ministerio del Medio Ambiente gracias a la adjudicación de un proyecto Fondef.</p>
-<p>El proyecto Samsara, cuya adjudicación se realiza en el marco del Fondef IDEA I+D, buscará durante dos años, desarrollar un sistema automático de monitoreo de imágenes satelitales de humedales urbanos, turberas de Chiloé y el bosque y matorral esclerófilo de la Región Metropolitana, para mejorar la cobertura espacial y temporal de fiscalización de la Superintendencia del Medio Ambiente, detectando si existen irregularidades en la conservación de las zonas analizadas, ayudando así a su preservación.</p>
-</section>
-<section id="etapas-del-proyecto" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="etapas-del-proyecto"><span class="header-section-number">1.1.2</span> Etapas del proyecto</h3>
-<ul>
-<li><p><strong>Desarrollar un método automatizado de detección en tiempo real de cambios en la estructura de la vegetación de humedales urbanos, turberas y bosque esclerófilo basado en productos satelitales y algoritmos de inteligencia artificial.</strong></p></li>
-<li><p>Generar un sistema de alerta temprana utilizable por entes fiscalizadores acorde a los requerimientos de la SMA. Generar una estructura computacional que dé soporte a las necesidades de funcionamiento del Data Cube a nivel nacional, incluyendo la asimilación automática de nuevos productos satelitales.</p></li>
-<li><p>Crear una plataforma automatizada que permita el monitoreo de los cambios en la estructura de la vegetación de forma amigable y operativa por parte de la SMA.</p></li>
-<li><p>Identificar necesidades de uso de imágenes satelitales para la protección del medio ambiente en organismos públicos.</p></li>
-</ul>
-<p><strong>Links de Interés:</strong></p>
-<ul>
-<li><p><a href="https://goblab.uai.cl/proyecto-samsara/">https://goblab.uai.cl/proyecto-samsara/</a></p></li>
-<li><p><a href="https://noticias.uai.cl/ingenieria-uai-y-goblab-lanzan-encuesta-para-conocer-como-los-funcionarios-publicos-usan-imagenes-satelitales/">https://noticias.uai.cl/ingenieria-uai-y-goblab-lanzan-encuesta-para-conocer-como-los-funcionarios-publicos-usan-imagenes-satelitales/</a></p></li>
-</ul>
+<p>Uno de los grandes problemas de actualmente en el mundo es la degradación de sistemas naturales, como los bosques y matorrales mediterráneos y humedales, los que en muchos casos contienen especies vegetales de especial interés por su endemismo, y alto nivel de amenaza y presión antrópica <span class="citation" data-cites="araya-lópez2018">(<a href="references.html#ref-araya-lópez2018" role="doc-biblioref">Araya-López et al. 2018</a>)</span>, <span class="citation" data-cites="fassnacht2021">(<a href="references.html#ref-fassnacht2021" role="doc-biblioref">Fassnacht et al. 2021</a>)</span>, las que pueden causar cambios en el hábitat, los cuales pueden llevar a la extinción de especies, así como a la reducción de la biodiversidad. Por lo anterior se hace necesario monitorear las áreas naturales protegidas en el país.</p>
+<p>En Chile, la Superintendencia del Medio Ambiente (SMA) es el principal órgano estatal encargado de velar por el cumplimiento de la normativa ambiental. En sus 8 años de vida ha tenido el gran desafío de fiscalizar más de 17.887 unidades a lo largo del país que tienen al menos una normativa ambiental que los regula. Sin embargo, la institución no cuenta con la infraestructura o los recursos necesarios para fiscalizar adecuadamente todas estas unidades. Para que el rol fiscalizador de la SMA sea eficaz y continuo en el tiempo, se requiere de una infraestructura de monitoreo de gran escala a nivel país.</p>
+<p>Entonces, se hace necesario contar con insumos satelitales de fuentes abiertas y cuyo análisis se automatizado. </p>
+<p>La creciente disponibilidad de productos satelitales y los avances tecnológicos han fomentado una nueva era de observación de la tierra y monitoreo de los recursos naturales por parte de los gobiernos, creando nuevas oportunidades y desafíos que deben ser abordados. Debido a esta motivación, surge la necesidad de crear un sistema monitoreo satelital, que permita identificar cambios en la estructura de la vegetación en humedales urbanos, turberas de Chiloé y el bosque y matorral esclerófilo de la región Metropolitana para ayudar a su preservación. </p>
+<p>La utilización de metodologías de análisis de imágenes satelitales para detectar cambios en ecosistemas naturales se ha hecho más común debido al acceso de fuentes abiertas de productos satelitales, y la capacidad de procesamiento computacional. La aplicabilidad de productos satelitales en detección de cambios en el tiempo, destaca el satélite Sentinel-1 de tipo SAR, tiene la ventaja de operar en longitudes de onda que no se ven obstaculizadas por la nubosidad, y puede adquirir datos sobre un lugar durante el día o la noche en todas las condiciones meteorológicas <span class="citation" data-cites="wang2022">(<a href="references.html#ref-wang2022" role="doc-biblioref">Wang et al. 2022</a>)</span>. Lo anterior lo hace idóneo para la detección de cambios en el territorio, como lo son ecosistemas de turberas, bosques esclerófilos y humedales urbanos, los cuales se ubican en diferentes zonas del país con diversas condiciones climáticas y topográficas. </p>
+<p>Al trabajar con imágenes SAR presentan dos tipos de dificultades para las tarea de detección de cambios, que son el ruido de moteado (speckle noise) y la deformación en los extremos, lo que se puede solucionar con un post procesamiento <span class="citation" data-cites="gao2021a">(<a href="references.html#ref-gao2021a" role="doc-biblioref">Gao et al. 2021</a>)</span> o en su defecto evaluar diferentes técnicas que permitan reducir el efecto de estas dificultados. </p>
+<p>Los investigadores han dedicado grandes esfuerzos a proponer métodos robustos de detección de cambios. Estos métodos pueden clasificarse a grandes rasgos en dos corrientes principales: 1) métodos supervisados y 2) métodos no supervisados. Un método supervisado requiere un conocimiento previo sobre los tipos de cobertura del suelo o un gran número de muestras etiquetadas de alta calidad <span class="citation" data-cites="volpi2013b">(<a href="references.html#ref-volpi2013b" role="doc-biblioref">Volpi et al. 2013, wang2022</a>)</span>. Para el caso del proyecto SAMSARA y en específico en la primera etapa se necesita que sea un método , ya que el método constantemente necesita estar capturando información satelital y comparándola con registros históricos, proceso que debe ser eficiente computacionalmente y sin supervisión experta. </p>
+<p>Para cumplir con lo anterior, en esta tesis se propone la utilización de una red neuronal convolucional del tipo no supervisada, pueda obtener información que permita información relevante y útil de la imágenes satelitales, que facilite el proceso de detección diferencias, a una escala territorial variable de acuerdo a las carctersticas territoriales de los ecosistemas a monitorear. </p>
 
 
-</section>
-</section>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-araya-lópez2018" class="csl-entry" role="doc-biblioentry">
+Araya-López, Rocío A., Javier Lopatin, Fabian E. Fassnacht, and H. Jaime Hernández. 2018. <span>“Monitoring Andean High Altitude Wetlands in Central Chile with Seasonal Optical Data: A Comparison Between Worldview-2 and Sentinel-2 Imagery.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, SI: Latin America Issue, 145 (November): 213–24. <a href="https://doi.org/10.1016/j.isprsjprs.2018.04.001">https://doi.org/10.1016/j.isprsjprs.2018.04.001</a>.
+</div>
+<div id="ref-fassnacht2021" class="csl-entry" role="doc-biblioentry">
+Fassnacht, Fabian Ewald, Javiera Poblete-Olivares, Lucas Rivero, Javier Lopatin, Andrés Ceballos-Comisso, and Mauricio Galleguillos. 2021. <span>“Using Sentinel-2 and Canopy Height Models to Derive a Landscape-Level Biomass Map Covering Multiple Vegetation Types.”</span> <em>International Journal of Applied Earth Observation and Geoinformation</em> 94 (February): 102236. <a href="https://doi.org/10.1016/j.jag.2020.102236">https://doi.org/10.1016/j.jag.2020.102236</a>.
+</div>
+<div id="ref-gao2021a" class="csl-entry" role="doc-biblioentry">
+Gao, Yunhao, Feng Gao, Junyu Dong, and Heng-Chao Li. 2021. <span>“SAR Image Change Detection Based on Multiscale Capsule Network.”</span> <em>IEEE Geoscience and Remote Sensing Letters</em> 18 (3): 484–88. <a href="https://doi.org/10.1109/LGRS.2020.2977838">https://doi.org/10.1109/LGRS.2020.2977838</a>.
+</div>
+<div id="ref-volpi2013b" class="csl-entry" role="doc-biblioentry">
+Volpi, Michele, Devis Tuia, Francesca Bovolo, Mikhail Kanevski, and Lorenzo Bruzzone. 2013. <span>“Supervised Change Detection in VHR Images Using Contextual Information and Support Vector Machines.”</span> <em>International Journal of Applied Earth Observation and Geoinformation</em>, Earth Observation and Geoinformation for Environmental Monitoring, 20 (February): 77–85. <a href="https://doi.org/10.1016/j.jag.2011.10.013">https://doi.org/10.1016/j.jag.2011.10.013</a>.
+</div>
+<div id="ref-wang2022" class="csl-entry" role="doc-biblioentry">
+Wang, Junjie, Feng Gao, Junyu Dong, Shan Zhang, and Qian Du. 2022. <span>“Change Detection from Synthetic Aperture Radar Images via Graph-Based Knowledge Supplement Network.”</span> <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em> 15: 1823–36. <a href="https://doi.org/10.1109/JSTARS.2022.3146167">https://doi.org/10.1109/JSTARS.2022.3146167</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -313,13 +403,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./abstract.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./objetivos.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Objetivos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./problema.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Problema u Oportunidad</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
