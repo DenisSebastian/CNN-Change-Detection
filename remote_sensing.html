@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CNN Change Detection - Conceptos básicos de Percepción Remota</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sar_sentinel_s1.html" rel="next">
+<link href="./marco.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Conceptos básicos de Percepción Remota</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CNN Change Detection</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problema.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Problema u Oportunidad</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./e-arte.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estado del Arte</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hipótesis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objetivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objetivos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Metodologia</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a-estudio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Área de Estudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./validacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Datos de Validación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./procesamiento.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Procesamientos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resultados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Resultados</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusiones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./rev_papers.html" class="sidebar-item-text sidebar-link">Revisión papers</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link">Ms-CapsNet</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link">RUSACD</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link">Tratamiento de Insumos</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link">Experimentación</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./marco.html" class="sidebar-item-text sidebar-link">Marco Conceptual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remote_sensing.html" class="sidebar-item-text sidebar-link active">Conceptos básicos de Percepción Remota</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sar_sentinel_s1.html" class="sidebar-item-text sidebar-link">Sentinel 1</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link">Ecosistemas Protegidos</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cube.html" class="sidebar-item-text sidebar-link">Data Cube</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./recursos.html" class="sidebar-item-text sidebar-link">Recursos</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#remote-sensing-data-acquisition-methods" id="toc-remote-sensing-data-acquisition-methods" class="nav-link active" data-scroll-target="#remote-sensing-data-acquisition-methods">Remote Sensing Data Acquisition Methods</a>
+  <ul class="collapse">
+  <li><a href="#spectral-information-and-resolution" id="toc-spectral-information-and-resolution" class="nav-link" data-scroll-target="#spectral-information-and-resolution">Spectral Information and Resolution</a></li>
+  </ul></li>
+  <li><a href="#spatial-information-and-resolution" id="toc-spatial-information-and-resolution" class="nav-link" data-scroll-target="#spatial-information-and-resolution">Spatial Information and Resolution</a>
+  <ul class="collapse">
+  <li><a href="#temporal-information-and-resolution" id="toc-temporal-information-and-resolution" class="nav-link" data-scroll-target="#temporal-information-and-resolution">Temporal Information and Resolution</a></li>
+  <li><a href="#radiometric-information-and-resolution" id="toc-radiometric-information-and-resolution" class="nav-link" data-scroll-target="#radiometric-information-and-resolution">Radiometric Information and Resolution</a></li>
+  <li><a href="#polarization-information" id="toc-polarization-information" class="nav-link" data-scroll-target="#polarization-information">Polarization Information</a></li>
+  <li><a href="#angular-information" id="toc-angular-information" class="nav-link" data-scroll-target="#angular-information">Angular Information</a></li>
+  </ul></li>
+  <li><a href="#remote-sensing-data-acquisition" id="toc-remote-sensing-data-acquisition" class="nav-link" data-scroll-target="#remote-sensing-data-acquisition">Remote Sensing Data Acquisition</a></li>
+  <li><a href="#remote-sensing-sensors" id="toc-remote-sensing-sensors" class="nav-link" data-scroll-target="#remote-sensing-sensors">Remote Sensing Sensors</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-pr-concept" class="quarto-section-identifier d-none d-lg-block">Conceptos básicos de Percepción Remota</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>La teledetección es el proceso de captura, medición y análisis de imágenes y representaciones digitales de patrones energéticos derivados de dispositivos sensores sin contacto con el fin de recopilar información fidedigna sobre las cosas físicas y el medio ambiente. La tecnología de teledetección ha penetrado en todos los segmentos de los recursos naturales, ya que proporciona información clara en modo de imagen.</p>
+<p>Todos los objetos del universo reflejan, irradian o dispersan radiación electromagnética. La teledetección es una técnica o herramienta similar a las matemáticas. Se utilizan sensores para medir la cantidad de radiación irradiada por un objeto o área geográfica a distancia y, con la ayuda de algoritmos basados en estadísticas y matemáticas, se extrae información valiosa.</p>
+<p>En la <a href="#fig-elephantf">Figure&nbsp;<span>1</span></a> se muestra un modelo de interacción que describe la relación de la teledetección con las ciencias sociales, físicas y biológicas y con las matemáticas y la lógica. El proceso general de teledetección utilizado por los científicos para extraer información a partir de datos obtenidos por teledetección se desarrolla en cuatro pasos, como se muestra en la figura 2. En esta subsección, se han tratado diferentes formas de adquisición de datos de teledetección y procesos de detección de cambios.</p>
+<div id="fig-elephantf" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/interaccion_PR.png" class="img-fluid figure-img" data-ig-align="center" width="540"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 1: Un modelo de interacción que describe la relación de la teledetección con las ciencias sociales, físicas y biológicas y con las matemáticas y la lógica.</figcaption><p></p>
+</figure>
+</div>
+<section id="remote-sensing-data-acquisition-methods" class="level2">
+<h2 class="anchored" data-anchor-id="remote-sensing-data-acquisition-methods">Remote Sensing Data Acquisition Methods</h2>
+<p>Remotely sensed data collection is the most important and expensive job in the remote sensing process. It is essential to have remotely sensed images in a digital format to apply digital image processing. There are two fundamental ways to acquire the digital image:</p>
+<ol type="1">
+<li>Capture the image with a remote sensing device in an analogue format, then convert it to digital format.</li>
+<li>Take a digital image of the remotely sensed image, such as one obtained by the Landsat 7 Thematic Mapper sensor system.</li>
+</ol>
+<p>The ability of a system to render information at the smallest discretely separable quantity in terms of space (spatial), EMR wavelength band (spectral), time (temporal), and/or radiation quantity is characterized as resolution (radiometric). Some of the major parameters that determine the nature of the collected remote sensing data are discussed in the subsections below.</p>
+<section id="spectral-information-and-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="spectral-information-and-resolution">Spectral Information and Resolution</h3>
+<p>The dimension (size) and the number of specific bands or channels in the electromag- netic spectrum to which a remote sensing sensor is sensitive are spectral resolutions. The data are collected in many bands of the electromagnetic spectrum by a multispectral remote sensing sensor. The data are collected in hundreds of spectral bands by a hyperspectral remote sensing device. Energy is recorded in hundreds of bands by an ultra-spectral remote sensing system. The bands are usually chosen to maximize the contrast between the object and the background. As a result, appropriate band selection may increase the likelihood of retrieving the needed information from the remote sensor data. The greater the narrowness of the band, the greater the spectral resolution.</p>
+</section>
+</section>
+<section id="spatial-information-and-resolution" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-information-and-resolution">Spatial Information and Resolution</h2>
+<p>The lowest angular or linear gap between two objects that a remote sensing system can resolve is called the spatial resolution. Using the spatial information in the image, the amount of spectral autocorrelation may be estimated. A pixel is a small spot on the earth’s surface that a sensor can observe as being distinct from its surroundings. It is a detector element or a slit whenever projected onto the ground. In other words, the ground segment sensed at any one time is the scanner’s spatial resolution. It has sometimes been referred to as the ground resolution element (GRE). The spatial resolution at which data is obtained affects the ability to distinguish diverse features and measure their extent. According to the usual rule, the spatial resolution should be less than half the size of the smallest object of interest.</p>
+<section id="temporal-information-and-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="temporal-information-and-resolution">Temporal Information and Resolution</h3>
+<p>The temporal resolution refers to how often a sensor records an image of a specific area. For many applications, a high temporal resolution is critical. Temporal resolution refers to the satellite’s capacity to extract the same area from the same viewing angle at different times. A sensor’s temporal resolution is determined by several elements, including the satellite/sensor capabilities, swath overlap, and latitude.</p>
+</section>
+<section id="radiometric-information-and-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="radiometric-information-and-resolution">Radiometric Information and Resolution</h3>
+<p>The sensitivity of detectors to minor variations in electromagnetic energy is known as radiometric resolution. High radiometric resolution improves the likelihood of more accurate remote sensing of phenomena. A sensor measurement allows it to distinguish the tiniest variation in spectral reflectance/remittance between different targets. The number of quantization levels and the saturation radiance determine the radiometric resolution. The more tiers there are, the more detailed the information that becomes digitalized.</p>
+</section>
+<section id="polarization-information" class="level3">
+<h3 class="anchored" data-anchor-id="polarization-information">Polarization Information</h3>
+<p>The polarization characteristics of electromagnetic radiation collected by remote sens- ing systems can be utilized to investigate the earth’s resources. In general, the stronger the polarization, the smoother the object’s surface.</p>
+</section>
+<section id="angular-information" class="level3">
+<h3 class="anchored" data-anchor-id="angular-information">Angular Information</h3>
+<p>The angle of incidence has traditionally been related to the incoming energy that illuminates the landscape and the angle of exitance from the terrain to the sensor system. The bidirectional nature of the remote sensing data collection influences the spectrum and polarization of the sensor light collected by the remote sensing system [3,4].</p>
+</section>
+</section>
+<section id="remote-sensing-data-acquisition" class="level2">
+<h2 class="anchored" data-anchor-id="remote-sensing-data-acquisition">Remote Sensing Data Acquisition</h2>
+<p>The two important methods of remote sensing data acquisition are aerial photography and satellite image data collection. Aerial photographs are the snapshots of the earth taken by calibrated cameras at a particular instant of time in an analog format. Through the process of digitization, this analog format is converted into a digital format. Aerial photography can be taken from space, from high- or low-altitude airplanes, or from platforms close to the ground. Each aerial shot has vital information for the user in the margin.</p>
+<ol type="1">
+<li><p>Vertical Photographs: The photographic device, i.e., the camera, is pinned as straight down as possible when taking a vertical shot. The allowed tolerance from the plumb (perpendicular) line to the camera axis is normally +3 degrees. The lens axis is nearly perpendicular to the earth’s surface, covers a limited area on a single vertical shot, and closely resembles a square or a rectangle [4].</p></li>
+<li><p>High oblique: The camera is tilted roughly 60 degrees from the vertical when taking a high oblique shot. It is mostly employed in the creation of aeronautical charts and has a minor military application. The ground area covered is trapezoid in high oblique images; the horizon is always visible in high oblique photographs.</p></li>
+<li><p>Low Oblique: This picture is taken with the camera at a 30-degree angle to the vertical. It has been used to research an area before an attack, as a replacement for a map, or as a supplement to a map. The ground area covered is a trapezoid in a low oblique area and coverage is quite limited [5].</p></li>
+<li><p>Trimetrogon: It is a composite of three photos shot simultaneously, one vertical and two high obliques, in a direction perpendicular to the flight path. The oblique images, taken at a 60-degree angle from the vertical, side lap the vertical photography, resulting in composites that run from horizon to horizon.</p></li>
+</ol>
+</section>
+<section id="remote-sensing-sensors" class="level2">
+<h2 class="anchored" data-anchor-id="remote-sensing-sensors">Remote Sensing Sensors</h2>
+<p>continuar …</p>
+<p>Concept Paper Change Detection in Remote Sensing Image Data Comparing Algebraic and Machine Learning Methods</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./marco.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Marco Conceptual</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sar_sentinel_s1.html" class="pagination-link">
+        <span class="nav-page-text">Sentinel 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Denis Berroeta</div>   
+  </div>
+</footer>
+
+
+
+</body></html>
