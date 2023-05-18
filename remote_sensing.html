@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CNN Change Detection - Conceptos básicos de Percepción Remota</title>
+<title>CNN Change Detection - Percepción Remota</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -66,7 +71,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Conceptos básicos de Percepción Remota</h1>
+      <h1 class="quarto-secondary-nav-title">Percepción Remota</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -149,24 +154,29 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./procesamiento.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Procesamientos de Datos</span></a>
+  <a href="./convencionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Métodos Convencionales</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resultados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Resultados</span></a>
+  <a href="./procesamiento.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesamientos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resultados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Resultados</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusiones</span></a>
+  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conclusiones</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">References</span></a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">References</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -189,19 +199,9 @@ ul.task-list{list-style: none;}
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./insumos.html" class="sidebar-item-text sidebar-link">Tratamiento de Insumos</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./experimentacion.html" class="sidebar-item-text sidebar-link">Experimentación</a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./marco.html" class="sidebar-item-text sidebar-link">Marco Conceptual</a>
+            <a href="./experimentacion.html" class="sidebar-item-text sidebar-link">Experimentación</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -209,7 +209,22 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote_sensing.html" class="sidebar-item-text sidebar-link active">Conceptos básicos de Percepción Remota</a>
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link">Tratamiento de Insumos</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./marco.html" class="sidebar-item-text sidebar-link">Marco Conceptual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remote_sensing.html" class="sidebar-item-text sidebar-link active">Percepción Remota</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,23 +254,23 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#remote-sensing-data-acquisition-methods" id="toc-remote-sensing-data-acquisition-methods" class="nav-link active" data-scroll-target="#remote-sensing-data-acquisition-methods">Remote Sensing Data Acquisition Methods</a>
+  <li><a href="#métodos-de-adquisición-de-datos-de-teledetección" id="toc-métodos-de-adquisición-de-datos-de-teledetección" class="nav-link active" data-scroll-target="#métodos-de-adquisición-de-datos-de-teledetección">Métodos de adquisición de datos de teledetección</a>
   <ul class="collapse">
-  <li><a href="#spectral-information-and-resolution" id="toc-spectral-information-and-resolution" class="nav-link" data-scroll-target="#spectral-information-and-resolution">Spectral Information and Resolution</a></li>
+  <li><a href="#información-espectral-y-resolución" id="toc-información-espectral-y-resolución" class="nav-link" data-scroll-target="#información-espectral-y-resolución">Información espectral y resolución</a></li>
   </ul></li>
-  <li><a href="#spatial-information-and-resolution" id="toc-spatial-information-and-resolution" class="nav-link" data-scroll-target="#spatial-information-and-resolution">Spatial Information and Resolution</a>
+  <li><a href="#información-espacial-y-resolución" id="toc-información-espacial-y-resolución" class="nav-link" data-scroll-target="#información-espacial-y-resolución">Información espacial y resolución</a>
   <ul class="collapse">
-  <li><a href="#temporal-information-and-resolution" id="toc-temporal-information-and-resolution" class="nav-link" data-scroll-target="#temporal-information-and-resolution">Temporal Information and Resolution</a></li>
-  <li><a href="#radiometric-information-and-resolution" id="toc-radiometric-information-and-resolution" class="nav-link" data-scroll-target="#radiometric-information-and-resolution">Radiometric Information and Resolution</a></li>
-  <li><a href="#polarization-information" id="toc-polarization-information" class="nav-link" data-scroll-target="#polarization-information">Polarization Information</a></li>
-  <li><a href="#angular-information" id="toc-angular-information" class="nav-link" data-scroll-target="#angular-information">Angular Information</a></li>
+  <li><a href="#información-temporal-y-resolución" id="toc-información-temporal-y-resolución" class="nav-link" data-scroll-target="#información-temporal-y-resolución">Información temporal y resolución</a></li>
+  <li><a href="#información-radiométrica-y-resolución" id="toc-información-radiométrica-y-resolución" class="nav-link" data-scroll-target="#información-radiométrica-y-resolución">Información radiométrica y resolución</a></li>
+  <li><a href="#información-de-polarización" id="toc-información-de-polarización" class="nav-link" data-scroll-target="#información-de-polarización">Información de polarización</a></li>
+  <li><a href="#información-angular" id="toc-información-angular" class="nav-link" data-scroll-target="#información-angular">Información angular</a></li>
   </ul></li>
-  <li><a href="#remote-sensing-data-acquisition" id="toc-remote-sensing-data-acquisition" class="nav-link" data-scroll-target="#remote-sensing-data-acquisition">Remote Sensing Data Acquisition</a></li>
-  <li><a href="#remote-sensing-sensors" id="toc-remote-sensing-sensors" class="nav-link" data-scroll-target="#remote-sensing-sensors">Remote Sensing Sensors</a></li>
+  <li><a href="#adquisición-de-datos-de-teledetección" id="toc-adquisición-de-datos-de-teledetección" class="nav-link" data-scroll-target="#adquisición-de-datos-de-teledetección">Adquisición de datos de teledetección</a></li>
+  <li><a href="#sensores-de-teledetección" id="toc-sensores-de-teledetección" class="nav-link" data-scroll-target="#sensores-de-teledetección">Sensores de teledetección</a></li>
   </ul>
 </nav>
     </div>
@@ -264,7 +279,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-pr-concept" class="quarto-section-identifier d-none d-lg-block">Conceptos básicos de Percepción Remota</span></h1>
+<h1 class="title"><span id="sec-pr-concept" class="quarto-section-identifier d-none d-lg-block">Percepción Remota</span></h1>
 </div>
 
 
@@ -272,6 +287,7 @@ ul.task-list{list-style: none;}
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -284,56 +300,56 @@ ul.task-list{list-style: none;}
 <div id="fig-elephantf" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="images/interaccion_PR.png" class="img-fluid figure-img" data-ig-align="center" width="540"></p>
-<p></p><figcaption class="figure-caption margin-caption">Figure 1: Un modelo de interacción que describe la relación de la teledetección con las ciencias sociales, físicas y biológicas y con las matemáticas y la lógica.</figcaption><p></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;1: Un modelo de interacción que describe la relación de la teledetección con las ciencias sociales, físicas y biológicas y con las matemáticas y la lógica.</figcaption><p></p>
 </figure>
 </div>
-<section id="remote-sensing-data-acquisition-methods" class="level2">
-<h2 class="anchored" data-anchor-id="remote-sensing-data-acquisition-methods">Remote Sensing Data Acquisition Methods</h2>
-<p>Remotely sensed data collection is the most important and expensive job in the remote sensing process. It is essential to have remotely sensed images in a digital format to apply digital image processing. There are two fundamental ways to acquire the digital image:</p>
+<section id="métodos-de-adquisición-de-datos-de-teledetección" class="level2">
+<h2 class="anchored" data-anchor-id="métodos-de-adquisición-de-datos-de-teledetección">Métodos de adquisición de datos de teledetección</h2>
+<p>La adquisición de datos de teledetección es el trabajo más importante y costoso del proceso de teledetección. Es esencial disponer de imágenes de teledetección en formato digital para aplicar el procesamiento digital de imágenes. Hay dos formas fundamentales de adquirir la imagen digital:</p>
 <ol type="1">
-<li>Capture the image with a remote sensing device in an analogue format, then convert it to digital format.</li>
-<li>Take a digital image of the remotely sensed image, such as one obtained by the Landsat 7 Thematic Mapper sensor system.</li>
+<li><p>Capturar la imagen con un dispositivo de teledetección en formato analógico y, a continuación, convertirla a formato digital.</p></li>
+<li><p>Tomar una imagen digital de la imagen teledetectada, como la obtenida por el sistema de sensores Landsat 7 Thematic Mapper.</p></li>
 </ol>
-<p>The ability of a system to render information at the smallest discretely separable quantity in terms of space (spatial), EMR wavelength band (spectral), time (temporal), and/or radiation quantity is characterized as resolution (radiometric). Some of the major parameters that determine the nature of the collected remote sensing data are discussed in the subsections below.</p>
-<section id="spectral-information-and-resolution" class="level3">
-<h3 class="anchored" data-anchor-id="spectral-information-and-resolution">Spectral Information and Resolution</h3>
-<p>The dimension (size) and the number of specific bands or channels in the electromag- netic spectrum to which a remote sensing sensor is sensitive are spectral resolutions. The data are collected in many bands of the electromagnetic spectrum by a multispectral remote sensing sensor. The data are collected in hundreds of spectral bands by a hyperspectral remote sensing device. Energy is recorded in hundreds of bands by an ultra-spectral remote sensing system. The bands are usually chosen to maximize the contrast between the object and the background. As a result, appropriate band selection may increase the likelihood of retrieving the needed information from the remote sensor data. The greater the narrowness of the band, the greater the spectral resolution.</p>
+<p>Se denomina resolución (radiométrica) a la capacidad de un sistema de presentar la información en la menor cantidad discretamente separable en términos de espacio (espacial), banda de longitud de onda EMR (espectral), tiempo (temporal) y/o cantidad de radiación. Algunos de los principales parámetros que determinan la naturaleza de los datos de teledetección recogidos se analizan en las subsecciones siguientes.</p>
+<section id="información-espectral-y-resolución" class="level3">
+<h3 class="anchored" data-anchor-id="información-espectral-y-resolución">Información espectral y resolución</h3>
+<p>La dimensión (tamaño) y el número de bandas o canales específicos del espectro electromagnético a los que es sensible un sensor de teledetección son resoluciones espectrales. Los datos se recogen en muchas bandas del espectro electromagnético mediante un sensor multiespectral de teledetección. Los datos son recogidos en cientos de bandas espectrales por un dispositivo hiperespectral de teledetección. La energía es registrada en cientos de bandas por un sistema de teledetección ultraespectral. Las bandas suelen elegirse para maximizar el contraste entre el objeto y el fondo. En consecuencia, una selección adecuada de las bandas puede aumentar la probabilidad de recuperar la información necesaria a partir de los datos del sensor remoto. Cuanto mayor sea la estrechez de la banda, mayor será la resolución espectral.</p>
 </section>
 </section>
-<section id="spatial-information-and-resolution" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-information-and-resolution">Spatial Information and Resolution</h2>
-<p>The lowest angular or linear gap between two objects that a remote sensing system can resolve is called the spatial resolution. Using the spatial information in the image, the amount of spectral autocorrelation may be estimated. A pixel is a small spot on the earth’s surface that a sensor can observe as being distinct from its surroundings. It is a detector element or a slit whenever projected onto the ground. In other words, the ground segment sensed at any one time is the scanner’s spatial resolution. It has sometimes been referred to as the ground resolution element (GRE). The spatial resolution at which data is obtained affects the ability to distinguish diverse features and measure their extent. According to the usual rule, the spatial resolution should be less than half the size of the smallest object of interest.</p>
-<section id="temporal-information-and-resolution" class="level3">
-<h3 class="anchored" data-anchor-id="temporal-information-and-resolution">Temporal Information and Resolution</h3>
-<p>The temporal resolution refers to how often a sensor records an image of a specific area. For many applications, a high temporal resolution is critical. Temporal resolution refers to the satellite’s capacity to extract the same area from the same viewing angle at different times. A sensor’s temporal resolution is determined by several elements, including the satellite/sensor capabilities, swath overlap, and latitude.</p>
+<section id="información-espacial-y-resolución" class="level2">
+<h2 class="anchored" data-anchor-id="información-espacial-y-resolución">Información espacial y resolución</h2>
+<p>La menor distancia angular o lineal entre dos objetos que puede resolver un sistema de teledetección se denomina resolución espacial. Utilizando la información espacial de la imagen, se puede estimar la cantidad de autocorrelación espectral. Un píxel es un pequeño punto de la superficie terrestre que un sensor puede observar como distinto de su entorno. Es un elemento detector o una rendija cuando se proyecta sobre el suelo. En otras palabras, el segmento de terreno detectado en un momento dado es la resolución espacial del escáner. A veces se ha denominado elemento de resolución del terreno (GRE). La resolución espacial con la que se obtienen los datos afecta a la capacidad de distinguir diversas características y medir su extensión. Según la regla habitual, la resolución espacial debe ser inferior a la mitad del tamaño del objeto de interés más pequeño.</p>
+<section id="información-temporal-y-resolución" class="level3">
+<h3 class="anchored" data-anchor-id="información-temporal-y-resolución">Información temporal y resolución</h3>
+<p>La resolución temporal se refiere a la frecuencia con la que un sensor registra una imagen de un área específica. Para muchas aplicaciones, una alta resolución temporal es crítica. La resolución temporal se refiere a la capacidad del satélite para extraer la misma zona desde el mismo ángulo de visión en diferentes momentos. La resolución temporal de un sensor viene determinada por varios elementos, como las capacidades del satélite/sensor, el solapamiento de franjas y la latitud.</p>
 </section>
-<section id="radiometric-information-and-resolution" class="level3">
-<h3 class="anchored" data-anchor-id="radiometric-information-and-resolution">Radiometric Information and Resolution</h3>
-<p>The sensitivity of detectors to minor variations in electromagnetic energy is known as radiometric resolution. High radiometric resolution improves the likelihood of more accurate remote sensing of phenomena. A sensor measurement allows it to distinguish the tiniest variation in spectral reflectance/remittance between different targets. The number of quantization levels and the saturation radiance determine the radiometric resolution. The more tiers there are, the more detailed the information that becomes digitalized.</p>
+<section id="información-radiométrica-y-resolución" class="level3">
+<h3 class="anchored" data-anchor-id="información-radiométrica-y-resolución">Información radiométrica y resolución</h3>
+<p>La sensibilidad de los detectores a pequeñas variaciones en la energía electromagnética se conoce como resolución radiométrica. Una alta resolución radiométrica mejora la probabilidad de una teledetección más precisa de los fenómenos. La medida de un sensor le permite distinguir la más mínima variación en la reflectancia/remitancia espectral entre diferentes objetivos. El número de niveles de cuantización y la radiancia de saturación determinan la resolución radiométrica. Cuantos más niveles haya, más detallada será la información que se digitalice.</p>
 </section>
-<section id="polarization-information" class="level3">
-<h3 class="anchored" data-anchor-id="polarization-information">Polarization Information</h3>
-<p>The polarization characteristics of electromagnetic radiation collected by remote sens- ing systems can be utilized to investigate the earth’s resources. In general, the stronger the polarization, the smoother the object’s surface.</p>
+<section id="información-de-polarización" class="level3">
+<h3 class="anchored" data-anchor-id="información-de-polarización">Información de polarización</h3>
+<p>Las características de polarización de la radiación electromagnética recogida por los sistemas de teledetección pueden utilizarse para investigar los recursos de la Tierra. En general, cuanto más fuerte es la polarización, más lisa es la superficie del objeto.</p>
 </section>
-<section id="angular-information" class="level3">
-<h3 class="anchored" data-anchor-id="angular-information">Angular Information</h3>
-<p>The angle of incidence has traditionally been related to the incoming energy that illuminates the landscape and the angle of exitance from the terrain to the sensor system. The bidirectional nature of the remote sensing data collection influences the spectrum and polarization of the sensor light collected by the remote sensing system [3,4].</p>
+<section id="información-angular" class="level3">
+<h3 class="anchored" data-anchor-id="información-angular">Información angular</h3>
+<p>El ángulo de incidencia se ha relacionado tradicionalmente con la energía entrante que ilumina el paisaje y el ángulo de salida del terreno hacia el sistema sensor. La naturaleza bidireccional de la adquisición de datos de teledetección influye en el espectro y la polarización de la luz del sensor recogida por el sistema de teledetección [3,4].</p>
 </section>
 </section>
-<section id="remote-sensing-data-acquisition" class="level2">
-<h2 class="anchored" data-anchor-id="remote-sensing-data-acquisition">Remote Sensing Data Acquisition</h2>
-<p>The two important methods of remote sensing data acquisition are aerial photography and satellite image data collection. Aerial photographs are the snapshots of the earth taken by calibrated cameras at a particular instant of time in an analog format. Through the process of digitization, this analog format is converted into a digital format. Aerial photography can be taken from space, from high- or low-altitude airplanes, or from platforms close to the ground. Each aerial shot has vital information for the user in the margin.</p>
+<section id="adquisición-de-datos-de-teledetección" class="level2">
+<h2 class="anchored" data-anchor-id="adquisición-de-datos-de-teledetección">Adquisición de datos de teledetección</h2>
+<p>Los dos métodos importantes de adquisición de datos de teledetección son la fotografía aérea y la adquisición de datos de imágenes de satélite. Las fotografías aéreas son las instantáneas de la tierra tomadas por cámaras calibradas en un instante concreto de tiempo en formato analógico. Mediante el proceso de digitalización, este formato analógico se convierte en formato digital. La fotografía aérea puede tomarse desde el espacio, desde aviones a gran o poca altura, o desde plataformas cercanas al suelo. Cada toma aérea contiene información vital para el usuario al margen.</p>
 <ol type="1">
-<li><p>Vertical Photographs: The photographic device, i.e., the camera, is pinned as straight down as possible when taking a vertical shot. The allowed tolerance from the plumb (perpendicular) line to the camera axis is normally +3 degrees. The lens axis is nearly perpendicular to the earth’s surface, covers a limited area on a single vertical shot, and closely resembles a square or a rectangle [4].</p></li>
-<li><p>High oblique: The camera is tilted roughly 60 degrees from the vertical when taking a high oblique shot. It is mostly employed in the creation of aeronautical charts and has a minor military application. The ground area covered is trapezoid in high oblique images; the horizon is always visible in high oblique photographs.</p></li>
-<li><p>Low Oblique: This picture is taken with the camera at a 30-degree angle to the vertical. It has been used to research an area before an attack, as a replacement for a map, or as a supplement to a map. The ground area covered is a trapezoid in a low oblique area and coverage is quite limited [5].</p></li>
-<li><p>Trimetrogon: It is a composite of three photos shot simultaneously, one vertical and two high obliques, in a direction perpendicular to the flight path. The oblique images, taken at a 60-degree angle from the vertical, side lap the vertical photography, resulting in composites that run from horizon to horizon.</p></li>
+<li><p>Fotografías verticales: El dispositivo fotográfico, es decir, la cámara, se fija lo más recto posible hacia abajo cuando se toma una fotografía vertical. La tolerancia permitida desde la línea de plomada (perpendicular) al eje de la cámara es normalmente de +3 grados. El eje del objetivo es casi perpendicular a la superficie terrestre, cubre un área limitada en una sola toma vertical y se asemeja mucho a un cuadrado o un rectángulo [4].</p></li>
+<li><p>Oblicuo alto: La cámara se inclina unos 60 grados con respecto a la vertical cuando se realiza una toma oblicua alta. Se emplea sobre todo en la creación de cartas aeronáuticas y tiene una aplicación militar menor. El área de terreno cubierta es trapezoidal en las imágenes oblicuas altas; el horizonte siempre es visible en las fotografías oblicuas altas.</p></li>
+<li><p>Oblicuo bajo: Esta fotografía se toma con la cámara en un ángulo de 30 grados respecto a la vertical. Se ha utilizado para investigar una zona antes de un ataque, como sustituto de un mapa o como complemento de un mapa. El área de terreno cubierta es un trapecio en oblicuo bajo y la cobertura es bastante limitada [5].</p></li>
+<li><p>Trimetrogon: Es un compuesto de tres fotos tomadas simultáneamente, una vertical y dos oblicuas altas, en dirección perpendicular a la trayectoria de vuelo. Las imágenes oblicuas, tomadas en un ángulo de 60 grados respecto a la vertical, solapan la fotografía vertical, dando lugar a composiciones que van de horizonte a horizonte.</p></li>
 </ol>
 </section>
-<section id="remote-sensing-sensors" class="level2">
-<h2 class="anchored" data-anchor-id="remote-sensing-sensors">Remote Sensing Sensors</h2>
+<section id="sensores-de-teledetección" class="level2">
+<h2 class="anchored" data-anchor-id="sensores-de-teledetección">Sensores de teledetección</h2>
 <p>continuar …</p>
-<p>Concept Paper Change Detection in Remote Sensing Image Data Comparing Algebraic and Machine Learning Methods</p>
+<p>Documento conceptual Detección de cambios en datos de imágenes de teledetección comparando métodos algebraicos y de aprendizaje automático</p>
 
 
 </section>
@@ -380,7 +396,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -408,31 +441,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
