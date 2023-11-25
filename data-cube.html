@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,8 +17,42 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -57,7 +91,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -65,15 +100,20 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Data Cube</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-cube.html">Data Cube</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -81,177 +121,211 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">CNN Change Detection</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./abstract.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></a>
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./problema.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Problema u Oportunidad</span></a>
+  <a href="./problema.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Problema u Oportunidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./e-arte.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estado del Arte</span></a>
+  <a href="./e-arte.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estado del Arte</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hipótesis</span></a>
+  <a href="./hipotesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hipótesis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./objetivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objetivos</span></a>
+  <a href="./objetivos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objetivos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Metodologia</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Metodologia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./a-estudio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Área de Estudio</span></a>
+  <a href="./a-estudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Área de Estudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></a>
+  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./validacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Datos de Validación</span></a>
+  <a href="./validacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Datos de Validación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./convencionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Métodos Convencionales</span></a>
+  <a href="./convencionales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Métodos Convencionales</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./procesamiento.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesamientos de Datos</span></a>
+  <a href="./procesamiento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesamientos de Datos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resultados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Resultados</span></a>
+  <a href="./resultados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conclusiones</span></a>
+  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">References</span></a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./rev_papers.html" class="sidebar-item-text sidebar-link">Revisión papers</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a href="./rev_papers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Revisión papers</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link">Ms-CapsNet</a>
+  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ms-CapsNet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link">RUSACD</a>
+  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RUSACD</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./experimentacion.html" class="sidebar-item-text sidebar-link">Experimentación</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="./experimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Experimentación</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./insumos.html" class="sidebar-item-text sidebar-link">Tratamiento de Insumos</a>
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tratamiento de Insumos</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./marco.html" class="sidebar-item-text sidebar-link">Marco Conceptual</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a href="./marco.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Marco Conceptual</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote_sensing.html" class="sidebar-item-text sidebar-link">Percepción Remota</a>
+  <a href="./remote_sensing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Percepción Remota</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sar_sentinel_s1.html" class="sidebar-item-text sidebar-link">Sentinel 1</a>
+  <a href="./sar_sentinel_s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sentinel 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link">Ecosistemas Protegidos</a>
+  <a href="./semantic-seg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Segmentación Semántica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ecosistemas Protegidos</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-cube.html" class="sidebar-item-text sidebar-link active">Data Cube</a>
+  <a href="./data-cube.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Cube</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./recursos.html" class="sidebar-item-text sidebar-link">Recursos</a>
+  <a href="./recursos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recursos</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -259,15 +333,23 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#datacube-entrenamiento" id="toc-datacube-entrenamiento" class="nav-link active" data-scroll-target="#datacube-entrenamiento">DataCube Entrenamiento</a></li>
+  <li><a href="#acceso-al-sistema" id="toc-acceso-al-sistema" class="nav-link" data-scroll-target="#acceso-al-sistema">Acceso al Sistema</a></li>
+  <li><a href="#explorar-datos-sentinel-1" id="toc-explorar-datos-sentinel-1" class="nav-link" data-scroll-target="#explorar-datos-sentinel-1">Explorar Datos Sentinel 1</a>
+  <ul class="collapse">
+  <li><a href="#productos-disponibles" id="toc-productos-disponibles" class="nav-link" data-scroll-target="#productos-disponibles">Productos Disponibles</a></li>
+  <li><a href="#definición-de-parámetros" id="toc-definición-de-parámetros" class="nav-link" data-scroll-target="#definición-de-parámetros">Definición de Parámetros</a></li>
+  <li><a href="#datos-asf_s1_grd_gamma0" id="toc-datos-asf_s1_grd_gamma0" class="nav-link" data-scroll-target="#datos-asf_s1_grd_gamma0">Datos <em>asf_s1_grd_gamma0</em></a></li>
+  <li><a href="#datos-sentinel1_grd_gamma0" id="toc-datos-sentinel1_grd_gamma0" class="nav-link" data-scroll-target="#datos-sentinel1_grd_gamma0">Datos <em>sentinel1_grd_gamma0</em></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Data Cube</h1>
+<h1 class="title">Data Cube</h1>
 </div>
 
 
@@ -286,8 +368,110 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="datacube-entrenamiento">DataCube Entrenamiento</h2>
 <p>Repositorio contiene una serie de notebooks para funcionar con el DataCube Chile. Está dividido en niveles de dificultad y por ahora, sólo está disponible el entrenamiento básico, que sienta los primeros lineamientos para comenzar a trabajar en el cubo de datos.</p>
 <p><a href="https://github.com/Data-Observatory/DataCubeTrainingBasic" class="uri">https://github.com/Data-Observatory/DataCubeTrainingBasic</a></p>
+</section>
+<section id="acceso-al-sistema" class="level2">
+<h2 class="anchored" data-anchor-id="acceso-al-sistema">Acceso al Sistema</h2>
+<p>Primeramente se debe acceder al siguiente link <a href="https://hub.datacubechile.cl/" class="uri">https://hub.datacubechile.cl/</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/data_cube_02.png" class="img-fluid figure-img" width="500"></p>
+</figure>
+</div>
+<p>Luego, haga click en el botón “Sign Up with AWSCognito” para acceder a la página de login.</p>
+<p>Ingrese las credenciales proporcionadas por correo (usuario, contraseña), y haga click en “Sign in”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/data_cube_03.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
+<p>Aparecerá la página de configuración del entorno virtual “Server Options” con 3 categorías “Resource Usage Allocation”, “Resource request” y “Jupyter profile”.</p>
+<ul>
+<li>En “Resource Usage Allocation”, de existir opciones, escojer la que corresponda según el proyecto en que está trabajando o las instrucciones del administrador.</li>
+<li>En “Resource request” escojer “DEFAULT” que consiste en la asignación de 8 CPU (cores), 32 GB de memoria RAM, sin GPU.</li>
+<li>En “Jupyter profile” escojer “Default Jupyter Python enviroment (master.lastest)”.</li>
+<li>Finalmente, deslizar hasta abajo y presionar Start.</li>
+</ul>
+<p>Existen varias opciones (R, GPU, etc…), que pueden o no estar activas dependiendo de la configuración que tenga su cuenta. Estas opciones permiten lanzar instancias con imágenes distintas (es decir pre-configuraciones diferentes) y en caso de necesitar alguna en particular, deberá ponerse en contacto con el administrador del sistema.</p>
+<p>Una vez que la instancia se haya lanzado, deberías llegar a esto:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/primer_login.PNG" class="img-fluid figure-img" width="500"></p>
+</figure>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="explorar-datos-sentinel-1" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="explorar-datos-sentinel-1">Explorar Datos Sentinel 1</h2>
+<p>En esta sección se buscar explicar los pasos de exploración de los datos tipo SAR del Satélite Sentinel 1 en el Data Cube, además de su disponibilidad a la fecha de hoy ( 2023-11-25 ), con el objetivo facilitar el uso de datos en la plataforma como también informar la necesidad de actualización de los datos disponibles ya sea por tipo, corrección, fecha o región de estudio.</p>
+<p>Siguiendo los pasos de la sección anterior se puede acceder a la la plataforma que dispone un “Jupyter Notebook” de trabajo, donde se creó un documento de trabajo llamado <code>SAR_CD/DataProcessing/S1_explore.ipynb</code> donde se registrarán la exploración de datos disponibles.</p>
+<section id="productos-disponibles" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="productos-disponibles">Productos Disponibles</h3>
+<p>Existen tres productos disponibles del Satelite Sentinel-1, que corresponden a los siguientes:</p>
+<ul>
+<li><code>'asf_s1_grd_gamma0'</code></li>
+<li><code>'asf_s1_rtc_grd_hd'</code></li>
+<li><code>'sentinel1_grd_gamma0'</code></li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/dc_products_SAR.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption margin-caption">Productos disponibles SAR en Data Cube</figcaption>
+</figure>
+</div>
+</section>
+<section id="definición-de-parámetros" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="definición-de-parámetros">Definición de Parámetros</h3>
+<p>Para realizar consultas sobre la disponibilidad de productos satelitales SAR en diferentes regiones y fechas se definieron parámetros para se incluíudos en la <em>query</em> que corresponden a los siguientes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>latitude <span class="op">=</span> <span class="op">-</span><span class="fl">42.21212</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>longitude <span class="op">=</span> <span class="op">-</span><span class="fl">73.71519</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">buffer</span> <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> (<span class="st">"2016-01-01"</span>, <span class="st">"2023-12-31"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>bands <span class="op">=</span> [<span class="st">'vv'</span>,<span class="st">'vh'</span>,<span class="st">'angle'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Las coordenadas corresponden al sitio <em>ST_021</em> que es una tubera intervenida por acción humana.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/roi_ST_021.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption margin-caption">Región de estudio para exploración de datos disponibles</figcaption>
+</figure>
+</div>
+<p>Las fechas escogidas (“2016-01-01”, “2023-12-31”) fue solo para capturar la mayor cantidad de datos.</p>
+</section>
+<section id="datos-asf_s1_grd_gamma0" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="datos-asf_s1_grd_gamma0">Datos <em>asf_s1_grd_gamma0</em></h3>
+<p>El producto satelital S1 <em>asf_s1_grd_gamma0</em> es el diponibiliza la mayor cantidad de imágenes en ese periodo y lugar, con un total de 338 registros.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/DataSet_asf_s1_grd_gamma0.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption margin-caption">Dataset de Datos de asf_s1_grd_gamma0</figcaption>
+</figure>
+</div>
+<p>A continuación se visualizan los primeros 12 imágenes disponibles en la región de estudio.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/vis_asf_s1_grd_gamma0.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption margin-caption">Visulización espacial de asf_s1_grd_gamma0</figcaption>
+</figure>
+</div>
+<p>### Datos <em>asf_s1_rtc_grd_hd</em></p>
+<p>El producto satelital <em>asf_s1_rtc_grd_hd</em> no tiene registros de imágenes en el perodio y región de estudio</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/Dataset_asf_s1_rtc_grd_hd.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption margin-caption">Dataset de Datos de asf_s1_rtc_grd_hd que no mantiene registros.</figcaption>
+</figure>
+</div>
+</section>
+<section id="datos-sentinel1_grd_gamma0" class="level3">
+<h3 class="anchored" data-anchor-id="datos-sentinel1_grd_gamma0">Datos <em>sentinel1_grd_gamma0</em></h3>
+<p>El producto <em>sentinel1_grd_gamma0</em> mantiene solo 4 registros de imágenes diponibles y todas del junio del 2023, como se observa a continuación:</p>
+<p><img src="images/Dataset_sentinel1_grd_gamma0.png" class="img-fluid" data-fig-align="center" width="800" alt="Dataset de Datos de sentinel1_grd_gamma0 que mantiene 4 registros."> <img src="images/vis_sentinel1_grd_gamma0.png" class="img-fluid" data-fig-align="center" width="800" alt="Visulización espacial de sentinel1_grd_gamma0"></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -318,9 +502,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -385,6 +583,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -440,6 +724,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Denis Berroeta</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 
