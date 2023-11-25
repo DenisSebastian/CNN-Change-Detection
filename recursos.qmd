@@ -1,0 +1,68 @@
+# Recursos {.unnumbered}
+
+
+## TorchGeo
+
+**Geospatial deep learning with TorchGeo**
+
+![](images/torchgeo-logo.png){width=60%}
+
+TorchGeo es una biblioteca de dominio de PyTorch que proporciona conjuntos de datos, muestreadores, transformaciones y modelos pre-entrenados específicos para datos geoespaciales.
+
+
+Link:
+
+- [Página Oficial](https://pytorch.org/blog/geospatial-deep-learning-with-torchgeo/?utm_source=social&utm_medium=metaai&utm_campaign=organic)
+
+- [Github Proyecto](https://github.com/microsoft/torchgeo)
+
+
+
+## Raster Vision
+
+[Github](https://github.com/azavea/raster-vision)
+
+
+## Links Por explorar
+
+
+<https://dymaxionlabs-eng.medium.com/how-to-create-a-land-cover-model-for-south-america-in-4-steps-67e57d3dae64>
+
+
+-   <https://courses.spatialthoughts.com/end-to-end-gee.html#module-4-change-detection>
+
+-   <https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1>
+
+-   <https://www.youtube.com/results?search_query=change+detection+gee>
+
+-   arquiología<https://code.earthengine.google.com/?scriptPath=users%2Fdenisberroeta%2FGEE_CIT_dbg%3Acc>
+
+-   <https://www.youtube.com/watch?v=wDBcTOTAwOc>
+
+-   <https://www.youtube.com/watch?v=5oONMB0UPWc>
+
+-   <https://developers.google.cn/earth-engine/tutorials/tutorial_forest_01>
+
+-   <https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications>
+
+-   <https://appliedsciences.nasa.gov/sites/default/files/2021-06/GEE_Land_Part3.pdf>
+
+-   <https://www.youtube.com/watch?v=KyjNhAvQS2s>
+
+-   <https://paperswithcode.com/task/change-detection-for-remote-sensing-images>
+
+<https://github.com/likyoo/Siam-NestedUNet>
+
+contaminación
+
+-   <https://appliedsciences.nasa.gov/join-mission/training/english/arset-high-resolution-no2-monitoring-space-tropomi>
+
+Programa de la NASA <https://appliedsciences.nasa.gov/join-mission/training/english/arset-using-google-earth-engine-land-monitoring-applications>
+
+<!-- radianearth -->
+
+bigearth net
+
+sentinel 1 Change detection no supervisado S1 si existe cambio algorimo global, unet - rmask
+
+torch geo

@@ -1,0 +1,19 @@
+---
+subtitle: "Conceptos Generales de IA"
+---
+
+# Segmentación Semántica {.unnumbered}
+
+## Zero Shot
+
+El concepto de "zero-shot" en segmentación semántica se refiere a la capacidad de un modelo de aprendizaje automático para realizar segmentación semántica en clases o categorías que no han sido específicamente vistas o entrenadas durante el proceso de entrenamiento.
+
+La segmentación semántica implica asignar etiquetas o categorías a cada píxel de una imagen para identificar y distinguir diferentes objetos o regiones en la imagen. En un enfoque convencional, durante el entrenamiento de un modelo de segmentación semántica, se le proporcionan ejemplos de imágenes etiquetadas con las clases específicas que se espera que el modelo identifique en las imágenes de prueba.
+
+Sin embargo, en situaciones del mundo real, puede haber clases o categorías nuevas y desconocidas que no se hayan incluido en el conjunto de entrenamiento. Aquí es donde entra en juego el enfoque "zero-shot". En lugar de entrenar explícitamente al modelo con ejemplos de estas nuevas clases, se aprovechan técnicas de transferencia de aprendizaje y conocimientos previos para realizar inferencias sobre estas clases desconocidas.
+
+En el enfoque "zero-shot", el modelo aprende a comprender y representar características semánticas generales de las clases durante el entrenamiento inicial. Estas características se utilizan luego para inferir y segmentar objetos o regiones correspondientes a clases no vistas previamente.
+
+Para lograr esto, se utiliza información auxiliar o metadatos relacionados con las nuevas clases, como descripciones textuales o características de alto nivel. Estos metadatos se utilizan para establecer una conexión entre las características visuales y las categorías desconocidas. El modelo puede aprender a generalizar y transferir el conocimiento aprendido sobre las clases conocidas para realizar inferencias sobre las nuevas clases, incluso sin haberlas visto antes.
+
+En resumen, el enfoque "zero-shot" en segmentación semántica permite que un modelo pueda inferir y segmentar clases o categorías que no han sido específicamente entrenadas durante el proceso de entrenamiento, utilizando técnicas de transferencia de aprendizaje y conocimientos previos aprendidos sobre otras clases conocidas.

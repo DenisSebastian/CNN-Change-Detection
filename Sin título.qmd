@@ -1,0 +1,11 @@
+# Conceptos básicos de Percepción Remota
+
+La teledetección es el proceso de captura, medición y análisis de imágenes y representaciones digitales de patrones energéticos derivados de dispositivos sensores sin contacto con el fin de recopilar información fidedigna sobre las cosas físicas y el medio ambiente. La tecnología de teledetección ha penetrado en todos los segmentos de los recursos naturales, ya que proporciona información clara en modo de imagen.
+
+Todos los objetos del universo reflejan, irradian o dispersan radiación electromagnética. La teledetección es una técnica o herramienta similar a las matemáticas. Se utilizan sensores para medir la cantidad de radiación irradiada por un objeto o área geográfica a distancia y, con la ayuda de algoritmos basados en estadísticas y matemáticas, se extrae información valiosa. E
+
+n la Figura 1 se muestra un modelo de interacción que describe la relación de la teledetección con las ciencias sociales, físicas y biológicas y con las matemáticas y la lógica. El proceso general de teledetección utilizado por los científicos para extraer información a partir de datos obtenidos por teledetección se desarrolla en cuatro pasos, como se muestra en la figura 2. En esta subsección, se han tratado diferentes formas de adquisición de datos de teledetección y procesos de detección de cambios.
+
+![](images/interaccion_PR.png){fig-align="center"}
+
+An interaction model depicting the relationship of remote sensing with the social, physical, and biological sciences and with mathematics and logic.

@@ -1,0 +1,343 @@
+---
+subtitle: "Análisis de diversos métodos de Detección de Cambios "
+format:
+  html:
+    fig-cap-location: "bottom"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, fig.align = "center", fig.width=5, fig.height=3.5)
+
+source("R/DI.R")
+source("R/graphics.R")
+source("R/functions.R")
+source("R/Douglas-Peucker.R")
+source("R/log_mean_ratio.R")
+
+library(raster)
+palette_grey <- grey(1:100/100)
+palette_rainbow <- rainbow(100)
+
+```
+
+# Métodos Convencionales
+
+## Insumos
+
+Para explorar diferentes métodos convencionales de detección de cambios, utilizaremos tres imágenes de muestra adquiridas en la provincia de Guizhou, China, por el sensor SAR COSMO-SkyMed en junio de 2016 y abril de 2017. Como se puede ver en la @fig-imgtest, estas imágenes antes y después, sumadas al mapa de referencia, incluyen montañas y un río. Estos elementos fueron utilizados en la investigación de @zhang_robust_2020.
+
+```{r}
+img1 <- raster("data/samples/tif/1_1.tif")
+img2 <- raster("data/samples/tif/1_2.tif")
+img3 <- raster("data/samples/tif/1_3.tif")
+
+```
+
+```{r echo=FALSE}
+#| layout: [[30,30, 30]]
+#| label: fig-imgtest
+#| fig-align: "center"
+#| fig-cap: "imágenes de prueba de métodos convencionales"
+#| fig-subcap: 
+#|   - "Imagen adquirida junio 2016"
+#|   - "Imagen adquirida Abril 2017"
+#|   - "Mapa de referencias reales"
+
+plot(img1, col=palette_grey)
+plot(img2, col=palette_grey)
+plot(img3, col=palette_grey)
+```
+
+## Diferencia Directa (DD)
+
+El cálculo de la diferencia directa corresponde a la resta de ambas imágenes retornando sus valores absolutos de diferencia.
+
+```{r}
+
+before_img <- as.matrix(img1)
+image_after <- as.matrix(img2)
+d_direct <-  diff_image(image_before = before_img, image_after = image_after)
+d_direct_raster <- matrix(data = d_direct, ncol = ncol(img1), nrow = nrow(img1)) %>% raster()
+# plot(d_direct_raster, col=palette_grey)
+# write_img(image = d_direct_raster, name = "DDI")
+```
+
+```{r}
+#| label: fig-pDD
+#| fig-cap: "Resultado del Cálculo de Diferencia Directa"
+
+plot_raster_g(d_direct_raster, title_g ="Diferencia Directa (DD)", 
+              palette_col = palette_grey)
+```
+
+```{r}
+#| label: fig-hDD
+#| fig-cap: "Histograma del resultado de cálculo de Diferencia Directa"
+
+hist_raster(d_direct_raster, title_g = "Histograma de Diferencia Directa (DD)", bins = 50)
+
+```
+
+## Diferencia Mejorada
+
+El método propuesto para crear la imagen de diferencia mejorada combina la consistencia de la diferencia entre los píxeles individuales y sus vecindarios. Esto se logra mediante el uso de la relación logarítmica (LR) y la relación de verosimilitud logarítmica (LLR). La LR refleja la diferencia entre los píxeles individuales, mientras que la LLR refleja la diferencia entre los vecindarios.
+
+### Relación logarítmica (LR) (Dekker, 1998)
+
+Refleja la diferencia entre los píxeles individuales. Esto se calcula utilizando la siguiente formula:
+
+$$D_{LR} (i, j) = log_{10}\frac{I_2(i, j)}{I_1(i, j)}$$
+
+Los elementos $I_1$ y $I_2$ corrponde a las imágenes.
+
+```{r}
+d_lr <-  log_ratio(img1, img2)
+# write_img(d_lr, name = "LR")
+```
+
+```{r}
+#| label: fig-pLR
+#| fig-cap: "Resultado de la Relación Logarítmica (LR)"
+
+plot_raster_g(d_lr,  palette_col = palette_grey,
+              title_g ="Relación Logarítmica (LR)")
+```
+
+```{r}
+#| label: fig-hLR
+#| fig-cap: "Histograma del resultado de la Relación Logarítmica"
+
+hist_raster(d_lr, title_g = "Histograma de Relación Logarítmica (LR)", bins = 100)
+```
+
+### Relación de verosimilitud logarítmica (LLR) (Cui et al., 2019)
+
+Refleja la diferencia entre los vecindarios. Se calcula utilizando las características estadísticas del vecindario del píxel para construir la relación de verosimilitud y se expresa con la siguiente ecuación:
+
+$$D_{LLR}(i, j)= log_{10}\left(\frac{(\sum_{(m,n)\in\Omega{i,j}}I_1(m,n)+\sum_{(m,n)\in\Omega{i,j}}I_2(m,n))^2}{4\times \sum_{(m,n)\in\Omega{i,j}}I_1(m,n)\times\sum_{(m,n)\in\Omega{i,j}}I_2(m,n)}\right)$$
+
+Donde:\
+$\Omega_{i, j}$ es el vecindario de $(i, j)$,\
+$I{i,j(m,n)}$ es laintensidad de pixeles en $\Omega_{i, j}$.\
+$I_{(m,n)}$ es el valor de píxel de la imagen original en la posición $(m,n)$.
+
+Se calcula utilizando las características estadísticas del vecindario del píxel para construir la relación de verosimilitud
+
+```{r}
+# Define the radius of the neighborhood
+r <- 3
+
+# Define the kernel
+kernel <- matrix(1, nrow=r, ncol=r)
+```
+
+
+```{r}
+d_llr <-  log_likelihood_ratio(img1, img2, kernel = kernel)
+# write_img(d_llr, name = "LLR")
+```
+
+```{r}
+#| label: fig-pLLR
+#| fig-cap: "Resultado de Relación de Verosimilitud Logarítmica (LLR)"
+
+# pal_navy <- colorRampPalette(c("white", "navy"))( 100 )
+plot_raster_g(d_llr, title_g ="Relación de Verosimilitud Logarítmica (LLR)",
+             palette_col = palette_grey)
+```
+
+```{r}
+#| label: fig-hLLR
+#| fig-cap: "Histograma de Relación de Verosimilitud Logarítmica (LLR)"
+#| 
+hist_raster(d_llr, title_g = "Histograma Relación de Verosimilitud Logarítmica (LLR)")
+```
+
+## Enhanced difference image (EDI)
+
+El método propuesto para crear la imagen de diferencia mejorada combina la consistencia de la diferencia entre los píxeles individuales y sus vecindarios. Esto se logra mediante el uso de la relación logarítmica (LR) y la relación de verosimilitud logarítmica (LLR). La LR refleja la diferencia entre los píxeles individuales, mientras que la LLR refleja la diferencia entre los vecindarios.
+
+$$
+D(i, j) = D{LR} (i, j) \times D_{LLR} (i, j) 
+$$
+
+```{r}
+edi <-  enhanced_difference(d_lr, d_llr)
+edi <- calc(edi, fun = inf_na)
+
+# write_img(edi, name = "EDI")
+```
+
+```{r}
+#| label: fig-pEDI
+#| fig-cap: "Resultado de Enhanced difference image"
+#| 
+plot_raster_g(edi,  palette_col = palette_grey,
+              title_g ="Enhanced difference image (EDI)")
+```
+
+```{r}
+#| label: fig-hEDI
+#| fig-cap: "Histograma de Enhanced difference image"
+
+hist_raster(edi, title_g = "Histograma Enhanced difference image (EDI)")
+```
+
+```{r}
+# ed_mod <- calc(ed, fun = keep_outliers)
+# plot_raster_g(ed_mod, title_g ="Enhanced difference image (EDI) - Ouliers")
+
+```
+
+## Triangular Threshold Segmentation
+
+El método de segmentación de umbral triangular se basa en la forma única del histograma DI y utiliza un método de Douglas-Peucker (Douglas y Peucker, 1973) para segmentar los datos en diferentes clases. Esto se logra mediante el uso de los diferentes niveles de gris y sus frecuencias correspondientes.
+
+![Ilustración esquemáticas del umbral triangular](images/douglas-peucker.png){fig-align="center" width="350"}
+
+TODO: agregar ecuación
+
+Este método consiste en:
+
+1.  Calcular el histograma de la imagen DI.
+2.  Calcular el valor umbral inicial (T) como el punto medio entre el valor mínimo y máximo de la imagen DI.
+3.  Inicializar una lista vacía para almacenar las clases resultantes.
+4.  Repetir los pasos 5-7 hasta que el valor umbral no cambie significativamente.
+5.  Calcular las medias de las clases formadas por los píxeles con valores por encima y por debajo del umbral actual.
+6.  Calcular el nuevo valor umbral como el promedio entre las medias de las clases.
+7.  Actualizar las clases resultantes dividiendo los píxeles en dos grupos: aquellos con valores por encima del umbral y aquellos con valores por debajo del umbral.
+8.  Devolver las clases resultantes.
+
+### Método Douglas-Peucker a imagen Diferencia Mejorada (EDI)
+
+```{r}
+edi_mod = abs(edi)*255
+edi_matrix = edi_mod %>% as.matrix()
+
+dp_clases <- triangular_threshold_segmentation(edi_matrix)
+umbral = dp_clases$threshold
+menor <- dp_clases$leq_th %>% raster()
+mayor <- dp_clases$gt_th %>% raster()
+# 
+# write_img(menor, name = "EDI_TH_m")
+# write_img(mayor, name = "EDI_TH_g")
+```
+
+```{r echo=FALSE}
+#| layout: [[40, 40]]
+#| label: fig-pDP-EDI
+#| fig-align: "center"
+#| fig-cap: "Imágenes de Diferencia Directa con segmentación triangular"
+#| fig-subcap: 
+#|   - "EDI bajo el umbral triangular de Douglas-Peucker"
+#|   - "EDI sobre el umbral triangular de Douglas-Peucker"
+
+plot(menor, col=palette_grey, main = "EDI bajo el umbral triangular")
+plot(mayor, col=palette_grey, main = "EDI sobre el umbral triangular")
+```
+
+### Método Douglas-Peucker a imagen Diferencia Directa (DDI)
+
+```{r}
+d_direct_matrix <- matrix(data = d_direct, ncol = ncol(img1), nrow = nrow(img1))
+dp_dd <- triangular_threshold_segmentation(d_direct_matrix)
+umbral = dp_dd$threshold
+menor <- dp_dd$leq_th %>% raster()
+mayor <- dp_dd$gt_th %>% raster()
+# write_img(menor, name = "DDI_TH_m")
+# write_img(mayor, name = "DDI_TH_g")
+
+```
+
+```{r echo=FALSE}
+#| layout: [[40, 40]]
+#| label: fig-pDP-DDI
+#| fig-align: "center"
+#| fig-cap: "Imágenes de Diferencia Directa con segmentación triangular"
+#| fig-subcap: 
+#|   - "DDI bajo el umbral triangular de Douglas-Peucker"
+#|   - "DDI sobre el umbral triangular de Douglas-Peucker"
+
+plot(menor, col=palette_grey, main = "DDI bajo el umbral triangular")
+plot(mayor, col=palette_grey, main = "DDI sobre el umbral triangular")
+```
+
+## Log Mean Ratio (LMR)
+
+El operador LMR se define como la relación entre la media logarítmica de dos imágenes, $I_1$ y $I_2$. Esta relación se calcula para cada píxel $(i,j)$ en el vecindario $\Omega$.
+
+$$D_{LMR}(i, j)= log(max(\frac{\mu(\Omega_{I_1})}{\mu(\Omega_{I_2})}, \frac{\mu(\Omega_{I_2})}{\mu(\Omega_{I_1})}))$$
+
+Donde $\mu(\Omega_{I_1})$ y $\mu(\Omega_{I_2})$ presenta el promedio del vecindario en $I_1$ y $I_2$, respectivamente.
+
+
+```{r}
+neighbourhood_size <- 3
+lmr_matrix <- lmr_neighbourhood(img1, img2, neighbourhood_size)
+lmr_raster <- raster(lmr_matrix)
+# write_img(lmr_raster, name = "LMR")
+```
+
+```{r}
+#| label: fig-pLMR
+#| fig-cap: "Resultado  de Log Mean Ratio (LMR) de ambas imágenes neighbourhood = 9"
+#| 
+
+plot_raster_g(lmr_raster, palette_col = palette_grey,
+              title_g = "Log Mean Ratio (LMR) de ambas imágenes" )
+```
+
+```{r}
+#| label: fig-hLMR
+#| fig-cap: "Histogrma de Log Mean Ratio (LMR) de ambas imágenes neighbourhood = 9"
+
+hist_raster(lmr_raster, title_g = "Histograma de Log Mean Ratio (LMR) de ambas imágenes")
+```
+
+
+
+## PCA k-means 
+
+![Ilustración esquemáticas del umbral triangular](images/PCA_Kmeans.png){fig-align="center" width="450"}
+
+PCA-Kmeans @Celik_2009 divide la imagen de diferencia en bloques no solapados. Los vectores propios ortonormales se extraen mediante PCA del conjunto de bloques no solapados para crear un espacio de vectores propios. Cada píxel de la imagen de diferencia se representa con un vector de características S-dimensional que es la proyección de los datos de la imagen de diferencia en el espacio de vectores propios generado. La detección de cambios se consigue particionando el espacio de vectores de características en dos clusters mediante k-means. 
+
+
+```{r eval=FALSE}
+library(magick)
+
+# Ruta de la imagen PNG de entrada
+png_file <- "results/pca_kmenas.png"
+
+# Cargar la imagen PNG
+image <- image_read(png_file)
+
+# Ruta y nombre del archivo TIFF de salida
+tiff_file <- "results/PCAK.tif"
+
+# Guardar la imagen como TIFF
+image_write(image, tiff_file)
+```
+
+```{r}
+#| label: fig-pPCAkmean
+#| fig-cap: "Resultado  del PCA K-Means de la Imagen de Diferencias"
+#| 
+pca_kmenas <-  raster("results/PCAK.tif")
+
+plot_raster_g(pca_kmenas, palette_col = palette_grey,
+              title_g = "PCA K-Means de la Imagen de Diferencias" )
+```
+
+```{r}
+#| label: fig-hPCAkmean
+#| fig-cap: "Histograma del PCA K-Means de la Imagen de Diferencias"
+
+hist_raster(pca_kmenas, title_g = "pca_kmenas")
+```
+
+## Multi-hierarchical FCM
+
+implementar a caso de uso, codigo agregar jeraquizado

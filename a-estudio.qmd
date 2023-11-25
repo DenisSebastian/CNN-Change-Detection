@@ -1,0 +1,40 @@
+
+# Área de Estudio {#a-estudio}
+
+Considerando que se pretende realizar un sistema de detección de cambios por en ecosistemas naturales protegidos correspondientes a  turberas de Chiloé, humedales urbanos y el bosque y matorral esclerófilo de la región Metropolitana @fig-ecosistemas, a continuación se describir sus características.
+
+
+
+![Ecosistemas natuales de estudio](images/ecosistemas.png){width="800" #fig-ecosistemas}
+
+
+## Turberas en Chiloé {#turbera}
+
+El concepto de turba debe ser entendido como un sedimento natural de tipo fitógeno, poroso, no consolidado, constituido por materia orgánica parcialmente descompuesta, acumulada en un ambiente saturado de agua. De esta forma, se puede entender al concepto de turbera como un depósito de turba con un espesor de, al menos, 30 cm.  [@hauser1996]
+
+Las turberas solo cubren el 3 \% de la superficie terrestre del planeta pero almacenan más carbono que todos los bosques de la Tierra *si se mantienen húmedas*.
+
+Según (Hauser 1996) [@hauser1996], el origen de las turberas se encuentra en las eras glaciares del Pleistoceno, cuando grandes extensiones de casquetes glaciares cubrieron el valle central de la Región de Los Lagos, incluyendo a la Isla Grande de Chiloé. El posterior retiro de los glaciares dejó masas de agua tierra adentro, formando los grandes lagos y lagunas glaciares que en la actualidad componen el paisaje de la región.
+
+
+
+Revisar y papers:
+
+Evaluation of impacts of management in an anthropogenic peatland using field and remote sensing data (Cabezas et al. 2015)
+
+Using aboveground vegetation attributes as proxies.pdf (Lopatin et al. 2019)
+
+Disturbance alters relationships between soil carb.pdf (Lopatin et al. 2022)
+
+
+## Humedales Urbanos {#humedales}
+
+Por desarrollar ...
+
+
+
+## Bosque y matorral esclerófilo de la región Metropolitana {#bosque-esc}
+
+Por desarrollar ...
+
+

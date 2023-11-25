@@ -1,0 +1,7 @@
+
+# Hipótesis {#hipotesis}
+
+El uso de redes neuronales convolucionales en imágenes satelitales tipo radar de apertura sintética (SAR) mejorará la detección de cambios y selección de zonas afectadas por la intervención humana en ecosistemas naturales protegidos en comparación con técnicas convencionales como los métodos algebraicos y de reducción de dimensionalidad.
+
+
+![](images/turberas-samsara.jpeg)

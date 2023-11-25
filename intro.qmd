@@ -1,0 +1,66 @@
+# Introducción {#intro}
+
+
+![](images/turbera-patagonia.jpeg)
+<br>
+
+<!-- - Párrafo 1: Contexto e importancia de proteger y monitorear ecosistemas -->
+<!-- Propósito: importancia de proteger y cuidar ecosistemas naturales -->
+<!-- Porque:  conforman sistemas contexto cambio climatico -->
+<!-- Evidencia: citas -->
+<!-- Eplicar evidencia: cambios biodevirsas -->
+<!-- Conclusión conector: Situación en Chile respecto a turberas -->
+
+Un tipo de ecosistema clave para combatir los efectos del cambio climático son las denominadas turberas, ya que desempeñan un importante papel en la regulación del clima a escala mundial, siendo uno de los reservorios terrestres más importantes del planeta [@parish2008assessment]. Las turberas pueden retener aproximadamente un tercio del carbono ($C$) de los suelos (@moore2002plant, @roig2004consideraciones, @asada2005surface). No obstante, cuando estos ecosistemas se degradan o alteran, sobre todo para usos que incluyen el drenaje de la tierra para cosechar turba o para cultivar con arado, pueden convertirse en fuentes significativas de Dióxido de Carbono ($CO_2$) [@parish2008assessment]. Las emisiones de gases de efecto invernadero producidas por la degradación y la quema de turberas ha aumentado considerablemente en los últimos años, y se calcula que podrían superar los $2 \times 10^9$ $Mg$ $C$ $yr^{-1}$ actuales [@joosten2009global]. Por ello, en el último informe del Grupo Intergubernamental de Expertos sobre el Cambio Climático [@settele2014terrestrial] se afirma que la conservación, restauración y rehumidificación de las turberas degradadas es una medida eficaz para mitigar las pérdidas de $C$.Según lo expuesto anteriormente, se puede entender su importancia a nivel medioambiental tanto global como local, ya que se encuentra ampliamente presente en el sur de Chile.
+
+
+<!-- - Párrafo 2: Situación actia en Chile y tipos de turberas -->
+<!-- Propósito: Estalecer estado actual en Chile -->
+<!-- Porque:  Importancia ambiental de chile -->
+<!-- Evidencia: Cantidad de Turberas en Chile -->
+<!-- Eplicar evidencia: Zona de Chiloe -->
+<!-- Conclusión conector: Territorio con Satelital -->
+
+En Chile, @joosten2002wise estimaron la superficie de turberas en 10.470 $km^2$, concentrada en las regiones de Aysén y Magallanes, en el sur de Chile, y correspondiente al 1,4% del territorio nacional [@schlatter2004turbales]. En la Isla de Chiloé (Región de Los Lagos), como consecuencia de la acelerada colonización humana, vastas extensiones de bosques fueron quemadas o taladas para obtener madera o para preparar la tierra para la agricultura o la ganadería [@cabezas2015]. Como resultado, las zonas de drenaje deficiente fueron colonizadas por musgos _Sphagnum_ (principalmente _S. magellanicum_) o por matorrales sucesionales [@diaz2007limitantes] [@diaz2007alteration], lo que fueron denominados "turberas antropogénicas" [@diaz2008caracterizacion], [@leon2014recent], estos ecosistemas han registrado tasas de acumulación reciente de $C$ superiores a las de las turberas de origen glaciar debido a que las turberas antropogénicas, al ser ecosistemas más recientes, son más activas [@leon2014recent]. Además, este tipo de turberas antropogénicas tienen una gran capacidad de retención de agua [@iturraspe2000aspectos]. Las turberas naturales, así como las antropogénicas presentes en la zona sur de Chile, tienen diferencias en su concepción e interacción con el entorno. Sin embargo, ambas comparten el riesgo de destrucción o degradación debido a actividades antrópicas o naturales, por lo que es necesario monitorearlas para su protección y conservación.
+
+<!-- - Párrafo 3: Situación en Chile Actual Protección (MMA) -->
+<!-- Propósito             : Establecer estado actual en Chile respecto Protección -->
+<!-- Porque                : Necesidad de monitoreo -->
+<!-- Evidencia             : Datos de turberas en chiloé -->
+<!-- Eplicar evidencia     : Desafíos -->
+<!-- Conclusión/conector   : Territorio con Satelital -->
+    
+    
+Entendiendo la importancia ambiental de las turberas, nace la necesidad de proteger y conservar este ecosistema. En este contexto, el estado de Chile se adscribe a la Convención de Ramsar ([Decreto Nº 771](https://www.bcn.cl/leychile/navegar?idNorma=15511) de 1981 del Ministerio de Relaciones Exteriores), 
+<!-- donde se adopta la definición de humedales,--> incluidas las turberas <!-- , como las zonas húmedas que se dividen en áreas de ciénagas, pantanos, áreas de musgos o agua, sean estas naturales o artificiales, permanentes o temporales, de aguas estáticas o corrientes, frescas, con helechos o saladas, incluyendo zonas de agua de mar cuya profundidad no exceda de seis metros durante la marea baja-->. Posteriormente, mediante la [Ley N°19.300](https://www.bcn.cl/leychile/navegar?idNorma=30667) de 1994, Ley sobre Bases Generales del Medio Ambiente, se señala que los proyectos o actividades susceptibles de causar impacto ambiental en cualquiera de sus fases deberán someterse al sistema de evaluación de impacto ambiental (SEIA). En su artículo Nº 10, se incluyen obras o actividades, incluyendo drenaje o desecación, que puedan significar una alteración física o química a los componentes bióticos, entre otros "la extracción de la cubierta vegetal de turberas".  En razón a lo anterior, posteriormente se declararon territorios de la provincia de Chiloé como Santuarios de la Naturaleza, como las Turberas Púlpito, Aucar y Punta Lapa. Para proteger y conservar estos santuarios y las demás turberas, se encarga a la Superintendencia del Medio Ambiente (SMA). Sin embargo, esta labor se dificulta por los recursos deficientes para disponer de personal suficiente y sumado a la cantidad de territorios que fiscalizar, entonces se hace necesario contar con un sistema de monitoreo ambiental a mayor escala, como lo que se puede obtener haciendo uso de imágenes satelitales.
+
+
+<!-- - Párrafo 4: Información satelital SAR y Desafios -->
+<!-- Propósito             : Justificación de uso de información satelital para detectar cambios -->
+<!-- Porque                : Peridiocidad, y capacidad de trabajo diferentes condicones climáticas -->
+<!-- Evidencia             : Radar y problemas -->
+<!-- Eplicar evidencia     : Explicar detalladamente desafío -->
+<!-- Conclusión/conector   : Conectar con metodos de Change Detecction -->
+
+
+Dado que el Estado de Chile reconoce la necesidad de proteger y conservar las turberas de la provincia de Chiloé, es esencial contar con un sistema de monitoreo que permita evidenciar los cambios en el territorio protegido de forma periódica. Se  utilizar información satelital, cuya disponibilidad y potente capacidad computacional para realizar análisis complejos ha fomentado su uso en el monitoreo de recursos naturales en diferentes partes del mundo. La región de estudio es una isla ubicada en la zona sur del país. Durante gran parte del año, presenta condiciones de nubosidad, lo que dificulta el uso de imágenes ópticas. Una alternativa son las imágenes satelitales tipo Radar de Apertura Sintética (SAR). Los métodos de detección de cambios basados en SAR son independientes de las nubes y la iluminación, pero sin embargo se han utilizado mucho menos debido a su limitada disponibilidad temporal y espacial, sus costes más elevados y sus requisitos de procesamiento más intensivos [@hecheltjen2014]. Sentinel-1 de la ESA y el libre acceso a sus productos, los métodos de detección de cambios basados en el SAR pueden utilizarse ahora de forma más eficiente para superar algunas de las restricciones de los métodos basados en la óptica. La alta resolución temporal (seis días considerando Sentinel-1A y -1B en el Ecuador), la alta resolución espacial y el amplio barrido permiten disponer de un sistema operativo de detección de cambios muy necesario, sin costes, a prueba de nubes e independiente de la iluminación [@muro_2016].
+
+
+<!-- P4.2: SAR Desafíos -->
+<!-- Propósito             : Especificar los desafios al trabajar con imagenes tipo radar -->
+<!-- Porque                : Necesario para entender los métodos -->
+<!-- Evidencia             : Espcificar los dos problemas -->
+<!-- Eplicar evidencia     : Explicar detalladamente desafío con citas -->
+<!-- Conclusión/conector   : Conectar con metodos de Change Detecction -->
+
+La presencia de ruido moteado (speckle) es un problema significativo en la tarea de detección de cambios en imágenes SAR. Este tipo de interferencia, conocida como ruido moteado, se presenta como una forma de ruido multiplicativo que degrada la calidad de la imagen y puede generar falsas detecciones de cambios @Wu_2019. Por lo tanto, la detección de cambios en imágenes SAR sigue siendo una tarea difícil @Pham_2016. Es fundamental diseñar técnicas robustas de detección de cambios que sean efectivas en la supresión del ruido moteado (speckle) @Saha_2021.
+
+<!-- P5: Métodos de Change Detection Supervisado y No supervisado -->
+<!-- Pendiente hasta definir el método propuesto de Deep Learning -->
+<!-- Propósito             : proque la solución debe ser no supervisada -->
+<!-- Porque                : debe ser un sistema de monitoreo autónomo -->
+<!-- Evidencia             : estudios similares -->
+<!-- Eplicar evidencia     : resultados destacados -->
+<!-- Conclusión/conector   : Conectar con lo métodos convenxionales y no convencioales -->
+
+Para lograr los objetivos de identificar la perturbación antrópica de las turberas en Chiloé, es necesario establecer un proceso de identificación y análisis utilizando imágenes satelitales. Este proceso se conoce como Detección de Cambios y consiste en comparar imágenes tomadas en diferentes momentos para detectar y cuantificar los cambios ocurridos en un área específica. La detección de cambios satelitales se basa en el análisis de las diferencias espectrales entre las imágenes, lo que permite identificar las áreas que han experimentado cambios en su composición o características. @ZHU_2022. Esta metodología es ampliamente utilizada en diversos campos, como la monitorización ambiental, la gestión de recursos naturales, la planificación urbana y la evaluación de impacto ambiental <!-- (Revisar cita Zhu, Z., et al. (2017) Change detection using landsat time series.)-->. Para llevar a cabo esta tarea, se utilizan técnicas de procesamiento de imágenes y algoritmos de detección de cambios, incluyendo el uso de técnicas de aprendizaje automático supervisado y no supervisado.

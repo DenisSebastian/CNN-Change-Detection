@@ -1,0 +1,8 @@
+---
+fig-cap-location: bottom
+editor_options: 
+  chunk_output_type: console
+---
+
+# Marco Conceptual {#sec-conceptual .unnumbered}
+

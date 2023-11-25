@@ -1,0 +1,61 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "CNN Change Detection"
+  subtitle: "Master of Data Science"
+  # affiliation: "Universidad Adolfo Ibáñez - Chile"
+  author: "Denis Berroeta González (denis.berroeta@uai.cl)"
+  date: "2022-08-26"
+  page-footer:
+    left: "Copyright 2022, Denis Berroeta"
+  chapters:
+    - index.qmd
+    - abstract.qmd
+    - intro.qmd
+    - problema.qmd
+    - e-arte.qmd
+    - hipotesis.qmd
+    - objetivos.qmd
+    - part: Metodologia
+      chapters: 
+        - a-estudio.qmd
+        - adquisicion.qmd
+        - validacion.qmd
+        - convencionales.qmd
+        - procesamiento.qmd
+        - resultados.qmd
+    - conclusiones.qmd
+    - references.qmd
+    - part: rev_papers.qmd
+      chapters:
+        - Ms-CapsNet.qmd
+        - RUSACD.qmd
+    - part: experimentacion.qmd
+      chapters:
+        - insumos.qmd
+    - part: marco.qmd
+      chapters:
+        - remote_sensing.qmd
+        - sar_sentinel_s1.qmd
+        - semantic-seg.qmd
+        - ecosistemas.qmd
+    - data-cube.qmd
+    - recursos.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    html-math-method: katex
+    css: style.css
+    fig-cap-location: "margin"
+    tab-cap-location: "bottom"
+    fig-align: "center"
+    mailto: "denis.berroeta@uai.cl"
+
+
+
+

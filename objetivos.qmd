@@ -1,0 +1,15 @@
+# Objetivos {#objetivos}
+
+
+![](images/panorama.jpg)
+
+
+## Objetivos Generales {#Objetivos-Generales}
+
+Crear sistema de detección de cambios no supervisado en ecosistemas naturales protegidos haciendo uso redes neuronales convolucionales, en imágenes satelitales tipo radar. 
+
+## Objetivos Específicos {#Objetivos-Espec}
+
+1. Implementar una red neuronal convolucional, que pueda detectar cambios en imágenes tipo radar en diferentes tiempos de forma no supervisada.
+
+2. Comparar los resultados de la detección de cambio, de técnicas convencionales como los métodos algebraícos y de reducción de dimensionalidad con los obtenidos mediante el uso de redes neuronales convolucionales. 

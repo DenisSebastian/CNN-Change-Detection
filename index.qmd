@@ -1,0 +1,12 @@
+# Preface {.unnumbered}
+
+
+
+Este documento tiene como objetivo principal de ir registrando los avances en el proceso de desarrollo de la Tesis: **"Sistema de Detección de cambios en imágenes satelitales tipo Radar en ambientes naturales protegidos en Chile utilizando redes neuronales convolucionales."**, para optar al Master of Science in Data Science 2022-2023 de la Universidad Adolfo Ibáñez.
+
+
+
+
+<br>
+
+![](images/uai_fic.jpeg){fig-align="center" width="400"}

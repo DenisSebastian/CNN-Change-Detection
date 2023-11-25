@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CNN Change Detection - 2&nbsp; Introducción</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./problema.html" rel="next">
+<link href="./abstract.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CNN Change Detection</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problema.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Problema u Oportunidad</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./e-arte.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estado del Arte</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hipotesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hipótesis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objetivos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objetivos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Metodologia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a-estudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Área de Estudio</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./validacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Datos de Validación</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./convencionales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Métodos Convencionales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./procesamiento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesamientos de Datos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resultados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./rev_papers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Revisión papers</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ms-CapsNet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RUSACD</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./experimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Experimentación</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tratamiento de Insumos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./marco.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Marco Conceptual</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remote_sensing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Percepción Remota</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sar_sentinel_s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sentinel 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./semantic-seg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Segmentación Semántica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ecosistemas Protegidos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cube.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Cube</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./recursos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recursos</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="intro" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><img src="images/turbera-patagonia.jpeg" class="img-fluid"> <br></p>
+<!-- - Párrafo 1: Contexto e importancia de proteger y monitorear ecosistemas -->
+<!-- Propósito: importancia de proteger y cuidar ecosistemas naturales -->
+<!-- Porque:  conforman sistemas contexto cambio climatico -->
+<!-- Evidencia: citas -->
+<!-- Eplicar evidencia: cambios biodevirsas -->
+<!-- Conclusión conector: Situación en Chile respecto a turberas -->
+<p>Un tipo de ecosistema clave para combatir los efectos del cambio climático son las denominadas turberas, ya que desempeñan un importante papel en la regulación del clima a escala mundial, siendo uno de los reservorios terrestres más importantes del planeta <span class="citation" data-cites="parish2008assessment">(<a href="references.html#ref-parish2008assessment" role="doc-biblioref">Parish et al. 2008</a>)</span>. Las turberas pueden retener aproximadamente un tercio del carbono (<span class="math inline">C</span>) de los suelos (<span class="citation" data-cites="moore2002plant">Moore et al. (<a href="references.html#ref-moore2002plant" role="doc-biblioref">2002</a>)</span>, <span class="citation" data-cites="roig2004consideraciones">Roig and Roig (<a href="references.html#ref-roig2004consideraciones" role="doc-biblioref">2004</a>)</span>, <span class="citation" data-cites="asada2005surface">Asada and Warner (<a href="references.html#ref-asada2005surface" role="doc-biblioref">2005</a>)</span>). No obstante, cuando estos ecosistemas se degradan o alteran, sobre todo para usos que incluyen el drenaje de la tierra para cosechar turba o para cultivar con arado, pueden convertirse en fuentes significativas de Dióxido de Carbono (<span class="math inline">CO_2</span>) <span class="citation" data-cites="parish2008assessment">(<a href="references.html#ref-parish2008assessment" role="doc-biblioref">Parish et al. 2008</a>)</span>. Las emisiones de gases de efecto invernadero producidas por la degradación y la quema de turberas ha aumentado considerablemente en los últimos años, y se calcula que podrían superar los <span class="math inline">2 \times 10^9</span> <span class="math inline">Mg</span> <span class="math inline">C</span> <span class="math inline">yr^{-1}</span> actuales <span class="citation" data-cites="joosten2009global">(<a href="references.html#ref-joosten2009global" role="doc-biblioref">Joosten et al. 2009</a>)</span>. Por ello, en el último informe del Grupo Intergubernamental de Expertos sobre el Cambio Climático <span class="citation" data-cites="settele2014terrestrial">(<a href="references.html#ref-settele2014terrestrial" role="doc-biblioref">Settele et al. 2014</a>)</span> se afirma que la conservación, restauración y rehumidificación de las turberas degradadas es una medida eficaz para mitigar las pérdidas de <span class="math inline">C</span>.Según lo expuesto anteriormente, se puede entender su importancia a nivel medioambiental tanto global como local, ya que se encuentra ampliamente presente en el sur de Chile.</p>
+<!-- - Párrafo 2: Situación actia en Chile y tipos de turberas -->
+<!-- Propósito: Estalecer estado actual en Chile -->
+<!-- Porque:  Importancia ambiental de chile -->
+<!-- Evidencia: Cantidad de Turberas en Chile -->
+<!-- Eplicar evidencia: Zona de Chiloe -->
+<!-- Conclusión conector: Territorio con Satelital -->
+<p>En Chile, <span class="citation" data-cites="joosten2002wise">Joosten and Clarke (<a href="references.html#ref-joosten2002wise" role="doc-biblioref">2002</a>)</span> estimaron la superficie de turberas en 10.470 <span class="math inline">km^2</span>, concentrada en las regiones de Aysén y Magallanes, en el sur de Chile, y correspondiente al 1,4% del territorio nacional <span class="citation" data-cites="schlatter2004turbales">(<a href="references.html#ref-schlatter2004turbales" role="doc-biblioref">Schlatter and Schlatter 2004</a>)</span>. En la Isla de Chiloé (Región de Los Lagos), como consecuencia de la acelerada colonización humana, vastas extensiones de bosques fueron quemadas o taladas para obtener madera o para preparar la tierra para la agricultura o la ganadería <span class="citation" data-cites="cabezas2015">(<a href="references.html#ref-cabezas2015" role="doc-biblioref">Cabezas et al. 2015</a>)</span>. Como resultado, las zonas de drenaje deficiente fueron colonizadas por musgos <em>Sphagnum</em> (principalmente <em>S. magellanicum</em>) o por matorrales sucesionales <span class="citation" data-cites="diaz2007limitantes">(<a href="references.html#ref-diaz2007limitantes" role="doc-biblioref">Marı́a F. Dı́az and Armesto 2007</a>)</span> <span class="citation" data-cites="diaz2007alteration">(<a href="references.html#ref-diaz2007alteration" role="doc-biblioref">M. Francisca Dı́az, Bigelow, and Armesto 2007</a>)</span>, lo que fueron denominados “turberas antropogénicas” <span class="citation" data-cites="diaz2008caracterizacion">(<a href="references.html#ref-diaz2008caracterizacion" role="doc-biblioref">Marı́a F. Dı́az et al. 2008</a>)</span>, <span class="citation" data-cites="leon2014recent">(<a href="references.html#ref-leon2014recent" role="doc-biblioref">León and Oliván 2014</a>)</span>, estos ecosistemas han registrado tasas de acumulación reciente de <span class="math inline">C</span> superiores a las de las turberas de origen glaciar debido a que las turberas antropogénicas, al ser ecosistemas más recientes, son más activas <span class="citation" data-cites="leon2014recent">(<a href="references.html#ref-leon2014recent" role="doc-biblioref">León and Oliván 2014</a>)</span>. Además, este tipo de turberas antropogénicas tienen una gran capacidad de retención de agua <span class="citation" data-cites="iturraspe2000aspectos">(<a href="references.html#ref-iturraspe2000aspectos" role="doc-biblioref">Iturraspe and Roig 2000</a>)</span>. Las turberas naturales, así como las antropogénicas presentes en la zona sur de Chile, tienen diferencias en su concepción e interacción con el entorno. Sin embargo, ambas comparten el riesgo de destrucción o degradación debido a actividades antrópicas o naturales, por lo que es necesario monitorearlas para su protección y conservación.</p>
+<!-- - Párrafo 3: Situación en Chile Actual Protección (MMA) -->
+
+<!-- Propósito             : Establecer estado actual en Chile respecto Protección -->
+<!-- Porque                : Necesidad de monitoreo -->
+<!-- Evidencia             : Datos de turberas en chiloé -->
+<!-- Eplicar evidencia     : Desafíos -->
+<!-- Conclusión/conector   : Territorio con Satelital -->
+<p>Entendiendo la importancia ambiental de las turberas, nace la necesidad de proteger y conservar este ecosistema. En este contexto, el estado de Chile se adscribe a la Convención de Ramsar (<a href="https://www.bcn.cl/leychile/navegar?idNorma=15511">Decreto Nº 771</a> de 1981 del Ministerio de Relaciones Exteriores), <!-- donde se adopta la definición de humedales,--> incluidas las turberas <!-- , como las zonas húmedas que se dividen en áreas de ciénagas, pantanos, áreas de musgos o agua, sean estas naturales o artificiales, permanentes o temporales, de aguas estáticas o corrientes, frescas, con helechos o saladas, incluyendo zonas de agua de mar cuya profundidad no exceda de seis metros durante la marea baja-->. Posteriormente, mediante la <a href="https://www.bcn.cl/leychile/navegar?idNorma=30667">Ley N°19.300</a> de 1994, Ley sobre Bases Generales del Medio Ambiente, se señala que los proyectos o actividades susceptibles de causar impacto ambiental en cualquiera de sus fases deberán someterse al sistema de evaluación de impacto ambiental (SEIA). En su artículo Nº 10, se incluyen obras o actividades, incluyendo drenaje o desecación, que puedan significar una alteración física o química a los componentes bióticos, entre otros “la extracción de la cubierta vegetal de turberas”. En razón a lo anterior, posteriormente se declararon territorios de la provincia de Chiloé como Santuarios de la Naturaleza, como las Turberas Púlpito, Aucar y Punta Lapa. Para proteger y conservar estos santuarios y las demás turberas, se encarga a la Superintendencia del Medio Ambiente (SMA). Sin embargo, esta labor se dificulta por los recursos deficientes para disponer de personal suficiente y sumado a la cantidad de territorios que fiscalizar, entonces se hace necesario contar con un sistema de monitoreo ambiental a mayor escala, como lo que se puede obtener haciendo uso de imágenes satelitales.</p>
+<!-- - Párrafo 4: Información satelital SAR y Desafios -->
+<!-- Propósito             : Justificación de uso de información satelital para detectar cambios -->
+<!-- Porque                : Peridiocidad, y capacidad de trabajo diferentes condicones climáticas -->
+<!-- Evidencia             : Radar y problemas -->
+<!-- Eplicar evidencia     : Explicar detalladamente desafío -->
+<!-- Conclusión/conector   : Conectar con metodos de Change Detecction -->
+<p>Dado que el Estado de Chile reconoce la necesidad de proteger y conservar las turberas de la provincia de Chiloé, es esencial contar con un sistema de monitoreo que permita evidenciar los cambios en el territorio protegido de forma periódica. Se utilizar información satelital, cuya disponibilidad y potente capacidad computacional para realizar análisis complejos ha fomentado su uso en el monitoreo de recursos naturales en diferentes partes del mundo. La región de estudio es una isla ubicada en la zona sur del país. Durante gran parte del año, presenta condiciones de nubosidad, lo que dificulta el uso de imágenes ópticas. Una alternativa son las imágenes satelitales tipo Radar de Apertura Sintética (SAR). Los métodos de detección de cambios basados en SAR son independientes de las nubes y la iluminación, pero sin embargo se han utilizado mucho menos debido a su limitada disponibilidad temporal y espacial, sus costes más elevados y sus requisitos de procesamiento más intensivos <span class="citation" data-cites="hecheltjen2014">(<a href="references.html#ref-hecheltjen2014" role="doc-biblioref">Hecheltjen 2014</a>)</span>. Sentinel-1 de la ESA y el libre acceso a sus productos, los métodos de detección de cambios basados en el SAR pueden utilizarse ahora de forma más eficiente para superar algunas de las restricciones de los métodos basados en la óptica. La alta resolución temporal (seis días considerando Sentinel-1A y -1B en el Ecuador), la alta resolución espacial y el amplio barrido permiten disponer de un sistema operativo de detección de cambios muy necesario, sin costes, a prueba de nubes e independiente de la iluminación <span class="citation" data-cites="muro_2016">(<a href="references.html#ref-muro_2016" role="doc-biblioref">Muro et al. 2016</a>)</span>.</p>
+<!-- P4.2: SAR Desafíos -->
+<!-- Propósito             : Especificar los desafios al trabajar con imagenes tipo radar -->
+<!-- Porque                : Necesario para entender los métodos -->
+<!-- Evidencia             : Espcificar los dos problemas -->
+<!-- Eplicar evidencia     : Explicar detalladamente desafío con citas -->
+<!-- Conclusión/conector   : Conectar con metodos de Change Detecction -->
+<p>La presencia de ruido moteado (speckle) es un problema significativo en la tarea de detección de cambios en imágenes SAR. Este tipo de interferencia, conocida como ruido moteado, se presenta como una forma de ruido multiplicativo que degrada la calidad de la imagen y puede generar falsas detecciones de cambios <span class="citation" data-cites="Wu_2019">Wu et al. (<a href="references.html#ref-Wu_2019" role="doc-biblioref">2019</a>)</span>. Por lo tanto, la detección de cambios en imágenes SAR sigue siendo una tarea difícil <span class="citation" data-cites="Pham_2016">Pham, Mercier, and Michel (<a href="references.html#ref-Pham_2016" role="doc-biblioref">2016</a>)</span>. Es fundamental diseñar técnicas robustas de detección de cambios que sean efectivas en la supresión del ruido moteado (speckle) <span class="citation" data-cites="Saha_2021">Saha, Bovolo, and Bruzzone (<a href="references.html#ref-Saha_2021" role="doc-biblioref">2021</a>)</span>.</p>
+<!-- P5: Métodos de Change Detection Supervisado y No supervisado -->
+<!-- Pendiente hasta definir el método propuesto de Deep Learning -->
+<!-- Propósito             : proque la solución debe ser no supervisada -->
+<!-- Porque                : debe ser un sistema de monitoreo autónomo -->
+<!-- Evidencia             : estudios similares -->
+<!-- Eplicar evidencia     : resultados destacados -->
+<!-- Conclusión/conector   : Conectar con lo métodos convenxionales y no convencioales -->
+<p>Para lograr los objetivos de identificar la perturbación antrópica de las turberas en Chiloé, es necesario establecer un proceso de identificación y análisis utilizando imágenes satelitales. Este proceso se conoce como Detección de Cambios y consiste en comparar imágenes tomadas en diferentes momentos para detectar y cuantificar los cambios ocurridos en un área específica. La detección de cambios satelitales se basa en el análisis de las diferencias espectrales entre las imágenes, lo que permite identificar las áreas que han experimentado cambios en su composición o características. <span class="citation" data-cites="ZHU_2022">Zhu, Qiu, and Ye (<a href="references.html#ref-ZHU_2022" role="doc-biblioref">2022</a>)</span>. Esta metodología es ampliamente utilizada en diversos campos, como la monitorización ambiental, la gestión de recursos naturales, la planificación urbana y la evaluación de impacto ambiental <!-- (Revisar cita Zhu, Z., et al. (2017) Change detection using landsat time series.)-->. Para llevar a cabo esta tarea, se utilizan técnicas de procesamiento de imágenes y algoritmos de detección de cambios, incluyendo el uso de técnicas de aprendizaje automático supervisado y no supervisado.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-asada2005surface" class="csl-entry" role="listitem">
+Asada, Taro, and Barry G Warner. 2005. <span>“Surface Peat Mass and Carbon Balance in a Hypermaritime Peatland.”</span> <em>Soil Science Society of America Journal</em> 69 (2): 549–62.
+</div>
+<div id="ref-cabezas2015" class="csl-entry" role="listitem">
+Cabezas, Julián, Mauricio Galleguillos, Ariel Valdés, Juan P. Fuentes, Cecilia Pérez, and Jorge F. Perez-Quezada. 2015. <span>“Evaluation of Impacts of Management in an Anthropogenic Peatland Using Field and Remote Sensing Data.”</span> <em>Ecosphere</em> 6. https://doi.org/<a href="https://doi.org/10.1890/ES15-00232.1">https://doi.org/10.1890/ES15-00232.1</a>.
+</div>
+<div id="ref-diaz2007alteration" class="csl-entry" role="listitem">
+Dı́az, M Francisca, Seth Bigelow, and Juan J Armesto. 2007. <span>“Alteration of the Hydrologic Cycle Due to Forest Clearing and Its Consequences for Rainforest Succession.”</span> <em>Forest Ecology and Management</em> 244 (1-3): 32–40.
+</div>
+<div id="ref-diaz2007limitantes" class="csl-entry" role="listitem">
+Dı́az, Marı́a F, and Juan J Armesto. 2007. <span>“Limitantes f<span>ı́</span>sicos y Bi<span>ó</span>ticos de La Regeneraci<span>ó</span>n Arb<span>ó</span>rea En Matorrales Sucesionales de La Isla Grande de Chilo<span>é</span>, Chile.”</span> <em>Revista Chilena de Historia Natural</em> 80 (1): 13–26.
+</div>
+<div id="ref-diaz2008caracterizacion" class="csl-entry" role="listitem">
+Dı́az, Marı́a F, Juan Larraı́n, Gabriela Zegers, and Carolina Tapia. 2008. <span>“Caracterizaci<span>ó</span>n Flor<span>ı́</span>stica e Hidrol<span>ó</span>gica de Turberas de La Isla Grande de Chilo<span>é</span>, Chile.”</span> <em>Revista Chilena de Historia Natural</em> 81 (4): 455–68.
+</div>
+<div id="ref-hecheltjen2014" class="csl-entry" role="listitem">
+Hecheltjen, F.; Menz, A.; Thonfeld. 2014. <span>“In Land Use and Land Cover Mapping in Europe.”</span> <em>Recent Advances in Remote Sensing Change Detection—A Review</em>, 145–78.
+</div>
+<div id="ref-iturraspe2000aspectos" class="csl-entry" role="listitem">
+Iturraspe, Rodolfo, and C Roig. 2000. <span>“Aspectos Hidrol<span>ó</span>gicos de Turberas de Sphagnum de Tierra Del Fuego-Argentina.”</span> <em>Conservaci<span>ó</span>n de Ecosistemas a Nivel Mundial Con <span>é</span>nfasis En Las Turberas de Tierra Del Fuego. Disertaciones y Conclusiones</em>, 85–93.
+</div>
+<div id="ref-joosten2009global" class="csl-entry" role="listitem">
+Joosten, Hans et al. 2009. <span>“The Global Peatland CO2 Picture: Peatland Status and Drainage Related Emissions in All Countries of the World.”</span> <em>The Global Peatland CO2 Picture: Peatland Status and Drainage Related Emissions in All Countries of the World.</em>
+</div>
+<div id="ref-joosten2002wise" class="csl-entry" role="listitem">
+Joosten, Hans, and Donal Clarke. 2002. <span>“Wise Use of Mires and Peatlands.”</span> <em>International Mire Conservation Group and International Peat Society</em> 304.
+</div>
+<div id="ref-leon2014recent" class="csl-entry" role="listitem">
+León, Carolina A, and Gisela Oliván. 2014. <span>“Recent Rates of Carbon and Nitrogen Accumulation in Peatlands of Isla Grande de Chilo<span>é</span>-Chile.”</span> <em>Revista Chilena de Historia Natural</em> 87: 1–7.
+</div>
+<div id="ref-moore2002plant" class="csl-entry" role="listitem">
+Moore, Tim R, Jill L Bubier, Steve E Frolking, Peter M Lafleur, and Nigel T Roulet. 2002. <span>“Plant Biomass and Production and CO2 Exchange in an Ombrotrophic Bog.”</span> <em>Journal of Ecology</em> 90 (1): 25–36.
+</div>
+<div id="ref-muro_2016" class="csl-entry" role="listitem">
+Muro, Javier, Morton Canty, Knut Conradsen, Christian Hüttich, Allan Aasbjerg Nielsen, Henning Skriver, Florian Remy, Adrian Strauch, Frank Thonfeld, and Gunter Menz. 2016. <span>“Short-Term Change Detection in Wetlands Using Sentinel-1 Time Series.”</span> <em>Remote Sensing</em> 8 (10). <a href="https://doi.org/10.3390/rs8100795">https://doi.org/10.3390/rs8100795</a>.
+</div>
+<div id="ref-parish2008assessment" class="csl-entry" role="listitem">
+Parish, Faizal, AA Sirin, D Charman, Hans Joosten, T Yu Minaeva, and Marcel Silvius. 2008. <span>“Assessment on Peatlands, Biodiversity and Climate Change.”</span>
+</div>
+<div id="ref-Pham_2016" class="csl-entry" role="listitem">
+Pham, Minh-Tan, Grégoire Mercier, and Julien Michel. 2016. <span>“Change Detection Between SAR Images Using a Pointwise Approach and Graph Theory.”</span> <em>IEEE Transactions on Geoscience and Remote Sensing</em> 54 (4): 2020–32. <a href="https://doi.org/10.1109/TGRS.2015.2493730">https://doi.org/10.1109/TGRS.2015.2493730</a>.
+</div>
+<div id="ref-roig2004consideraciones" class="csl-entry" role="listitem">
+Roig, Claudio, and Fidel A Roig. 2004. <span>“Consideraciones Generales.”</span> <em>Los Turbales de La Patagonia: Bases Para Su Inventario y La Conservaci<span>ó</span>n de Su Biodiversidad. Wetlands Internacional, Buenos Aires</em>, 5–21.
+</div>
+<div id="ref-Saha_2021" class="csl-entry" role="listitem">
+Saha, Sudipan, Francesca Bovolo, and Lorenzo Bruzzone. 2021. <span>“Building Change Detection in VHR SAR Images via Unsupervised Deep Transcoding.”</span> <em>IEEE Transactions on Geoscience and Remote Sensing</em> 59 (3): 1917–29. <a href="https://doi.org/10.1109/TGRS.2020.3000296">https://doi.org/10.1109/TGRS.2020.3000296</a>.
+</div>
+<div id="ref-schlatter2004turbales" class="csl-entry" role="listitem">
+Schlatter, Roberto P, and Juan E Schlatter. 2004. <span>“Los Turbales de Chile.”</span> <em>Los Turbales de La Patagonia. Bases Para Su Inventario y La Conservaci<span>ó</span>n de Su Biodiversidad, Publicaci<span>ó</span>n</em>, no. 19: 75–80.
+</div>
+<div id="ref-settele2014terrestrial" class="csl-entry" role="listitem">
+Settele, Josef, Robert Scholes, R Betts, Stuart Bunn, Paul Leadley, Daniel Nepstad, Jonathan T Overpeck, et al. 2014. <span>“Terrestrial and Inland Water Systems.”</span> <em>Climate Change</em> 260: 271–359.
+</div>
+<div id="ref-Wu_2019" class="csl-entry" role="listitem">
+Wu, Hui, Heng-Chao Lit, Gang Yang, and Wen Yang. 2019. <span>“Change Detection of Remote Sensing Images Based on Weighted Nonnegative Matrix Factorization.”</span> In <em>2019 10th International Workshop on the Analysis of Multitemporal Remote Sensing Images (MultiTemp)</em>, 1–4. <a href="https://doi.org/10.1109/Multi-Temp.2019.8866946">https://doi.org/10.1109/Multi-Temp.2019.8866946</a>.
+</div>
+<div id="ref-ZHU_2022" class="csl-entry" role="listitem">
+Zhu, Zhe, Shi Qiu, and Su Ye. 2022. <span>“Remote Sensing of Land Change: A Multifaceted Perspective.”</span> <em>Remote Sensing of Environment</em> 282: 113266. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2022.113266">https://doi.org/10.1016/j.rse.2022.113266</a>.
+</div>
+</div>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./abstract.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./problema.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Problema u Oportunidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Denis Berroeta</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

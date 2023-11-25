@@ -1,0 +1,7 @@
+# Abstract {#abstract}
+
+![](images/turberas-samsara.jpeg)
+
+
+
+En el contexto del cambio climático, las denominadas turberas surgen como ecosistemas críticos debido a su capacidad para almacenar carbono. Para proteger y monitorear estos ecosistemas, se emplea información satelital de tipo radar de apertura sintética (SAR) debido a su capacidad para cubrir grandes áreas y funcionar en diversas condiciones atmosféricas. En esta tesis, se propone un enfoque no supervisado basado en redes neuronales convolucionales para detectar cambios en el territorio. Este enfoque permite identificar áreas potencialmente afectadas por factores naturales o humanos. Los resultados obtenidos demuestran que este método es más eficiente y preciso que los métodos convencionales de detección de cambios. Como conclusión, se destaca la viabilidad de detectar cambios incluso en condiciones atmosféricas adversas utilizando imágenes SAR y técnicas de Deep Learning. Estos hallazgos representan una contribución significativa para el monitoreo y conservación de las turberas, y contribuyen a la comprensión y mitigación del cambio climático.

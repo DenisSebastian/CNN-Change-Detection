@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CNN Change Detection",
+    "section": "",
+    "text": "Este documento tiene como objetivo inicial ir registrando los avances en el proceso de experimentación de la Tesis de Master of Data Science de la Universidad Adolfo Ibáñez."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduccion",
+    "section": "",
+    "text": "Definición del problema de investigación."
+  },
+  {
+    "objectID": "rev_biblio.html",
+    "href": "rev_biblio.html",
+    "title": "2  Revisión Bibliográfica",
+    "section": "",
+    "text": "En está sección se registrará los aspectos generales de la revisión bibliográfica a modo de conocer el estado del arte en técnicas de identificación de cambios en imagenes satelitales utilizado redes neuronales convolucionales."
+  }
+]
