@@ -22,7 +22,7 @@ palette_rainbow <- rainbow(100)
 
 ```
 
-# Métodos Convencionales
+# Métodos Convencionales  {.unnumbered}
 
 ## Insumos
 

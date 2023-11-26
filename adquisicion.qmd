@@ -2,6 +2,29 @@
 # Adquisición de Datos {#datos}
 
 
+## Turberas
+
+::: {.callout-warning}
+## Texto sin Estructura
+
+El texto de esta subsección no tiene estructura y corresponde bloques de información sin orden todavía
+:::
+
+### Turberas con Cambio
+
+### Turberas Estables
+
+
+## Imágenes Radar de Apertura Sintética
+
+
+::: {.callout-warning}
+## Texto sin Estructura
+
+El texto de esta subsección no tiene estructura y corresponde bloques de información sin orden todavía
+:::
+
+
 La misión **Sentinel-1** es el Observatorio Radar Europeo de la iniciativa conjunta Copernicus de la Comisión Europea (CE) y la Agencia Espacial Europea (ESA). Copernicus es una iniciativa europea para la puesta en marcha de servicios de información relacionados con el medio ambiente y la seguridad. Se basa en los datos de observación recibidos de los satélites de observación de la Tierra y la información terrestre.
 
 La misión Sentinel-1 incluye imágenes en banda C que operan en cuatro modos de imagen exclusivos con diferente resolución (hasta 5 m) y cobertura (hasta 400 km). Ofrece capacidad de doble polarización, tiempos de revisita muy cortos y una rápida entrega de productos. Para cada observación, se dispone de mediciones precisas de la posición y la actitud de la nave espacial.
@@ -12,7 +35,7 @@ La misión está compuesta por una constelación de dos satélites, Sentinel\-1A
 
 Sentinel-1 está diseñado para trabajar en un modo de operación preprogramado y libre de conflictos, obteniendo imágenes de todas las masas terrestres mundiales, zonas costeras y rutas marítimas en alta resolución y cubriendo el océano mundial con viñetas. Esto garantiza la fiabilidad del servicio requerida por los servicios operativos y un archivo de datos consistente a largo plazo construido para aplicaciones basadas en series temporales largas.
 
-## Resolución Temporal Sentinel-1
+### Resolución Temporal
 Un solo satélite Sentinel-1 podrá cartografiar el mundo entero una vez cada 12 días. La constelación de dos satélites ofrece un ciclo de repetición exacta de 6 días. La constelación tendrá una frecuencia de repetición (ascendente/descendente) de 3 días en el ecuador, menos de 1 día en el Ártico y se espera que proporcione cobertura sobre Europa, Canadá y las principales rutas marítimas en 1-3 días @fig-revisita, independientemente de las condiciones meteorológicas. Los datos del radar se entregarán a los servicios de Copernicus una hora después de su adquisición.
 
 ![Tiempo de Revisista en días del Satélite Sentinel-1](images/revisita1.jpeg){width="600" #fig-revisita}
@@ -22,7 +45,7 @@ Sentinel-1 se encuentra en una órbita casi polar, sincrónica al sol, con un ci
 
 ![Cobertura Geográfica de Satélite Sentinel-1](images/revisita.png){width="800" #fig-cobertura}
 
-## Intrumentos a Bordo Sentinel-1
+### Intrumentos a Bordo
 
 Sentinel-1 lleva un único instrumento de radar de apertura sintética en banda C que opera a una frecuencia central de 5,405 GHz. Incluye una antena activa phased array de orientación derecha que proporciona un rápido escaneo en elevación y azimut, una capacidad de almacenamiento de datos de 1 410 Gb y una capacidad de enlace descendente en banda X de 520 Mbit/s.
 

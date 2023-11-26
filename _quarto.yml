@@ -14,35 +14,32 @@ book:
     - index.qmd
     - abstract.qmd
     - intro.qmd
-    - problema.qmd
-    - e-arte.qmd
     - hipotesis.qmd
     - objetivos.qmd
-    - part: Metodologia
-      chapters: 
-        - a-estudio.qmd
-        - adquisicion.qmd
-        - validacion.qmd
-        - convencionales.qmd
-        - procesamiento.qmd
-        - resultados.qmd
+    - a-estudio.qmd
+    - adquisicion.qmd
+    - metodologia.qmd
     - conclusiones.qmd
     - references.qmd
-    - part: rev_papers.qmd
-      chapters:
-        - Ms-CapsNet.qmd
-        - RUSACD.qmd
-    - part: experimentacion.qmd
-      chapters:
-        - insumos.qmd
+    - part: Rezagos
+      chapters: 
+        - convencionales.qmd
+        - recursos.qmd
+        - problema.qmd
+        - e-arte.qmd
     - part: marco.qmd
       chapters:
+        - insumos.qmd
         - remote_sensing.qmd
         - sar_sentinel_s1.qmd
         - semantic-seg.qmd
         - ecosistemas.qmd
-    - data-cube.qmd
-    - recursos.qmd
+        - data-cube.qmd
+    - part: rev_papers.qmd
+      chapters:
+        - Ms-CapsNet.qmd
+        - RUSACD.qmd
+    
 
 bibliography: references.bib
 

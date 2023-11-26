@@ -1,6 +1,6 @@
 
 
-# Problema u Oportunidad {#sec-problema } 
+# Problema u Oportunidad {#sec-problema .unnumbered} 
 
 
 
