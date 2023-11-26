@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CNN Change Detection - Ecosistemas Protegidos</title>
+<title>CNN Change Detection - 7&nbsp; Metodologia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data-cube.html" rel="next">
-<link href="./semantic-seg.html" rel="prev">
+<link href="./conclusiones.html" rel="next">
+<link href="./adquisicion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,11 +62,27 @@ div.csl-indent {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +91,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./marco.html">Marco Conceptual</a></li><li class="breadcrumb-item"><a href="./ecosistemas.html">Ecosistemas Protegidos</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./metodologia.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Metodologia</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -163,7 +160,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./metodologia.html" class="sidebar-item-text sidebar-link">
+  <a href="./metodologia.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Metodologia</span></span></a>
   </div>
 </li>
@@ -249,7 +246,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link active">
+  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ecosistemas Protegidos</span></a>
   </div>
 </li>
@@ -294,16 +291,29 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-turbera" id="toc-sec-turbera" class="nav-link active" data-scroll-target="#sec-turbera">Turba</a></li>
+  <li><a href="#pre-procesamientos" id="toc-pre-procesamientos" class="nav-link active" data-scroll-target="#pre-procesamientos"><span class="header-section-number">7.1</span> Pre Procesamientos</a></li>
+  <li><a href="#métodos-convencionales" id="toc-métodos-convencionales" class="nav-link" data-scroll-target="#métodos-convencionales"><span class="header-section-number">7.2</span> Métodos Convencionales</a>
+  <ul class="collapse">
+  <li><a href="#diferencia-directa-dd" id="toc-diferencia-directa-dd" class="nav-link" data-scroll-target="#diferencia-directa-dd"><span class="header-section-number">7.2.1</span> Diferencia Directa (DD)</a></li>
+  <li><a href="#relación-logarítmica-lr-dekker-1998" id="toc-relación-logarítmica-lr-dekker-1998" class="nav-link" data-scroll-target="#relación-logarítmica-lr-dekker-1998"><span class="header-section-number">7.2.2</span> Relación logarítmica (LR) (Dekker, 1998)</a></li>
+  <li><a href="#relación-de-verosimilitud-logarítmica-llr-cui-et-al.-2019" id="toc-relación-de-verosimilitud-logarítmica-llr-cui-et-al.-2019" class="nav-link" data-scroll-target="#relación-de-verosimilitud-logarítmica-llr-cui-et-al.-2019"><span class="header-section-number">7.2.3</span> Relación de verosimilitud logarítmica (LLR) (Cui et al., 2019)</a></li>
+  <li><a href="#enhanced-difference-image-edi" id="toc-enhanced-difference-image-edi" class="nav-link" data-scroll-target="#enhanced-difference-image-edi"><span class="header-section-number">7.2.4</span> Enhanced difference image (EDI)</a></li>
+  <li><a href="#log-mean-ratio-lmr" id="toc-log-mean-ratio-lmr" class="nav-link" data-scroll-target="#log-mean-ratio-lmr"><span class="header-section-number">7.2.5</span> Log Mean Ratio (LMR)</a></li>
+  </ul></li>
+  <li><a href="#discretización" id="toc-discretización" class="nav-link" data-scroll-target="#discretización"><span class="header-section-number">7.3</span> Discretización</a>
+  <ul class="collapse">
+  <li><a href="#triangular-threshold-segmentation" id="toc-triangular-threshold-segmentation" class="nav-link" data-scroll-target="#triangular-threshold-segmentation"><span class="header-section-number">7.3.1</span> Triangular Threshold Segmentation</a></li>
+  </ul></li>
+  <li><a href="#métricas" id="toc-métricas" class="nav-link" data-scroll-target="#métricas"><span class="header-section-number">7.4</span> Métricas</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ecosistemas Protegidos</h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Metodologia</span></h1>
 </div>
 
 
@@ -318,150 +328,106 @@ div.csl-indent {
 
 </header>
 
-<section id="sec-turbera" class="level2">
-<h2 class="anchored" data-anchor-id="sec-turbera">Turba</h2>
-<p>Las turberas solo cubren el 3 % de la superficie terrestre del planeta pero almacenan más carbono que todos los bosques de la Tierra – <strong>si se mantienen humedas</strong>.</p>
-<dl>
-<dt>Definición:</dt>
-<dd>
-<p>El término turba debe ser entendido como un sedimento natural de tipo fitógeno, poroso, no consolidado, constituido por materia orgánica parcialmente descompuesta, acumulada en un ambiente saturado de agua. De esta forma, se puede entender al concepto de turbera como un depósito de turba con un espesor de, al menos, 30 cm <span class="citation" data-cites="hauser1996">(<a href="references.html#ref-hauser1996" role="doc-biblioref">Hauser 1996</a>)</span></p>
-</dd>
-<dt>Formación:</dt>
-<dd>
-<p>Según <span class="citation" data-cites="hauser1996">(<a href="references.html#ref-hauser1996" role="doc-biblioref">Hauser 1996</a>)</span>, el origen de las turberas se encuentra en las eras glaciares del Pleistoceno, cuando grandes extensiones de casquetes glaciares cubrieron el valle central de la Región de Los Lagos, incluyendo a la Isla Grande de Chiloé. El posterior retiro de los glaciares dejó masas de agua tierra adentro, formando los grandes lagos y lagunas glaciares que en la actualidad componen el paisaje de la región.</p>
-<p>En el caso de Chiloé, zona en la que se establecieron las condiciones climáticas ideales para el desarrollo del musgo del género Sphagnum, lo que permitió la acumulación de materia orgánica en depresiones del relieve de la isla con alto contenido de humedad <a href="#fig-turba-a">Figure&nbsp;<span>1 (a)</span></a>. Este proceso de acumulación del musgo se consolidó en la formación de extensas turberas <a href="#fig-turba-b">Figure&nbsp;<span>1 (b)</span></a> y <a href="#fig-turba-c">Figure&nbsp;<span>1 (c)</span></a> . [<span class="citation" data-cites="hauser1996">Hauser (<a href="references.html#ref-hauser1996" role="doc-biblioref">1996</a>)</span>]</p>
-</dd>
-</dl>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Schofield.png" class="img-fluid figure-img" width="500"></p>
-<figcaption class="figure-caption">Proceso de formación de turberas de origen glaciar (caso de Chiloé). Fuente: <span class="citation" data-cites="schofieldw.b1985">(<a href="references.html#ref-schofieldw.b1985" role="doc-biblioref">Schofield W.B 1985</a>)</span></figcaption>
+<!-- - P1: Introducción a la Metodología -->
+<!-- Propósito: Dar introducción de los del procedimiento utilizado -->
+<!-- Porque: Brindar al lector un contexto general de los métodos -->
+<!-- Evidencia: Explicará métodos convencionales y discretización -->
+<!-- Explicar evidencia: ya que permitiá identificar los cambios -->
+<!-- Conclusión/conexión: evaluaran los resultados para validar el procedimiento -->
+<p>En la sección se explicará los pasos que se realizaron para detectar cambios o no cambios en diversas turberas en la provincia de Chiloé. Primeramente se realizaron varios pasos para el procesamiento de las imágenes radar antes y después para las turberas previamente definidas como “cambio” y como también se realizó en dos períodos las Turberas denominadas como “estables”. Primero, se aplicaron técnicas de pre procesamiento a las imágenes para mejorar su calidad y normalización. Luego, se sometieron a diversos métodos convencionales de detección de cambios, los cuales permitieron identificar las áreas donde se produjeron cambios. Estos resultados fueron luego pasados por la etapa de discretización de cambios, utilizando un enfoque tradicional y otro basado en segmentación de Deep Learning. Finalmente, se evaluaron los resultados utilizando métricas de intersección para validar la efectividad del procedimiento propuesto.</p>
+<section id="pre-procesamientos" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="pre-procesamientos"><span class="header-section-number">7.1</span> Pre Procesamientos</h2>
+</section>
+<section id="métodos-convencionales" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="métodos-convencionales"><span class="header-section-number">7.2</span> Métodos Convencionales</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Texto sin Estructura
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El texto de esta subsección no tiene estructura y corresponde bloques de información sin orden todavía</p>
+</div>
+</div>
+<section id="diferencia-directa-dd" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="diferencia-directa-dd"><span class="header-section-number">7.2.1</span> Diferencia Directa (DD)</h3>
+<p>El cálculo de la diferencia directa corresponde a la resta de ambas imágenes retornando sus valores absolutos de diferencia.</p>
+<p><span class="math display">DD(i,j)=I_1(i, j)-I_2(i, j)</span> Los elementos <span class="math inline">I_1</span> y <span class="math inline">I_2</span> corrponde a las imágenes.</p>
+</section>
+<section id="relación-logarítmica-lr-dekker-1998" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="relación-logarítmica-lr-dekker-1998"><span class="header-section-number">7.2.2</span> Relación logarítmica (LR) (Dekker, 1998)</h3>
+<p>Refleja la diferencia entre los píxeles individuales. Esto se calcula utilizando la siguiente formula:</p>
+<p><span class="math display">D_{LR} (i, j) = log_{10}\frac{I_2(i, j)}{I_1(i, j)}</span></p>
+</section>
+<section id="relación-de-verosimilitud-logarítmica-llr-cui-et-al.-2019" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="relación-de-verosimilitud-logarítmica-llr-cui-et-al.-2019"><span class="header-section-number">7.2.3</span> Relación de verosimilitud logarítmica (LLR) (Cui et al., 2019)</h3>
+<p>Refleja la diferencia entre los vecindarios. Se calcula utilizando las características estadísticas del vecindario del píxel para construir la relación de verosimilitud y se expresa con la siguiente ecuación:</p>
+<p><span class="math display">D_{LLR}(i, j)= log_{10}\left(\frac{(\sum_{(m,n)\in\Omega{i,j}}I_1(m,n)+\sum_{(m,n)\in\Omega{i,j}}I_2(m,n))^2}{4\times \sum_{(m,n)\in\Omega{i,j}}I_1(m,n)\times\sum_{(m,n)\in\Omega{i,j}}I_2(m,n)}\right)</span> Donde:<br>
+<span class="math inline">\Omega_{i, j}</span> es el vecindario de <span class="math inline">(i, j)</span>,<br>
+<span class="math inline">I{i,j(m,n)}</span> es laintensidad de pixeles en <span class="math inline">\Omega_{i, j}</span>.<br>
+<span class="math inline">I_{(m,n)}</span> es el valor de píxel de la imagen original en la posición <span class="math inline">(m,n)</span>.</p>
+<p>Se calcula utilizando las características estadísticas del vecindario del píxel para construir la relación de verosimilitud</p>
+</section>
+<section id="enhanced-difference-image-edi" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="enhanced-difference-image-edi"><span class="header-section-number">7.2.4</span> Enhanced difference image (EDI)</h3>
+<p>El método propuesto para crear la imagen de diferencia mejorada combina la consistencia de la diferencia entre los píxeles individuales y sus vecindarios. Esto se logra mediante el uso de la relación logarítmica (LR) y la relación de verosimilitud logarítmica (LLR). La LR refleja la diferencia entre los píxeles individuales, mientras que la LLR refleja la diferencia entre los vecindarios.</p>
+<p><span class="math display">
+D(i, j) = D{LR} (i, j) \times D_{LLR} (i, j)
+</span></p>
+</section>
+<section id="log-mean-ratio-lmr" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="log-mean-ratio-lmr"><span class="header-section-number">7.2.5</span> Log Mean Ratio (LMR)</h3>
+<p>El operador LMR se define como la relación entre la media logarítmica de dos imágenes, <span class="math inline">I_1</span> y <span class="math inline">I_2</span>. Esta relación se calcula para cada píxel <span class="math inline">(i,j)</span> en el vecindario <span class="math inline">\Omega</span>.</p>
+<p><span class="math display">D_{LMR}(i, j)= log(max(\frac{\mu(\Omega_{I_1})}{\mu(\Omega_{I_2})}, \frac{\mu(\Omega_{I_2})}{\mu(\Omega_{I_1})}))</span></p>
+<p>Donde <span class="math inline">\mu(\Omega_{I_1})</span> y <span class="math inline">\mu(\Omega_{I_2})</span> presenta el promedio del vecindario en <span class="math inline">I_1</span> y <span class="math inline">I_2</span>, respectivamente.</p>
+</section>
+</section>
+<section id="discretización" class="level2 page-columns page-full" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="discretización"><span class="header-section-number">7.3</span> Discretización</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Texto sin Estructura
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El texto de esta subsección no tiene estructura y corresponde bloques de información sin orden todavía</p>
+</div>
+</div>
+<section id="triangular-threshold-segmentation" class="level3 page-columns page-full" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="triangular-threshold-segmentation"><span class="header-section-number">7.3.1</span> Triangular Threshold Segmentation</h3>
+<p>El método de segmentación de umbral triangular se basa en la forma única del histograma DI y utiliza un método de Douglas-Peucker (Douglas y Peucker, 1973) para segmentar los datos en diferentes clases. Esto se logra mediante el uso de los diferentes niveles de gris y sus frecuencias correspondientes.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/douglas-peucker.png" class="img-fluid figure-img" width="350"></p>
+<figcaption class="figure-caption margin-caption">Ilustración esquemáticas del umbral triangular</figcaption>
 </figure>
 </div>
-<dl>
-<dt>Botánicamente (Chiloé):</dt>
-<dd>
-<p>Botánicamente, el pompón pertenece al Reino de las Plantas, a la División <em>Bryophyta</em>, a la Clase <em>Musci</em> y a la Familia de las <em>Sphagnaceas</em>. Esta familia comprende sólo un género, Sphagnum, compuesto por más de 300 especies descritas. En el archipiélago de Chiloé conviven varias especies de este género. La más abundante es <em>S. magellanicum</em>, que se caracteriza por su color rojo, talla relativamente robusta y hojas con ápice obtuso. Suele cubrir grandes superficies con mal drenaje en terrenos abiertos o cubriendo el suelo de los tepuales (bosques formados por la mirtácea <em>Tepualia stipularis</em>), donde se desarrolla con extraordinario vigor. Existen además, al menos 4 especies que se han identificado en la zona norte de la Isla: <em>S. fimbriatum</em>, <em>S. falcatulum</em>, <em>S. recurvum</em> y S. cuspidatum var. cuspidatum. Adicionalmente, la literatura cita otras 2 especies para la Isla: <em>S. acutifolium y S. subnitens</em>.Todas estas especies son de difícil identificación, siendo su morfología celular y la anatomía foliar la base de su clasificación <span class="citation" data-cites="zegers2006">(<a href="references.html#ref-zegers2006" role="doc-biblioref">Zegers et al. 2006</a>)</span></p>
-</dd>
-<dt>Caracterización:</dt>
-<dd>
-<p>Una de las características relevantes de las turberas de Sphagnum es que presenta una matriz continua superficial de musgos sobre una capa de turba que puede alcanzar varios metros de profundidad <span class="citation" data-cites="díaz2008">(<a href="references.html#ref-díaz2008" role="doc-biblioref">Díaz et al. 2008</a>)</span>. Según el mismo autor, entre otras características relevantes de este tipo de turberas se encuentran:</p>
-<ul>
-<li><p>La turba que la compone es de origen vegetal y se encuentra en distintos estados de descomposición anaeróbica. <a href="#fig-turbas">Figure&nbsp;<span>1</span></a></p></li>
-<li><p>El estrato superficial es biológicamente activo, conformado por asociaciones de especies, entre las que predominan plantas con gran capacidad para retener humedad <a href="#fig-turba-b">Figure&nbsp;<span>1 (b)</span></a>.</p></li>
-<li><p>El musgo Sphagnum forma un ambiente pobre en nutrientes (baja concentración de nitrógeno), ácido, anóxico y frío, lo que previene la presencia de hongos y bacterias que descomponen al material muerto <a href="#fig-turba-c">Figure&nbsp;<span>1 (c)</span></a>.</p></li>
-<li><p>Tiene una gran capacidad de absorción de agua (hasta 20 veces su peso seco en agua) <a href="#fig-turba-e">Figure&nbsp;<span>1 (e)</span></a></p></li>
-<li><p>Su fuente de agua proviene de ríos y/o de la lluvia <a href="#fig-turba-d">Figure&nbsp;<span>1 (d)</span></a>.</p></li>
-<li><p>Es un ecosistema de humedal con flora y fauna única y especializada.</p></li>
-</ul>
-</dd>
-</dl>
-<div id="fig-turbas" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-turba-a" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/turba_a.png" class="img-fluid figure-img" data-ref-parent="fig-turbas" width="500"></p>
-<figcaption class="figure-caption">(a)</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-turba-b" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/turba_b.png" class="img-fluid figure-img" data-ref-parent="fig-turbas" width="500"></p>
-<figcaption class="figure-caption">(b)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-turba-c" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/turba_c.png" class="img-fluid figure-img" data-ref-parent="fig-turbas" width="500"></p>
-<figcaption class="figure-caption">(c)</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-turba-d" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/turba_d.png" class="img-fluid figure-img" data-ref-parent="fig-turbas" width="500"></p>
-<figcaption class="figure-caption">(d)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-turba-e" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/turba_e.png" class="img-fluid figure-img" data-ref-parent="fig-turbas" width="500"></p>
-<figcaption class="figure-caption">(e)</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-turba-f" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/turba_f.png" class="img-fluid figure-img" data-ref-parent="fig-turbas" width="500"></p>
-<figcaption class="figure-caption">(f)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Fuente: <span class="citation" data-cites="treimun2017">(<a href="references.html#ref-treimun2017" role="doc-biblioref">Treimun 2017</a>)</span></figcaption><p></p>
-</figure>
-</div>
-<p><br></p>
-<dl>
-<dt>Extracción:</dt>
-<dd>
-Como Problema …
-</dd>
-</dl>
-<p>TO-DO:</p>
-<ul>
-<li><p>Descripción de prdocesod e extracción y conexión con problema medio ambiental</p></li>
-<li><p>Descripción Completa Bosque Esclerofilo (? ROI)</p></li>
-<li><p>Descripción Completa Humedales Urbanos</p></li>
-</ul>
-<p>Agregar conceptos papers:</p>
-<ul>
-<li><p>cabezas_evaluation_2015 Evaluation of impacts of management in an anthropogenic peatland using field and remote sensing data <span class="citation" data-cites="cabezas_evaluation_2015">(<a href="references.html#ref-cabezas_evaluation_2015" role="doc-biblioref">Cabezas et al. 2015</a>)</span></p></li>
-<li><p>Lopatin et al.&nbsp;- 2019 - Using aboveground vegetation attributes as proxies.pdf <span class="citation" data-cites="lopatin_using_2019">(<a href="references.html#ref-lopatin_using_2019" role="doc-biblioref">Lopatin et al. 2019</a>)</span></p></li>
-<li><p>Lopatin et al.&nbsp;- 2022 - Disturbance alters relationships between soil carb.pdf <span class="citation" data-cites="lopatin_disturbance_2022">(<a href="references.html#ref-lopatin_disturbance_2022" role="doc-biblioref">Lopatin et al. 2022</a>)</span></p></li>
-</ul>
+<p><span class="math display">P_1</span></p>
+<p>Este método consiste en:</p>
+<ol type="1">
+<li>Calcular el histograma de la imagen DI.</li>
+<li>Calcular el valor umbral inicial (T) como el punto medio entre el valor mínimo y máximo de la imagen DI.</li>
+<li>Inicializar una lista vacía para almacenar las clases resultantes.</li>
+<li>Repetir los pasos 5-7 hasta que el valor umbral no cambie significativamente.</li>
+<li>Calcular las medias de las clases formadas por los píxeles con valores por encima y por debajo del umbral actual.</li>
+<li>Calcular el nuevo valor umbral como el promedio entre las medias de las clases.</li>
+<li>Actualizar las clases resultantes dividiendo los píxeles en dos grupos: aquellos con valores por encima del umbral y aquellos con valores por debajo del umbral.</li>
+<li>Devolver las clases resultantes.</li>
+</ol>
+</section>
+</section>
+<section id="métricas" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="métricas"><span class="header-section-number">7.4</span> Métricas</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-cabezas_evaluation_2015" class="csl-entry" role="listitem">
-Cabezas, Juli’an, Mauricio Galleguillos, Ariel Vald’es, Juan P. Fuentes, Cecilia P’erez, and Jorge F. Perez-Quezada. 2015. <span>“Evaluation of Impacts of Management in an Anthropogenic Peatland Using Field and Remote Sensing Data.”</span> <em>Ecosphere</em> 6 (12): 1–24. <a href="https://doi.org/10.1890/ES15-00232.1">https://doi.org/10.1890/ES15-00232.1</a>.
-</div>
-<div id="ref-díaz2008" class="csl-entry" role="listitem">
-Díaz, María F., Juan Larraín, Gabriela Zegers, and Carolina Tapia. 2008. <span>“Floristic and Hydrological Characterization of Chiloé Island Peatlands, Chile.”</span> <em>Revista Chilena de Historia Natural</em> 81 (4): 455–68. <a href="https://doi.org/10.4067/S0716-078X2008000400002">https://doi.org/10.4067/S0716-078X2008000400002</a>.
-</div>
-<div id="ref-hauser1996" class="csl-entry" role="listitem">
-Hauser, Arturo. 1996. <span>“Los depósitos de turba en Chile y sus perspectivas de utilización.”</span> <em>Revista Geológica de Chile 23 (2) : 217-229.</em>, 13. <a href="http://www.andeangeology.cl/index.php/revista1/article/view/2208">http://www.andeangeology.cl/index.php/revista1/article/view/2208</a>.
-</div>
-<div id="ref-lopatin_disturbance_2022" class="csl-entry" role="listitem">
-Lopatin, Javier, Roc’ıo ArayaNANAL’opez, Mauricio Galleguillos, and Jorge F. PereNAzNAQueza. 2022. <span>“Disturbance Alters Relationships Between Soil Carbon Pools and Aboveground Vegetation Attributes in an Anthropogenic Peatland in <span>Patagonia</span>.”</span> <em>Ecology and Evolution</em> 12 (3). <a href="https://doi.org/10.1002/ece3.8694">https://doi.org/10.1002/ece3.8694</a>.
-</div>
-<div id="ref-lopatin_using_2019" class="csl-entry" role="listitem">
-Lopatin, Javier, Teja Kattenborn, Mauricio Galleguillos, Jorge F. Perez-Quezada, and Sebastian Schmidtlein. 2019. <span>“Using Aboveground Vegetation Attributes as Proxies for Mapping Peatland Belowground Carbon Stocks.”</span> <em>Remote Sensing of Environment</em> 231 (September): 111217. <a href="https://doi.org/10.1016/j.rse.2019.111217">https://doi.org/10.1016/j.rse.2019.111217</a>.
-</div>
-<div id="ref-schofieldw.b1985" class="csl-entry" role="listitem">
-Schofield W.B. 1985. <span>“Introduction to Bryology.”</span>
-</div>
-<div id="ref-treimun2017" class="csl-entry" role="listitem">
-Treimun, John. 2017. <span>“Turberas de Chiloé, Ministerio del Medio Ambiente, Chile.”</span>
-</div>
-<div id="ref-zegers2006" class="csl-entry" role="listitem">
-Zegers, Gabriela, Juan Larraín, María Francisca Díaz, and Juan Armesto. 2006. <span>“Impacto Ecológico y Social de La Explotación de Pomponales y Turberas de Sphagnum En La Isla Grande de Chiloé.”</span> <a href="http://biblioteca.cehum.org/handle/CEHUM2018/1389">http://biblioteca.cehum.org/handle/CEHUM2018/1389</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -700,13 +666,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./semantic-seg.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Segmentación Semántica</span>
+      <a href="./adquisicion.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Adquisición de Datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data-cube.html" class="pagination-link">
-        <span class="nav-page-text">Data Cube</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./conclusiones.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conclusiones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
