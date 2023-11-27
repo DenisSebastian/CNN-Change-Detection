@@ -1,8 +1,16 @@
+---
+fig-cap-location: bottom
+---
+
 
 # Adquisición de Datos {#datos}
 
 
 ## Turberas
+
+
+
+### Turberas con Cambio
 
 ::: {.callout-warning}
 ## Texto sin Estructura
@@ -10,7 +18,31 @@
 El texto de esta subsección no tiene estructura y corresponde bloques de información sin orden todavía
 :::
 
-### Turberas con Cambio
+En estapa se realizó una inspección visual a los 858 sitios definidos como turberas, y mediante fotointerpretación indetificar si existen cambios en dos periodos diferentes, el tipo y fecha aproximada de cambio, para lo cual se se utilizó el software de [Google Earth Pro](https://www.google.com/intl/es-419/earth/versions/) valiendose de la funcionalidad de serie de tiempo. 
+
+
+Del procedimento anterior, se concluye que son muy pocos los que sitios que sufrieron alteración especificamente 28, y no todos los cambios correspondía a actividades extractivas de las turbas, sino que también por cambio de suelo (@fig-csuelo), construcciones, deforestación ect.
+
+::: {#fig-csuelo layout-ncol="2"}
+
+![Antes de cambio de suelo](images/cambio_suelo_a_22.png){#fig-antes width="800"}
+
+![Antes de cambio de suelo](images/cambio_suelo_b_23.png){#fig-hanno}
+
+Cambio por Actividad Antrópica, pero no se observa que sea una tubera
+:::
+
+En algunos casos efectivamente se trataba de cambió por actividades extractivas como se observa en la siguiente @fig-aerop
+
+
+::: {#fig-aerop layout-ncol="2"}
+
+![Antes de alteación](images/turbera_a_26.png){#fig-antes-t}
+
+![Después de la alteación](images/turbera_b_27.png){#fig-despues-t}
+
+Cambio por Actividad Antrópica correspondiente a actividades extractivas de turba
+:::
 
 ### Turberas Estables
 

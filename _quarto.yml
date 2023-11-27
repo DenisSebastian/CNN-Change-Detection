@@ -14,8 +14,6 @@ book:
     - index.qmd
     - abstract.qmd
     - intro.qmd
-    - hipotesis.qmd
-    - objetivos.qmd
     - a-estudio.qmd
     - adquisicion.qmd
     - metodologia.qmd
@@ -27,6 +25,8 @@ book:
         - recursos.qmd
         - problema.qmd
         - e-arte.qmd
+        - hipotesis.qmd
+        - objetivos.qmd
     - part: marco.qmd
       chapters:
         - insumos.qmd
