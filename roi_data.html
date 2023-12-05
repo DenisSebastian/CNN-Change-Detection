@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CNN Change Detection - 3&nbsp; Área de Estudio y Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./metodologia.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./roi_data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Área de Estudio y Data</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CNN Change Detection</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./roi_data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Área de Estudio y Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metodologia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resultados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./discusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discusión</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusiones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Rezagos</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./convencionales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Métodos Convencionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./recursos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problema.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problema u Oportunidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./e-arte.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estado del Arte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hipotesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Hipótesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objetivos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Objetivos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a-estudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Área de Estudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./adquisicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adquisición de Datos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./marco.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Marco Conceptual</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./insumos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tratamiento de Insumos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remote_sensing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Percepción Remota</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sar_sentinel_s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sentinel 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./semantic-seg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Segmentación Semántica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ecosistemas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ecosistemas Protegidos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cube.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Cube</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./rev_papers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Revisión papers</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ms-CapsNet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ms-CapsNet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RUSACD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RUSACD</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-roi" id="toc-sec-roi" class="nav-link active" data-scroll-target="#sec-roi"><span class="header-section-number">3.1</span> Área de Estudio</a></li>
+  <li><a href="#sec-data" id="toc-sec-data" class="nav-link" data-scroll-target="#sec-data"><span class="header-section-number">3.2</span> Data</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Área de Estudio y Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-roi" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-roi"><span class="header-section-number">3.1</span> Área de Estudio</h2>
+<!-- % P1: Describir la Región de Chiloé Características Climática -->
+<!-- % P2:  Turberas en Chiloé formación -->
+<!-- % P3: Conector con Data -->
+<!-- %P1: Describir la Región de Chiloé Características Climática -->
+<!-- % Propósito: Dar contexto grografíco de ROI -->
+<!-- % Porque: Entender variables de entorno ecosistemica formación crecimiento -->
+<!-- % Evidencia: mapa -->
+<!-- % Explicar evidencia: Citas del clima y vegetación -->
+<!-- % Conclusión/conexión:  -->
+<p>La región de estudio corresponde a toda la provincia de Chiloé (<a href="#fig-chiloe">Figure&nbsp;<span>3.1</span></a>), en la Región de los Lagos, al sur de Chile (42°36′S 73°57′O). El Territorio de Chiloé es un archipiélago formado por más de treinta islas, con una extensión de 9.181 km². La Isla Grande tiene una longitud de 180 km de norte a sur y es principalmente en esta isla donde se encuentran las turberas antropogénicas objeto de estudio. La zona tiene un clima templado con fuerte influencia oceánica y presenta un periodo seco durante el verano <span class="citation" data-cites="di1976bioclimatologia">(<a href="references.html#ref-di1976bioclimatologia" role="doc-biblioref">Di Castri, Hajek, et al. 1976</a>)</span>. Según los datos de nueve años de la estación meteorológica SDBS, la temperatura media es de 10 °C y hay 2.110 mm de precipitaciones anuales <span class="citation" data-cites="carmona2010estacion">(<a href="references.html#ref-carmona2010estacion" role="doc-biblioref">Carmona et al. 2010</a>)</span>.</p>
+<div id="fig-chiloe" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/Chiloe_chile.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Región de Estudio provincia de Chiloé, Chile. Elaboración propia</figcaption>
+</figure>
+</div>
+<!-- % P2:  Turberas en Chiloé formación -->
+<!-- %Propósito: Reiterar importancia de las turberas -->
+<!-- %Porque: Comprender formación -->
+<!-- %Evidencia: Definciiones con referencias -->
+<!-- %Explicar evidencia: Composición orgánica -->
+<!-- %Conclusión/conexión: importancia de para monitoreo -->
+<p>Históricamente las turberas tiene su origen en la tala y quema del bosque de tepú (Tepualia stipularis) ubicado en la zona, que dejó un suelo mal drenado colonizado por especies de Sphagnum sp. <span class="citation" data-cites="diaz2007alteration">(<a href="references.html#ref-diaz2007alteration" role="doc-biblioref">Dı́az, Bigelow, and Armesto 2007</a>)</span>. Se estima que la acumulación de materia orgánica comenzó en 1900 <span class="citation" data-cites="leon2012caracterizacion">(<a href="references.html#ref-leon2012caracterizacion" role="doc-biblioref">León 2012</a>)</span>. Las turberas son humedales en los que la materia orgánica se produce y deposita más rápidamente de lo que puede descomponerse, lo que da lugar a la formación de turba <span class="citation" data-cites="gore1983mires">(<a href="references.html#ref-gore1983mires" role="doc-biblioref">Gore 1983</a>)</span>. Los humedales son ecosistemas generados en zonas donde la presencia de agua produce suelos sometidos a procesos anaeróbicos, por lo que están dominados por una biota adaptada a las inundaciones <span class="citation" data-cites="keddy2010wetland">(<a href="references.html#ref-keddy2010wetland" role="doc-biblioref">Keddy 2010</a>)</span>. Estos ecosistemas ofrecen numerosos servicios ecosistémicos, como la depuración y el almacenamiento de agua dulce <span class="citation" data-cites="bullock2003role">(<a href="references.html#ref-bullock2003role" role="doc-biblioref">Bullock and Acreman 2003</a>)</span> y ser importantes reservorios de carbono (C) <span class="citation" data-cites="zedler2005wetland">(<a href="references.html#ref-zedler2005wetland" role="doc-biblioref">Zedler and Kercher 2005</a>)</span>.</p>
+<!-- %P3: Conector con Data -->
+<!-- %Propósito: Importancia monitoreo y conectar con data -->
+<!-- %Porque: Explicar los desafío de adquisión de información -->
+<!-- %Evidencia: Uso de sar -->
+<!-- %Explicar evidencia: CAmtura información bajo diferentes condiciones atmosférica -->
+<!-- %Conclusión/conexión: Conexión con Data -->
+<p>Considerando la importancia ecosistémica de las turberas y su degradación por acción humana, es necesario contar con un sistema de monitoreo. Una solución eficiente a través de imágenes satelitales en términos de temporalidad de captura de información y cobertura espacial. Teniendo en cuenta la ubicación geográfica de la región de estudio, esta se encuentra bajo condiciones climáticas nubosas durante gran parte del año, por lo tanto, las imágenes satelitales ópticas no son útiles. La alternativa idónea es el uso de imágenes satelitales tipo radar, que puedan captar información de la superficie bajo diferentes condiciones atmosféricas y tanto de día como de noche <span class="citation" data-cites="hecheltjen2014">(<a href="references.html#ref-hecheltjen2014" role="doc-biblioref">Hecheltjen 2014</a>)</span>.</p>
+</section>
+<section id="sec-data" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-data"><span class="header-section-number">3.2</span> Data</h2>
+<!-- P1: Resumen de las Turberas Analizadas -->
+<!-- Propósito: Explicar el procedimiento de Seleción turbera -->
+<!-- Porque: Dar una buena descipción del tipo de cambio que se observarà -->
+<!-- Evidencia: Ejemplos de turberas con cambios -->
+<!-- Explicar evidencia:  imágenes con intervención antrópica -->
+<!-- Conclusión/conexión:  -->
+<p>Tomando como base la delimitación de turberas realizada por el Ministerio del Medio Ambiente (MMA) en la provincia de Chiloé, se procedió a clasificarlas en dos categorías. En primer lugar, se identificaron las turberas que experimentaron cambios a lo largo del tiempo, y por otro lado, aquellas que se mantuvieron estables. Para realizar esta clasificación, se utilizó el proceso de fotointerpretación utilizando Google Earth Pro. Las turberas clasificadas como “cambio” registraron tanto la temporalidad del cambio como el tipo de alteración, ya sea por causas naturales o por actividad humana ( ver Figura ). En este estudio se utilizaron tanto turberas estables como aquellas que presentaron cambios debido a la acción humana, donde la temporalidad toma un rol importante el proceso de adquisición de imágenes satelitales.</p>
+<div id="fig-aerop" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-antes-t" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/turbera_a_26.png" class="img-fluid figure-img" data-ref-parent="fig-aerop"></p>
+<figcaption class="figure-caption">(a) Antes de alteación</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-despues-t" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/turbera_b_27.png" class="img-fluid figure-img" data-ref-parent="fig-aerop"></p>
+<figcaption class="figure-caption">(b) Después de la alteación</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.2: Cambio por Actividad Antrópica correspondiente a actividades extractivas de turba</figcaption><p></p>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bullock2003role" class="csl-entry" role="listitem">
+Bullock, Andy, and Mike Acreman. 2003. <span>“The Role of Wetlands in the Hydrological Cycle.”</span> <em>Hydrology and Earth System Sciences</em> 7 (3): 358–89.
+</div>
+<div id="ref-carmona2010estacion" class="csl-entry" role="listitem">
+Carmona, Martı́n R, Juan Carlos Aravena, Marcela A Bustamante-Sanchez, Juan L Celis-Diez, Andrés Charrier, Iván A Dı́az, Javiera Dı́az-Forestier, et al. 2010. <span>“Estaci<span>ó</span>n Biol<span>ó</span>gica Senda Darwin: Investigaci<span>ó</span>n Ecol<span>ó</span>gica de Largo Plazo En La Interfase Ciencia-Sociedad.”</span> <em>Revista Chilena de Historia Natural</em> 83 (1): 113–42. <a href="https://www.scielo.cl/scielo.php?pid=S0716-078X2010000100007&amp;script=sci_arttext&amp;tlng=en">https://www.scielo.cl/scielo.php?pid=S0716-078X2010000100007&amp;script=sci_arttext&amp;tlng=en</a>.
+</div>
+<div id="ref-di1976bioclimatologia" class="csl-entry" role="listitem">
+Di Castri, Francesco, Ernst R Hajek, et al. 1976. <em>Bioclimatolog<span>ı́</span>a de Chile</em>. Vol. 128. Vicerrector<span>ı́</span>a Acad<span>é</span>mica de la Universidad Cat<span>ó</span>lica de Chile Santiago. <a href="https://grn.cl/bioclimatologia_de_chile.pdf">https://grn.cl/bioclimatologia_de_chile.pdf</a>.
+</div>
+<div id="ref-diaz2007alteration" class="csl-entry" role="listitem">
+Dı́az, M Francisca, Seth Bigelow, and Juan J Armesto. 2007. <span>“Alteration of the Hydrologic Cycle Due to Forest Clearing and Its Consequences for Rainforest Succession.”</span> <em>Forest Ecology and Management</em> 244 (1-3): 32–40.
+</div>
+<div id="ref-gore1983mires" class="csl-entry" role="listitem">
+Gore, AJP. 1983. <span>“Mires: Swamp, Bog, Fen and Moor-Ecosystems of the World.”</span> <em>Elsevier Scientific Publishing Company.</em> 4.
+</div>
+<div id="ref-hecheltjen2014" class="csl-entry" role="listitem">
+Hecheltjen, F.; Menz, A.; Thonfeld. 2014. <span>“In Land Use and Land Cover Mapping in Europe.”</span> <em>Recent Advances in Remote Sensing Change Detection—A Review</em>, 145–78.
+</div>
+<div id="ref-keddy2010wetland" class="csl-entry" role="listitem">
+Keddy, Paul A. 2010. <em>Wetland Ecology: Principles and Conservation</em>. Cambridge university press.
+</div>
+<div id="ref-leon2012caracterizacion" class="csl-entry" role="listitem">
+León, Carolina. 2012. <span>“Caracterizaci<span>ó</span>n Flor<span>ı́</span>stica y Ecol<span>ó</span>gica de Turberas Esfagnosas de La Isla Grande de Chilo<span>é</span>-Chile: Una Herramienta Para La Conservaci<span>ó</span>n y El Desarrollo Sostenible.”</span> PhD thesis, Universidad Complutense de Madrid.
+</div>
+<div id="ref-zedler2005wetland" class="csl-entry" role="listitem">
+Zedler, Joy B, and Suzanne Kercher. 2005. <span>“Wetland Resources: Status, Trends, Ecosystem Services, and Restorability.”</span> <em>Annu. Rev. Environ. Resour.</em> 30: 39–74.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./metodologia.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metodología</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Denis Berroeta</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
