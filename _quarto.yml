@@ -14,9 +14,10 @@ book:
     - index.qmd
     - abstract.qmd
     - intro.qmd
-    - a-estudio.qmd
-    - adquisicion.qmd
+    - roi_data.qmd
     - metodologia.qmd
+    - resultados.qmd
+    - discusion.qmd
     - conclusiones.qmd
     - references.qmd
     - part: Rezagos
@@ -27,6 +28,8 @@ book:
         - e-arte.qmd
         - hipotesis.qmd
         - objetivos.qmd
+        - a-estudio.qmd
+        - adquisicion.qmd
     - part: marco.qmd
       chapters:
         - insumos.qmd

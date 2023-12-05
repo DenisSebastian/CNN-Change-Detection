@@ -5,7 +5,8 @@ editor_options:
 ---
 
 
-# Área de Estudio {#a-estudio}
+# Área de Estudio {#a-estudio .unnumbered}
+
 
 ::: {.callout-warning}
 ## Texto sin Estructura

@@ -23,6 +23,16 @@ Un tipo de ecosistema clave para combatir los efectos del cambio climático son 
 
 En Chile, @joosten2002wise estimaron la superficie de turberas en 10.470 $km^2$, concentrada en las regiones de Aysén y Magallanes, en el sur de Chile, y correspondiente al 1,4% del territorio nacional [@schlatter2004turbales]. En la Isla de Chiloé (Región de Los Lagos), como consecuencia de la acelerada colonización humana, vastas extensiones de bosques fueron quemadas o taladas para obtener madera o para preparar la tierra para la agricultura o la ganadería [@cabezas2015]. Como resultado, las zonas de drenaje deficiente fueron colonizadas por musgos _Sphagnum_ (principalmente _S. magellanicum_) o por matorrales sucesionales [@diaz2007limitantes] [@diaz2007alteration], lo que fueron denominados "turberas antropogénicas" [@diaz2008caracterizacion], [@leon2014recent], estos ecosistemas han registrado tasas de acumulación reciente de $C$ superiores a las de las turberas de origen glaciar debido a que las turberas antropogénicas, al ser ecosistemas más recientes, son más activas [@leon2014recent]. Además, este tipo de turberas antropogénicas tienen una gran capacidad de retención de agua [@iturraspe2000aspectos]. Las turberas naturales, así como las antropogénicas presentes en la zona sur de Chile, tienen diferencias en su concepción e interacción con el entorno. Sin embargo, ambas comparten el riesgo de destrucción o degradación debido a actividades antrópicas o naturales, por lo que es necesario monitorearlas para su protección y conservación.
 
+<!-- - Párafo 3 Acción Humana -->
+<!-- Propósito            : Definir acción Humana -->
+<!-- Porque               : Resaltar el problema -->
+<!-- Evidencia            : Actividad humana -->
+<!-- Eplicar evidencia    : Citar fuentes. -->
+<!-- Conclusión/conector  : NEcesidad de tener un marco regulatorio -->
+    
+La isla de Chiloé tiene una larga historia de uso de la turba como combustible. Sin embargo, desde alrededor de 1996, se comenzó a explotar el musgo de la capa superior de la turba debido a las demandas de actividades como la horticultura y la floricultura. Desde entonces hasta 2010, las exportaciones se multiplicaron por 29 debido a la alta demanda externa. En 2012, se valoraron en aproximadamente 13 millones de dólares, equivalentes a 3.900 toneladas de musgo seco [@aguero2013musgo]. La cosecha indiscriminada de este recurso ha tenido efectos ambientales irreversibles que van más allá del agotamiento del musgo y el empobrecimiento de los productores. También ha afectado el ciclo del carbono y la hidrología local, provocando erosión del paisaje y pérdida de biodiversidad (@zegers2006, @diaz2012plan). La extracción de musgo Sphagnum se realiza principalmente en turberas antropogénicas (@rojas2004turberas, @zegers200). En razón a lo anterior, es necesario contar con un marco regulatorio en el país.
+
+
 <!-- - Párrafo 3: Situación en Chile Actual Protección (MMA) -->
 <!-- Propósito             : Establecer estado actual en Chile respecto Protección -->
 <!-- Porque                : Necesidad de monitoreo -->

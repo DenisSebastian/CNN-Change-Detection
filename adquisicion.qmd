@@ -3,7 +3,7 @@ fig-cap-location: bottom
 ---
 
 
-# Adquisición de Datos {#datos}
+# Adquisición de Datos {#datos .unnumbered}
 
 
 ## Turberas

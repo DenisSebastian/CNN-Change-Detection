@@ -1,4 +1,4 @@
-# Metodologia {sec-metodologia}
+# Metodología {sec-metodologia}
 
 <!-- - P1: Introducción a la Metodología -->
 <!-- Propósito: Dar introducción de los del procedimiento utilizado -->

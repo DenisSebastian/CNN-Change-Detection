@@ -1,0 +1,73 @@
+---
+fig-cap-location: bottom
+---
+
+
+# Área de Estudio y Data
+
+## Área de Estudio {#sec-roi}
+
+<!-- % P1: Describir la Región de Chiloé Características Climática -->
+<!-- % P2:  Turberas en Chiloé formación -->
+<!-- % P3: Conector con Data -->
+
+<!-- %P1: Describir la Región de Chiloé Características Climática -->
+<!-- % Propósito: Dar contexto grografíco de ROI -->
+<!-- % Porque: Entender variables de entorno ecosistemica formación crecimiento -->
+<!-- % Evidencia: mapa -->
+<!-- % Explicar evidencia: Citas del clima y vegetación -->
+<!-- % Conclusión/conexión:  -->
+
+La región de estudio corresponde a toda la provincia de Chiloé (@fig-chiloe), en la Región de los Lagos, al sur de Chile (42°36′S 73°57′O). El Territorio de Chiloé es un archipiélago formado por más de treinta islas, con una extensión de 9.181 km². La Isla Grande tiene una longitud de 180 km de norte a sur y es principalmente en esta isla donde se encuentran las turberas antropogénicas objeto de estudio. La zona tiene un clima templado con fuerte influencia oceánica y presenta un periodo seco durante el verano [@di1976bioclimatologia]. Según los datos de nueve años de la estación meteorológica SDBS, la temperatura media es de 10 °C y hay 2.110 mm de precipitaciones anuales [@carmona2010estacion].
+
+
+![Región de Estudio provincia de Chiloé, Chile. Elaboración propia](images/Chiloe_chile.png){#fig-chiloe}
+
+
+
+<!-- % P2:  Turberas en Chiloé formación -->
+<!-- %Propósito: Reiterar importancia de las turberas -->
+<!-- %Porque: Comprender formación -->
+<!-- %Evidencia: Definciiones con referencias -->
+<!-- %Explicar evidencia: Composición orgánica -->
+<!-- %Conclusión/conexión: importancia de para monitoreo -->
+
+Históricamente las turberas tiene su origen en la tala y quema del bosque de tepú (Tepualia stipularis) ubicado en la zona, que dejó un suelo mal drenado colonizado por especies de Sphagnum sp. [@diaz2007alteration]. Se estima que la acumulación de materia orgánica comenzó en 1900 [@leon2012caracterizacion]. Las turberas son humedales en los que la materia orgánica se produce y deposita más rápidamente de lo que puede descomponerse, lo que da lugar a la formación de turba [@gore1983mires]. Los humedales son ecosistemas generados en zonas donde la presencia de agua produce suelos sometidos a procesos anaeróbicos, por lo que están dominados por una biota adaptada a las inundaciones [@keddy2010wetland]. Estos ecosistemas ofrecen numerosos servicios ecosistémicos, como la depuración y el almacenamiento de agua dulce [@bullock2003role] y ser importantes reservorios de carbono (C) [@zedler2005wetland].
+
+
+<!-- %P3: Conector con Data -->
+<!-- %Propósito: Importancia monitoreo y conectar con data -->
+<!-- %Porque: Explicar los desafío de adquisión de información -->
+<!-- %Evidencia: Uso de sar -->
+<!-- %Explicar evidencia: CAmtura información bajo diferentes condiciones atmosférica -->
+<!-- %Conclusión/conexión: Conexión con Data -->
+
+
+Considerando la importancia ecosistémica de las turberas y su degradación por acción humana, es necesario contar con un sistema de monitoreo. Una solución eficiente a través de imágenes satelitales en términos de temporalidad de captura de información y cobertura espacial. Teniendo en cuenta la ubicación geográfica de la región de estudio, esta se encuentra bajo condiciones climáticas nubosas durante gran parte del año, por lo tanto, las imágenes satelitales ópticas no son útiles. La alternativa idónea es el uso de imágenes satelitales tipo radar, que puedan captar información de la superficie bajo diferentes condiciones atmosféricas y tanto de día como de noche [@hecheltjen2014].
+
+
+
+## Data {#sec-data}
+
+
+<!-- P1: Resumen de las Turberas Analizadas -->
+<!-- Propósito: Explicar el procedimiento de Seleción turbera -->
+<!-- Porque: Dar una buena descipción del tipo de cambio que se observarà -->
+<!-- Evidencia: Ejemplos de turberas con cambios -->
+<!-- Explicar evidencia:  imágenes con intervención antrópica -->
+<!-- Conclusión/conexión:  -->
+
+Tomando como base la delimitación de turberas realizada por el Ministerio del Medio Ambiente (MMA) en la provincia de Chiloé, se procedió a clasificarlas en dos categorías. En primer lugar, se identificaron las turberas que experimentaron cambios a lo largo del tiempo, y por otro lado, aquellas que se mantuvieron estables. Para realizar esta clasificación, se utilizó el proceso de fotointerpretación utilizando Google Earth Pro. Las turberas clasificadas como "cambio" registraron tanto la temporalidad del cambio como el tipo de alteración, ya sea por causas naturales o por actividad humana ( ver Figura \ref{fig:tuberaCambio}). En este estudio se utilizaron tanto turberas estables como aquellas que presentaron cambios debido a la acción humana, donde la temporalidad toma un rol importante el proceso de adquisición de imágenes satelitales.
+
+
+
+::: {#fig-aerop layout-ncol="2"}
+
+![Antes de alteación](images/turbera_a_26.png){#fig-antes-t}
+
+![Después de la alteación](images/turbera_b_27.png){#fig-despues-t}
+
+Cambio por Actividad Antrópica correspondiente a actividades extractivas de turba
+:::
+
+
